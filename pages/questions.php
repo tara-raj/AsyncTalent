@@ -246,6 +246,7 @@ if ($handle) {
 		$select = rand(0, $var);
 
 		echo $arr[$select][1];
+		$_SESSION["time"] = $arr[$select][7];
 	}
 	
 	//print_r($array);
@@ -260,10 +261,81 @@ if ($handle) {
 <input class="btn btn-primary" type="button" onClick="history.go(0)" value="New Question">
 </form>
 </table>
-<h4 align="right"> 02:59 time left </h4>
-<textarea class="form-control" rows="5" cols="95"></textarea> 
+<?php
+$timestamp = time();
+$_SESSION['ts'] = "";
+$diff = $_SESSION["time"]*60; //<-Time of countdown in seconds.  ie. 3600 = 1 hr. or 86400 = 1 day.
+
+//MODIFICATION BELOW THIS LINE IS NOT REQUIRED.
+$hld_diff = $diff;
+if(isset($_SESSION['ts'])) {
+	$slice = ($timestamp - $_SESSION['ts']);	
+	$diff = $diff - $slice;
+}
+
+if(!isset($_SESSION['ts']) || $diff > $hld_diff || $diff < 0) {
+	$diff = $hld_diff;
+	$_SESSION['ts'] = $timestamp;
+}
+
+//Below is demonstration of output.  Seconds could be passed to Javascript.
+$diff; //$diff holds seconds less than 3600 (1 hour);
+
+$hours = floor($diff / 3600) . ' : ';
+$diff = $diff % 3600;
+$minutes = floor($diff / 60) . ' : ';
+$diff = $diff % 60;
+$seconds = $diff;
+?>
+<div id="strclock" align="right">Clock Here!</div>
+<script type="text/javascript">
+ var hour = <?php echo floor($hours); ?>;
+ var min = <?php echo floor($minutes); ?>;
+ var sec = <?php echo floor($seconds); ?>
+
+function countdown() {
+ if(sec <= 0 && min > 0) {
+  sec = 59;
+  min -= 1;
+ }
+ else if(min <= 0 && sec <= 0) {
+  min = 0;
+  sec = 0;
+ }
+ else {
+  sec -= 1;
+ }
+ 
+ if(min <= 0 && hour > 0) {
+  min = 59;
+  hour -= 1;
+ }
+ 
+ var pat = /^[0-9]{1}$/;
+ sec = (pat.test(sec) == true) ? '0'+sec : sec;
+ min = (pat.test(min) == true) ? '0'+min : min;
+ hour = (pat.test(hour) == true) ? '0'+hour : hour;
+ 
+ document.getElementById('strclock').innerHTML = hour+":"+min+":"+sec;
+ setTimeout("countdown()",1000);
+ 
+ var tt = document.getElementById('strclock').innerHTML
+ if(sec <= "15" && min == "00" && hour == "00"){
+ 	//document.getElementById('strclock').innerHTML = "Time's Up!";
+ 	document.getElementById('strclock').style.color = "red";
+ 	document.getElementById("strclock").style.font = "bold 20px arial";
+ }
+ if(sec == "00" && min == "00" && hour == "00"){
+ 	document.getElementById('strclock').innerHTML = "Time's Up!";
+ }
+ 
+ }
+ countdown();
+</script> 
 <br>
-<form align="center">
+<form align="center" action="question_process.php" method="post">
+<textarea class="form-control" rows="5" cols="95" id="response"></textarea>
+<br>
 <input class="btn btn-lg btn-success" type="button" value="Submit">
 </form>
 
