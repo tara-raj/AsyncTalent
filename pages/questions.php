@@ -244,7 +244,8 @@ if ($handle) {
 	
 	function pickRandom($var, $arr){
 		$select = rand(0, $var);
-
+		$_SESSION["selected_question"] = $select;
+		//echo $_SESSION["selected_question"];
 		echo $arr[$select][1];
 		$_SESSION["time"] = $arr[$select][7];
 	}
