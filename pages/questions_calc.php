@@ -182,7 +182,7 @@
                             
                                         <table>
                                         <td>
-                                        <h3 class="text-primary">
+                                        <h4 class="text-primary">
                             <?php
 $text = strtolower($_POST["response"]);
 
@@ -237,13 +237,18 @@ if(sizeof($keywords) > 1){
 }
 
 ?>           
-                                        <h3></td>
+                                        <h4></td>
                                         <td>&nbsp &nbsp</td>
                                         <td>
 </table>
+<h3 class="text-success">Buzzword Wizard </h3>
+<h3> Your Score: 2 </h3>
+<h4> You touched on important concepts, but you need to speak more. Citing at least one specific example in your response will help. </h4>
 
-<br>
-<h4>Buzzword Wizard </h4>
+<!--<h4> Check out more tips: </h4>
+<li><a>Putting buzzwords in meaningful sentences</a></li>
+<li><a>Situation, Action, Response</a></li> 
+<li><a>Specific examples</a></li>--!>
 
                         </div>
                         <!-- /.panel-body -->
