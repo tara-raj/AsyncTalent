@@ -258,7 +258,7 @@ if ($handle) {
                                         <td>&nbsp &nbsp</td>
                                         <td>
                                             <form>
-<input class="btn btn-primary" type="button" onClick="history.go(0)" value="New Question">
+<input class="btn btn-primary" type="button" onClick="history.go(0)" value="New Question" id="new_q">
 </form>
 </table>
 <?php
@@ -327,16 +327,17 @@ function countdown() {
  }
  if(sec == "00" && min == "00" && hour == "00"){
  	document.getElementById('strclock').innerHTML = "Time's Up!";
+ 	document.getElementById('sub').click();
  }
  
  }
  countdown();
 </script> 
 <br>
-<form align="center" action="question_process.php" method="post">
-<textarea class="form-control" rows="5" cols="95" id="response"></textarea>
+<form align="center" action="questions_calc.php" method="post">
+<textarea class="form-control" rows="5" cols="95" id="response" name="response"></textarea>
 <br>
-<input class="btn btn-lg btn-success" type="button" value="Submit">
+<input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub">
 </form>
 
                         </div>
