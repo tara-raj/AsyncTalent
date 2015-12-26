@@ -184,9 +184,8 @@
                                         <td>
                                         <h4 class="text-primary">
                             <?php
-                            
 $text = strtolower($_POST["final_span"]);
-//echo $text . "<br>";
+echo $text . "<br>";
 
 //echo $text;
 $q = $_SESSION["selected_question"];

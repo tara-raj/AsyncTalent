@@ -80,9 +80,7 @@
     padding: 0;
   }
 </style>
-<h1 class="center" id="headline">
-  <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
-    Web Speech API</a> Demonstration</h1>
+<form align="center" action="recording_calc.php" method="post">
 <div id="info">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
   <p id="info_speak_now">Speak now.</p>
@@ -102,17 +100,16 @@
      version 25 or later.</p>
 </div>
 <div class="right">
-  <button id="start_button" onclick="startButton(event)">
-    <img id="start_img" src="mic.gif" alt="Start"></button>
+  <button id="start_button" onclick="startButton(event)"></button>
 </div>
-<div id="results">
-  <span id="final_span" class="final"></span>
-  <span id="interim_span" class="interim"></span>
+<!--<div id="results" name="results">--!>
+  <textarea id="final_span" class="final" name="final_span" rows="5" cols="95"></textarea>
+  <!--<textarea id="interim_span" class="interim" name="interim_span"></textarea>--!>
   <p>
-</div>
+<!--</div>--!>
 <div class="center">
   <div class="sidebyside" style="text-align:right">
-    <button id="copy_button" class="button" onclick="copyButton()">
+    <!--<button id="copy_button" class="button" onclick="copyButton()">
       Copy and Paste</button>
     <div id="copy_info" class="info">
       Press Control-C to copy text.<br>(Command-C on Mac.)
@@ -126,7 +123,7 @@
       (See chrome://settings/handlers to change.)
     </div>
   </div>
-  <p>
+  <p>--!>
   <div id="div_language">
     <select id="select_language" onchange="updateCountry()"></select>
     &nbsp;&nbsp;
@@ -290,6 +287,10 @@ if (!('webkitSpeechRecognition' in window)) {
     }
   };
 }
+
+//STARTS TEH RECORDING RIGHT AWAY
+startButton(event);
+
 function upgrade() {
   start_button.style.visibility = 'hidden';
   showInfo('info_upgrade');
@@ -373,3 +374,7 @@ function showButtons(style) {
   email_info.style.display = 'none';
 }
 </script>
+<br>
+<input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub"> </form>
+</body>
+</html>
