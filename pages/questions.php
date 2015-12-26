@@ -204,6 +204,7 @@ $conn->query($query) or die ();
 $query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
 $conn->query($query) or die ("Invalid create" . $conn->error); 
 //echo "Company table initialized";
+//chmod("QuestionBank.csv", 0755);
 
 $handle = fopen("QuestionBank.csv", "r");
 if ($handle) {
@@ -216,6 +217,7 @@ if ($handle) {
                        ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
         //echo $ls[0] . " " . $ls[1] . "<br>";
 		$conn->query($query) or die ("invalid user insert" . $conn->error);
+		//echo "here";
 		}
         /*for($i = 0; $i < sizeof($ls); $i++){
         	echo $line_separated[$i] . "<br>";
