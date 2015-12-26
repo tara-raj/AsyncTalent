@@ -184,7 +184,8 @@
                                         <td>
                                         <h4 class="text-primary">
                             <?php
-$text = strtolower($_POST["response"]);
+$text = strtolower($_POST["transcription"]);
+echo $text . "<br>";
 
 //echo $text;
 $q = $_SESSION["selected_question"];
