@@ -1,314 +1,375 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Web Speech API Demo</title>
-    <style>
-      body
-      {
-        max-width: 500px;
-        margin: 2em auto;
-        font-size: 20px;
-      }
-
-      h1
-      {
-        text-align: center;
-      }
-
-      .buttons-wrapper
-      {
-        text-align: center;
-      }
-
-      .hidden
-      {
-        display: none;
-      }
-
-      #transcription,
-      #log
-      {
-        display: block;
-        width: 100%;
-        height: 5em;
-        overflow-y: scroll;
-        border: 1px solid #333333;
-        line-height: 1.3em;
-      }
-
-      .button-demo
-      {
-        padding: 0.5em;
-        display: inline-block;
-        margin: 1em auto;
-      }
-    </style>
-  </head>
-  <body>
-<h1 class="page-header">Mock Interview</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
- 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                           Question
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-8">
-                
-                                        <div class="form-group">
-                                        </div>
-                                        <div class="form-group">
-                                        <table>
-                                        <td>
-                                        <h3 class="text-primary">
-                                        <?php
-	$dbhost = 'localhost';
-	$dbuser = 'Assign2';
-	$dbpass = 'password';
- 
-$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
-if($conn )
-{
-  //echo "Connected";
-}
-if(! $conn )
-{
-  die('Could not connect: ' . mysql_error());
-}
-
-$query = "DROP table Questions";
-$conn->query($query) or die (); 
-//echo "Dropped";
-
-$query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
-$conn->query($query) or die ("Invalid create" . $conn->error); 
-//echo "Company table initialized";
-
-$handle = fopen("QuestionBank.csv", "r");
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        // process the line read.
-        $ls = explode(",", $line);
-        if($ls[0] != 'Question'){
-        $query = "INSERT INTO Questions (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
-                       VALUES
-                       ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
-        //echo $ls[0] . " " . $ls[1] . "<br>";
-		$conn->query($query) or die ("invalid user insert" . $conn->error);
-		}
-        /*for($i = 0; $i < sizeof($ls); $i++){
-        	echo $line_separated[$i] . "<br>";
-        }*/
-    }
-
-    fclose($handle);
-    
-} else {
-    // error opening the file.
-} 
-
-	$query="SELECT * FROM Questions";
-	$conn->query($query) or die ("couldn't connect " . $conn->error);
-	$result = $conn->query($query);
-
-	$array = array();
-	
-	while($row = mysqli_fetch_row($result))
-	{
-		//echo $row[0] . " " . $row[1] . " " . $row[2] . " " . $row[3] . " " . $row[4] . " " . $row[5] . " " . $row[6] . " " . $row[7] . $row[8] . $row[9]. "<br>";
-		array_push($array, $row);
-	}
-	
-	pickRandom(sizeof($array)-1, $array);
-	
-	function pickRandom($var, $arr){
-		$select = rand(0, $var);
-		$_SESSION["selected_question"] = $select;
-		//echo $_SESSION["selected_question"];
-		echo $arr[$select][1];
-		$_SESSION["time"] = $arr[$select][7];
-	}
-	
-	//print_r($array);
-	/*for($i = 0; $i < sizeof($array); $i++){
-		echo $array[$i];
-	}*/
-?>
-                                        <h3></td>
-                                        <td>&nbsp &nbsp</td>
-                                        <td>
-                                            <form>
-<input class="btn btn-primary" type="button" onClick="history.go(0)" value="New Question" id="new_q">
-</form>
-</table>
-<?php
-$timestamp = time();
-$_SESSION['ts'] = "";
-$diff = $_SESSION["time"]*60; //<-Time of countdown in seconds.  ie. 3600 = 1 hr. or 86400 = 1 day.
-
-//MODIFICATION BELOW THIS LINE IS NOT REQUIRED.
-$hld_diff = $diff;
-if(isset($_SESSION['ts'])) {
-	$slice = ($timestamp - $_SESSION['ts']);	
-	$diff = $diff - $slice;
-}
-
-if(!isset($_SESSION['ts']) || $diff > $hld_diff || $diff < 0) {
-	$diff = $hld_diff;
-	$_SESSION['ts'] = $timestamp;
-}
-
-//Below is demonstration of output.  Seconds could be passed to Javascript.
-$diff; //$diff holds seconds less than 3600 (1 hour);
-
-$hours = floor($diff / 3600) . ' : ';
-$diff = $diff % 3600;
-$minutes = floor($diff / 60) . ' : ';
-$diff = $diff % 60;
-$seconds = $diff;
-?>
-<div id="strclock" align="right">Clock Here!</div>
-<script type="text/javascript">
- var hour = <?php echo floor($hours); ?>;
- var min = <?php echo floor($minutes); ?>;
- var sec = <?php echo floor($seconds); ?>
-
-function countdown() {
- if(sec <= 0 && min > 0) {
-  sec = 59;
-  min -= 1;
- }
- else if(min <= 0 && sec <= 0) {
-  min = 0;
-  sec = 0;
- }
- else {
-  sec -= 1;
- }
- 
- if(min <= 0 && hour > 0) {
-  min = 59;
-  hour -= 1;
- }
- 
- var pat = /^[0-9]{1}$/;
- sec = (pat.test(sec) == true) ? '0'+sec : sec;
- min = (pat.test(min) == true) ? '0'+min : min;
- hour = (pat.test(hour) == true) ? '0'+hour : hour;
- 
- document.getElementById('strclock').innerHTML = hour+":"+min+":"+sec;
- setTimeout("countdown()",1000);
- 
- var tt = document.getElementById('strclock').innerHTML
- if(sec <= "15" && min == "00" && hour == "00"){
- 	//document.getElementById('strclock').innerHTML = "Time's Up!";
- 	document.getElementById('strclock').style.color = "red";
- 	document.getElementById("strclock").style.font = "bold 20px arial";
- }
- if(sec == "00" && min == "00" && hour == "00"){
- 	document.getElementById('strclock').innerHTML = "Time's Up!";
- 	document.getElementById('sub').click();
- }
- 
- }
- countdown();
-</script> 
-<br>
-
-<form align="center" action="questions_calc.php" method="post">
-<label>Response Transcription</label>
-<textarea id="transcription" readonly="readonly" name='transcription'></textarea>
-<br>
-<input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub">
-</form>
-<button class="btn btn-lg btn-primary" id="button-stop-ws" class="button-demo">Stop recording</button>
-   <!--<span>Results:</span>
-   <label><input type="radio" name="recognition-type" value="final"  checked="checked"/> Final only</label>
-    <label><input type="radio" name="recognition-type" value="interim"/> Interim</label>--!>
-
-    <!--<h3>Log</h3>
-    <div id="log"></div>--!>
-
-    <div class="buttons-wrapper">
-      <!--<button id="button-play-ws" class="button-demo">Play demo</button>--!>
-      
-      <!--<button id="clear-all" class="button-demo">Clear all</button>--!>
+<meta charset="utf-8">
+<title>Web Speech API Demo</title>
+<style>
+  * {
+    font-family: Verdana, Arial, sans-serif;
+  }
+  a:link {
+    color:#000;
+    text-decoration: none;
+  }
+  a:visited {
+    color:#000;
+  }
+  a:hover {
+    color:#33F;
+  }
+  .button {
+    background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
+    border: 1px solid #076bd2;
+    border-radius: 3px;
+    color: #fff;
+    display: none;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 8px 25px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #076bd2;
+    letter-spacing: normal;
+  }
+  .center {
+    padding: 10px;
+    text-align: center;
+  }
+  .final {
+    color: black;
+    padding-right: 3px; 
+  }
+  .interim {
+    color: gray;
+  }
+  .info {
+    font-size: 14px;
+    text-align: center;
+    color: #777;
+    display: none;
+  }
+  .right {
+    float: right;
+  }
+  .sidebyside {
+    display: inline-block;
+    width: 45%;
+    min-height: 40px;
+    text-align: left;
+    vertical-align: top;
+  }
+  #headline {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  #info {
+    font-size: 20px;
+    text-align: center;
+    color: #777;
+    visibility: hidden;
+  }
+  #results {
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 150px;
+  }
+  #start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+  }
+</style>
+<h1 class="center" id="headline">
+  <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
+    Web Speech API</a> Demonstration</h1>
+<div id="info">
+  <p id="info_start">Click on the microphone icon and begin speaking.</p>
+  <p id="info_speak_now">Speak now.</p>
+  <p id="info_no_speech">No speech was detected. You may need to adjust your
+    <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+      microphone settings</a>.</p>
+  <p id="info_no_microphone" style="display:none">
+    No microphone was found. Ensure that a microphone is installed and that
+    <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+    microphone settings</a> are configured correctly.</p>
+  <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+  <p id="info_denied">Permission to use microphone was denied.</p>
+  <p id="info_blocked">Permission to use microphone is blocked. To change,
+    go to chrome://settings/contentExceptions#media-stream</p>
+  <p id="info_upgrade">Web Speech API is not supported by this browser.
+     Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+     version 25 or later.</p>
+</div>
+<div class="right">
+  <button id="start_button" onclick="startButton(event)">
+    <img id="start_img" src="mic.gif" alt="Start"></button>
+</div>
+<div id="results">
+  <span id="final_span" class="final"></span>
+  <span id="interim_span" class="interim"></span>
+  <p>
+</div>
+<div class="center">
+  <div class="sidebyside" style="text-align:right">
+    <button id="copy_button" class="button" onclick="copyButton()">
+      Copy and Paste</button>
+    <div id="copy_info" class="info">
+      Press Control-C to copy text.<br>(Command-C on Mac.)
     </div>
-    <span id="ws-unsupported" class="hidden">API not supported</span>
-
-    <script>
-      // Test browser support
-      window.SpeechRecognition = window.SpeechRecognition       ||
-                                 window.webkitSpeechRecognition ||
-                                 null;
-
-      if (window.SpeechRecognition === null) {
-        document.getElementById('ws-unsupported').classList.remove('hidden');
-        document.getElementById('button-play-ws').setAttribute('disabled', 'disabled');
-        document.getElementById('button-stop-ws').setAttribute('disabled', 'disabled');
+  </div>
+  <div class="sidebyside">
+    <button id="email_button" class="button" onclick="emailButton()">
+      Create Email</button>
+    <div id="email_info" class="info">
+      Text sent to default email application.<br>
+      (See chrome://settings/handlers to change.)
+    </div>
+  </div>
+  <p>
+  <div id="div_language">
+    <select id="select_language" onchange="updateCountry()"></select>
+    &nbsp;&nbsp;
+    <select id="select_dialect"></select>
+  </div>
+</div>
+<script>
+var langs =
+[['Afrikaans',       ['af-ZA']],
+ ['Bahasa Indonesia',['id-ID']],
+ ['Bahasa Melayu',   ['ms-MY']],
+ ['Català',          ['ca-ES']],
+ ['Čeština',         ['cs-CZ']],
+ ['Deutsch',         ['de-DE']],
+ ['English',         ['en-AU', 'Australia'],
+                     ['en-CA', 'Canada'],
+                     ['en-IN', 'India'],
+                     ['en-NZ', 'New Zealand'],
+                     ['en-ZA', 'South Africa'],
+                     ['en-GB', 'United Kingdom'],
+                     ['en-US', 'United States']],
+ ['Español',         ['es-AR', 'Argentina'],
+                     ['es-BO', 'Bolivia'],
+                     ['es-CL', 'Chile'],
+                     ['es-CO', 'Colombia'],
+                     ['es-CR', 'Costa Rica'],
+                     ['es-EC', 'Ecuador'],
+                     ['es-SV', 'El Salvador'],
+                     ['es-ES', 'España'],
+                     ['es-US', 'Estados Unidos'],
+                     ['es-GT', 'Guatemala'],
+                     ['es-HN', 'Honduras'],
+                     ['es-MX', 'México'],
+                     ['es-NI', 'Nicaragua'],
+                     ['es-PA', 'Panamá'],
+                     ['es-PY', 'Paraguay'],
+                     ['es-PE', 'Perú'],
+                     ['es-PR', 'Puerto Rico'],
+                     ['es-DO', 'República Dominicana'],
+                     ['es-UY', 'Uruguay'],
+                     ['es-VE', 'Venezuela']],
+ ['Euskara',         ['eu-ES']],
+ ['Français',        ['fr-FR']],
+ ['Galego',          ['gl-ES']],
+ ['Hrvatski',        ['hr_HR']],
+ ['IsiZulu',         ['zu-ZA']],
+ ['Íslenska',        ['is-IS']],
+ ['Italiano',        ['it-IT', 'Italia'],
+                     ['it-CH', 'Svizzera']],
+ ['Magyar',          ['hu-HU']],
+ ['Nederlands',      ['nl-NL']],
+ ['Norsk bokmål',    ['nb-NO']],
+ ['Polski',          ['pl-PL']],
+ ['Português',       ['pt-BR', 'Brasil'],
+                     ['pt-PT', 'Portugal']],
+ ['Română',          ['ro-RO']],
+ ['Slovenčina',      ['sk-SK']],
+ ['Suomi',           ['fi-FI']],
+ ['Svenska',         ['sv-SE']],
+ ['Türkçe',          ['tr-TR']],
+ ['български',       ['bg-BG']],
+ ['Pусский',         ['ru-RU']],
+ ['Српски',          ['sr-RS']],
+ ['한국어',            ['ko-KR']],
+ ['中文',             ['cmn-Hans-CN', '普通话 (中国大陆)'],
+                     ['cmn-Hans-HK', '普通话 (香港)'],
+                     ['cmn-Hant-TW', '中文 (台灣)'],
+                     ['yue-Hant-HK', '粵語 (香港)']],
+ ['日本語',           ['ja-JP']],
+ ['Lingua latīna',   ['la']]];
+for (var i = 0; i < langs.length; i++) {
+  select_language.options[i] = new Option(langs[i][0], i);
+}
+select_language.selectedIndex = 6;
+updateCountry();
+select_dialect.selectedIndex = 6;
+showInfo('info_start');
+function updateCountry() {
+  for (var i = select_dialect.options.length - 1; i >= 0; i--) {
+    select_dialect.remove(i);
+  }
+  var list = langs[select_language.selectedIndex];
+  for (var i = 1; i < list.length; i++) {
+    select_dialect.options.add(new Option(list[i][1], list[i][0]));
+  }
+  select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
+}
+var create_email = false;
+var final_transcript = '';
+var recognizing = false;
+var ignore_onend;
+var start_timestamp;
+if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+  start_button.style.display = 'inline-block';
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.onstart = function() {
+    recognizing = true;
+    showInfo('info_speak_now');
+    start_img.src = 'mic-animate.gif';
+  };
+  recognition.onerror = function(event) {
+    if (event.error == 'no-speech') {
+      start_img.src = 'mic.gif';
+      showInfo('info_no_speech');
+      ignore_onend = true;
+    }
+    if (event.error == 'audio-capture') {
+      start_img.src = 'mic.gif';
+      showInfo('info_no_microphone');
+      ignore_onend = true;
+    }
+    if (event.error == 'not-allowed') {
+      if (event.timeStamp - start_timestamp < 100) {
+        showInfo('info_blocked');
       } else {
-        var recognizer = new window.SpeechRecognition();
-        var transcription = document.getElementById('transcription');
-        var log = document.getElementById('log');
-
-        // Recogniser doesn't stop listening even if the user pauses
-        recognizer.continuous = true;
-
-        // Start recognising
-        recognizer.onresult = function(event) {
-          transcription.textContent = '';
-
-          for (var i = event.resultIndex; i < event.results.length; i++) {
-            if (event.results[i].isFinal) {
-              transcription.textContent = event.results[i][0].transcript; 
-              //+ ' (Confidence: ' + event.results[i][0].confidence + ')';
-            } else {
-              transcription.textContent += event.results[i][0].transcript;
-            }
-          }
-        };
-
-        // Listen for errors
-        recognizer.onerror = function(event) {
-          log.innerHTML = 'Recognition error: ' + event.message + '<br />' + log.innerHTML;
-        };
-
-		try {
-            recognizer.start();
-            //recognizer.interimResults = document.querySelector('input[name="recognition-type"][value="interim"]').checked;
-            log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
-          } catch(ex) {
-            log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
-          }
-          
-        document.getElementById('button-play-ws').addEventListener('click', function() {
-          // Set if we need interim results
-          recognizer.interimResults = document.querySelector('input[name="recognition-type"][value="interim"]').checked;
-
-          try {
-            recognizer.start();
-            log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
-          } catch(ex) {
-            log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
-          }
-        });
-
-        document.getElementById('button-stop-ws').addEventListener('click', function() {
-          recognizer.stop();
-          log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
-        });
-
-        document.getElementById('clear-all').addEventListener('click', function() {
-          transcription.textContent = '';
-          log.textContent = '';
-        });
+        showInfo('info_denied');
       }
-    </script>
-  </body>
-</html>
+      ignore_onend = true;
+    }
+  };
+  recognition.onend = function() {
+    recognizing = false;
+    if (ignore_onend) {
+      return;
+    }
+    start_img.src = 'mic.gif';
+    if (!final_transcript) {
+      showInfo('info_start');
+      return;
+    }
+    showInfo('');
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
+      range.selectNode(document.getElementById('final_span'));
+      window.getSelection().addRange(range);
+    }
+    if (create_email) {
+      create_email = false;
+      createEmail();
+    }
+  };
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+    interim_span.innerHTML = linebreak(interim_transcript);
+    if (final_transcript || interim_transcript) {
+      showButtons('inline-block');
+    }
+  };
+}
+function upgrade() {
+  start_button.style.visibility = 'hidden';
+  showInfo('info_upgrade');
+}
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+var first_char = /\S/;
+function capitalize(s) {
+  return s.replace(first_char, function(m) { return m.toUpperCase(); });
+}
+function createEmail() {
+  var n = final_transcript.indexOf('\n');
+  if (n < 0 || n >= 80) {
+    n = 40 + final_transcript.substring(40).indexOf(' ');
+  }
+  var subject = encodeURI(final_transcript.substring(0, n));
+  var body = encodeURI(final_transcript.substring(n + 1));
+  window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+}
+function copyButton() {
+  if (recognizing) {
+    recognizing = false;
+    recognition.stop();
+  }
+  copy_button.style.display = 'none';
+  copy_info.style.display = 'inline-block';
+  showInfo('');
+}
+function emailButton() {
+  if (recognizing) {
+    create_email = true;
+    recognizing = false;
+    recognition.stop();
+  } else {
+    createEmail();
+  }
+  email_button.style.display = 'none';
+  email_info.style.display = 'inline-block';
+  showInfo('');
+}
+function startButton(event) {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = select_dialect.value;
+  recognition.start();
+  ignore_onend = false;
+  final_span.innerHTML = '';
+  interim_span.innerHTML = '';
+  start_img.src = 'mic-slash.gif';
+  showInfo('info_allow');
+  showButtons('none');
+  start_timestamp = event.timeStamp;
+}
+function showInfo(s) {
+  if (s) {
+    for (var child = info.firstChild; child; child = child.nextSibling) {
+      if (child.style) {
+        child.style.display = child.id == s ? 'inline' : 'none';
+      }
+    }
+    info.style.visibility = 'visible';
+  } else {
+    info.style.visibility = 'hidden';
+  }
+}
+var current_style;
+function showButtons(style) {
+  if (style == current_style) {
+    return;
+  }
+  current_style = style;
+  copy_button.style.display = style;
+  email_button.style.display = style;
+  copy_info.style.display = 'none';
+  email_info.style.display = 'none';
+}
+</script>
