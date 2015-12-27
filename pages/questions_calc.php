@@ -131,11 +131,11 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <!--<input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
-                                </button>
+                                </button>--!>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -144,13 +144,13 @@
                             <a href="index.html"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
-                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find</a>
+                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find Companies</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i>Apply</a>
+                            <a href="apply.php"><i class="fa fa-edit fa-fw"></i>Apply</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
+                            <a href="interview.php"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
                         </li>
                     </ul>
                 </div>
@@ -158,7 +158,7 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -174,7 +174,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-12">
                 
                                         <div class="form-group">
                                         </div>

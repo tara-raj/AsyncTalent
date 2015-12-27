@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">EmployED</a>
+                <a class="navbar-brand" href="index.html">EmployEDU</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -131,11 +131,11 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <!--<input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
-                                </button>
+                                </button>--!>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -144,13 +144,13 @@
                             <a href="index.html"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
-                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find</a>
+                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find Companies</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i>Apply</a>
+                            <a href="apply.php"><i class="fa fa-edit fa-fw"></i>Apply</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
+                            <a href="interview.php"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
                         </li>
                     </ul>
                 </div>
@@ -167,11 +167,12 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-			<h3 class="text-primary"> Apply to Jobs </h3>
+			<h3 class="text-primary"> Apply to Jobs</h3>
 			<h4> You may use this job board to find jobs that are interesting to you. If available, we have listed recruiter contact information for your convenience.
 			Refer to the application crash course page for best practices for contacting recruiters. </h4>
 			<br>
-			<table>
+			<h1 class="text-primary" align="center">Coming Soon!</h1>
+			<!--<table>
 			<tr>
 				<td>
                      <div class="panel panel-default">
@@ -362,7 +363,7 @@
 					</div>
 				</td>
 			</tr>
-			</table>
+			</table>--!>
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 

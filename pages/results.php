@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">EmployED</a>
+                <a class="navbar-brand" href="index.html">EmployEDU</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -131,11 +131,11 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <!--<input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
-                                </button>
+                                </button>--!>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -144,13 +144,13 @@
                             <a href="index.html"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
-                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find</a>
+                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find Companies</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i>Apply</a>
+                            <a href="apply.php"><i class="fa fa-edit fa-fw"></i>Apply</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
+                            <a href="interview.php"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
                         </li>
                     </ul>
                 </div>
@@ -158,7 +158,7 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -175,7 +175,7 @@
                             <div class="row">
 
                         <!-- /.panel-body -->
-                         <div class="col-lg-6" align="left">
+                         <div class="col-lg-12" align="center">
  
  			<?php
  			//GET COMPANY INFO
@@ -302,70 +302,14 @@
 			}
 
  			?>
-                                
-                                    <!--<table>
-                                    <tr>
-                                    	<td align="right"><img src=src="<?php echo "ratings/".$_SESSION['logo'].".png"; ?>" height="35" width="200"></img></td>
-                                    	<td><h1 vertical-align="bottom">&nbsp <?php echo $_SESSION['company'] ?></h1></td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2" align="center"><h5><?php echo $_SESSION['description'] ?></h5></td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h2 align="right"> <?php echo $_SESSION['overall'] ?> &nbsp &nbsp</h2></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['overall'].".png"; ?>" height="35" width="200"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Compensation &nbsp &nbsp</h4></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['comp'].".png"; ?>"  height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Culture &nbsp &nbsp</h4></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['culture'].".png"; ?>" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Work/Life Balance &nbsp &nbsp</h4></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['workLife'].".png"; ?>" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Job Role &nbsp &nbsp</h4></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['role'].".png"; ?>" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Growth Opportunities &nbsp &nbsp</h4></td>
-                                    	<td><img src="<?php echo "ratings/".$_SESSION['growth'].".png"; ?>" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2" align="center"><button onclick="back()" class="btn btn-success btn-lg">Back to Quiz</button></td>
-                                    </tr>
-                                    <script>
-                                    	function back(){
-                                    		location.href = 'forms.php';
-                                    	}
-                                    </script>
-                                    </table>--!>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
+  
+                                    		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
+    
                     </div>
                     <!-- /.panel -->
+            
         </div>
         <!-- /#page-wrapper -->
 

@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">EmployED</a>
+                <a class="navbar-brand" href="index.html">EmployEDU</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -131,11 +131,11 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <!--<input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
-                                </button>
+                                </button>--!>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -144,13 +144,13 @@
                             <a href="index.html"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
-                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find</a>
+                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find Companies</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-edit fa-fw"></i>Apply</a>
+                            <a href="apply.php"><i class="fa fa-edit fa-fw"></i>Apply</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
+                            <a href="interview.php"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
                         </li>
                     </ul>
                 </div>
@@ -158,7 +158,7 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -180,13 +180,15 @@
                         <div class="panel-heading">
                             Companies
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body" align="center">
                             <div class="row">
 
                         <!-- /.panel-body -->
-                         <div class="col-lg-6" align="left">
+                         <div class="col-lg-12" align="center">
             <form action="browse_calc.php" method="post">
+            <p align="left">
             <label>Sort Company Listings &nbsp</label>
+            </p>
             <select class="form-control" onchange="sort()" id="sortSelect" name="sortSelect">
                 <option><?php echo $_SESSION["order"]; ?></option>
                 <option>Overall Rating</option>
