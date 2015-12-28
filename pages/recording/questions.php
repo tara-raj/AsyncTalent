@@ -62,7 +62,7 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
-                <!--<li class="dropdown">
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
@@ -109,7 +109,7 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>--!>
+                    </ul>
                     <!-- /.dropdown-alerts -->
                 </li>
                 <!-- /.dropdown -->
@@ -269,7 +269,6 @@ if ($handle) {
                                             <form>
 <input class="btn btn-primary" type="button" onClick="history.go(0)" value="New Question" id="new_q">
 </form>
-<h4 class="text-muted" align="right" id="totalTime"><?php echo $_SESSION['time']; ?></h4>
 </table>
 <?php
 $timestamp = time();
@@ -337,6 +336,7 @@ function countdown() {
  }
  if(sec == "00" && min == "00" && hour == "00"){
  	document.getElementById('strclock').innerHTML = "Time's Up!";
+ 	document.getElementById('sub').click();
  }
  
  }
@@ -639,7 +639,7 @@ function showButtons(style) {
 }
 </script>
 <br>
-<!--<input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub">--!>
+<input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub">
  <button style="visibility:hidden" onclick="startRecording(this);" id="record">record</button>
   <button style="visibility:hidden" onclick="stopRecording(this);" id="stop">stop</button>
   
@@ -673,18 +673,11 @@ function showButtons(style) {
   }
 
   //CHANGED BASED ON TIME FOR QUESTION
-  var tim = document.getElementById('totalTime').innerHTML;
-  tim =  tim * 60 * 1000;
-  //alert(tim);
-  
   setInterval(function(){ 
    $("#stop").click();
-   document.getElementById("clicker").style.visibility = "visible";
-	},tim);
+	},8000);
 	
-	/*setInterval(function(){
-	document.getElementById('sub').click();
-	},10000);*/
+	
 	
   function stopRecording(button) {
     recorder && recorder.stop();
@@ -752,14 +745,17 @@ function showButtons(style) {
   </script>
   
   <label id="lid" name="lid"><a id="ade" name="ade"><audio id="aud" name="aud"></audio></a></label>
-  <br>
-  <h3 id="clicker" class="text-danger" style="visibility:hidden">Click the link above to download the audio! Then click the Submit button.</h3>
   <input type="hidden" name="r_id" id="r_id"/>
   <br>
-                            <input style="visibility:visible" class="btn btn-lg btn-success" type="submit" value="Submit" id="sub"> 
-  </form>
 
+<!--<img src="/Downloads/Fox.jpg"></img>--!>
+
+<!--<audio controls id="player">
+  	<source id="song" src="../Downloads/Test_Audio.wav"></source>
+</audio>--!>
+										
   <script src="recorder.js"></script>
+  <input class="btn btn-lg btn-success" type="submit" value="Submit" id="sub"> </form>
 
                         </div>
                         <!-- /.panel-body -->

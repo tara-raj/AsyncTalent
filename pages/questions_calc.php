@@ -179,12 +179,11 @@
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
-                            
                                         <table>
                                         <td>
                                         <h4 class="text-primary">
-                            <?php
-                            
+                                        <br>
+                            <?php                            
 $text = strtolower($_POST["final_span"]);
 //echo $text . "<br>";
 
@@ -399,6 +398,13 @@ if($k == 3 && $p == 3 && $e == 1){
 <h3 class="text-success"><?php echo $_SESSION["result_name"]; ?> </h3>
 <h3> Your Score: <?php echo $_SESSION["final_score"]; ?> </h3>
 <h4> <?php echo $_SESSION["tips"]; ?> </h4>
+<br><br>
+<h4 class="text-primary">
+<?php
+$tire = $_POST['r_id'];
+echo "The name of your audio file is: " . $tire . "<br><br>";
+?>
+</h4>
 <form align="center" action="questions.php" method="post">
 <input class="btn btn-lg btn-success" type="submit" value="New Question" id="sub">
 </form>
