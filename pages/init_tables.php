@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Initialize </title>
+		<title> EmployEDU - Initialize </title>
 	</head>
 	<body>
 <?php
@@ -19,16 +19,12 @@ if(! $conn )
 }
 
 //User Profiles Table
-//$query = "DROP table Profiles";
-//$conn->query($query) or die (); 
+$query = "DROP table Profiles";
+$conn->query($query) or die (); 
 
-// sql to create table
-//$query = "CREATE TABLE Tickets (Ticket_id int primary key not null AUTO_INCREMENT, Received char(255) not null, Sender_name char(30) not null, Sender_email char(80) not null, Subject char(80) not null, Description text not null, Tech char(30), Status char(15) not null)";
-//$conn->query($query) or die ("Invalid create" . $conn->error); 
-
-//$query = "CREATE TABLE Profiles (User_id int primary key not null AUTO_INCREMENT, Username char(25) not null, Password char(25) not null, Compensation int not null, Culture int not null, WorkLife int not null, Role int not null, Growth int not null);";
-//$conn->query($query) or die ("Invalid create" . $conn->error); 
-//echo "User table initialized";
+$query = "CREATE TABLE Profiles (User_id int primary key not null AUTO_INCREMENT, Username char(25) not null, Password char(255) not null, Type char(25) not null, Compensation int not null, Culture int not null, WorkLife int not null, Role int not null, Growth int not null);";
+$conn->query($query) or die ("Invalid create" . $conn->error); 
+echo "User table initialized";
 
 //Company Profiles Table
 $query = "DROP table Companies";
@@ -39,18 +35,19 @@ $conn->query($query) or die ("Invalid create" . $conn->error);
 echo "Company table initialized";
 
 //ADD USERS 
-$password = hash('sha256', 'password');
-$name1 = "traj";
-$name2 = "tlr8ed";
+$p = 'password';
+$password = hash('sha256', $p);
+$name1 = "user";
+$name2 = "recruiter";
 
-$query = "INSERT INTO Profiles (Username, Password)
+$query = "INSERT INTO Profiles (Username, Password, Type)
                        VALUES
-                       ('$name1', '$password')";
+                       ('$name1', '$password', 'user')";
 $conn->query($query) or die ("invalid user insert" . $conn->error);
 
-$query = "INSERT INTO Profiles (Username, Password)
+$query = "INSERT INTO Profiles (Username, Password, Type)
                        VALUES
-                       ('$name2', '$password')";
+                       ('$name2', '$password', 'recruiter')";
 $conn->query($query) or die ("invalid user insert" . $conn->error); 
 
 //ADD COMPANIES

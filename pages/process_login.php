@@ -6,14 +6,16 @@
 <html>
 <link rel = "stylesheet" type = "text/css" href = "style.css"/>
 	<head>
-		<title> Landing </title>
+		<title> EmployEDU </title>
 	</head>
 	<body>
  <?php 
  	
   		$username = rtrim($_POST["username"]);
   		$_SESSION['name'] = $username;
-    	$password = hash('sha256', rtrim($_POST["password"]));
+  		$p = rtrim($_POST["password"]);
+    	$password = hash('sha256', $p);
+    	//echo $password . "<br>";
 		$success = 0;
 ?>
 <?php
@@ -37,19 +39,27 @@ if (false === $result) {
 
 while($row = mysqli_fetch_row($result))
 {
-    if($row[1] == $username){ //compare row to username
-    	if($row[2] = $password){ //compare hashed passwords
+    //echo "<br>" . $row[2];
+    //echo $row[3]. "<br>";
+    if($row[1] == $username && $row[2] == $password){ //compare row to username
     		$_SESSION['admin'] = $username;
-			$success = 5;
-			echo "hit";
-    	}
+			if($row[3] == 'user'){
+				$success = 5;
+			}
+			if($row[3] == 'recruiter'){
+				$success = 10;
+			}
+			//echo "hit";
     } else {
     	continue;
     }
 }
 
 if($success == 5){
-		header("Location: forms.php");
+	header("Location: find.php");
+}
+else if($success == 10){
+	header("Location: interview.php");
 }
 else {
 	header("Location: Login.php");
