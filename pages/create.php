@@ -181,29 +181,511 @@
                                 <div class="col-lg-12">
                 
                                         <div class="form-group">
-                                        <h3 class="text-primary"> Behavioral <h3>
+                                        <table>
+                                        <tr>
+                                        <td>
+                                        	<h3 class="text-primary" valign="top"> Behavioral &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</h3>
+                                        </td>
+                                        <td valign="top">
+							           		<select id="mainMenu" onchange="displayAccordingly()" class="form-control">
+        										<option value="Pick Question Category">Pick Question Category</option>
+        										<option value="Ambition">Ambition</option>
+        										<option value="Analytical Thinking">Analytical Thinking</option>
+        										<option value="Building Relationships">Building Relationships</option>
+        										<option value="Communication">Communication</option>
+        									</select>
+							            </td>	
+							            </tr>							            						            
+							            </table>
+							            
                                         <table class="table">
                                         <tr align="center">
-                                        <td>
-										<button class="btn btn-success">Ambition</button>
-										</td>
-										<td>
-										<button class="btn btn-success">Analytical Thinking</button>
-										</td>
-										<td>
-										<button class="btn btn-success">Building Relationships</button>
-										</td>
-										</tr>
-										<tr align="center">
-                                        <td>
-										<button class="btn btn-success">Communication</button>
-										</td>
-										<td>
-										<button class="btn btn-success">SubCategory</button>
-										</td>
-										<td>
-										<button class="btn btn-success">SubCategory</button>
-										</td>
+                                                <div id="myDiv"></div>
+                                        <label id="dir">Pick a category from the dropdown above to view questions.</label>
+                                        
+
+<?php
+	$dbhost = 'localhost';
+	$dbuser = 'Assign2';
+	$dbpass = 'password';
+ 
+	$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+	if($conn )
+	{
+  		//echo "Connected";
+	}
+	if(! $conn )
+	{
+  		die('Could not connect: ' . mysql_error());
+	}
+
+	$query = "DROP table Questions";
+	$conn->query($query) or die (); 
+
+	$query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
+	$conn->query($query) or die ("Invalid create" . $conn->error); 
+
+	$handle = fopen("QuestionBank.csv", "r");
+	if ($handle) {
+    	while (($line = fgets($handle)) !== false) {
+        	// process the line read.
+        	$ls = explode(",", $line);
+        	if($ls[0] != 'Question'){
+        		$query = "INSERT INTO Questions (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
+                       VALUES
+                       ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
+			$conn->query($query) or die ("invalid user insert" . $conn->error);
+		}
+    }
+
+    fclose($handle);
+    
+	} else {
+    	// error opening the file.
+	} 
+?>
+		<?php
+			$dbhost = 'localhost';
+			$dbuser = 'Assign2';
+			$dbpass = 'password';
+ 
+			$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+			if($conn )
+			{
+  				//echo "Connected";
+			}
+			if(! $conn )
+			{
+  				die('Could not connect: ' . mysql_error());
+			}
+
+			$query="SELECT * FROM Questions";
+			$conn->query($query) or die ("couldn't connect " . $conn->error);
+			$result = $conn->query($query);
+
+			$array = array();
+	
+			while($row = mysqli_fetch_row($result))
+			{
+				$stuff = $row[3].",".$row[1].$row[7];
+				array_push($array , $stuff);
+			}
+
+		?>
+		
+	<script type="text/javascript">
+    	var created = 0;
+
+        function displayAccordingly() {
+
+            //Call mainMenu the main dropdown menu
+            document.getElementById('dir').innerHTML = "";
+            var mainMenu = document.getElementById('mainMenu');
+
+            //Create the new dropdown menu
+            var whereToPut = document.getElementById('myDiv');
+            
+            var ar = <?php echo json_encode($array) ?>;
+			var m = document.getElementById('mainMenu').value;
+
+			var b = document.getElementById('myDiv');
+			var h = document.createElement("LABEL");
+			var t = document.createTextNode("Hello World");
+			h.appendChild(t);
+			
+			if(m == "Ambition"){
+
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+
+				var l2 = document.createElement("br");
+					b.appendChild(l2);
+
+				for(var i = 0; i < ar.length; i++){
+					if(ar[i].includes(m)){
+
+					var p = document.createElement("DIV");
+					p.className = "btn-group";
+					p.role = "group";
+					
+					var lb = document.createElement("BUTTON");
+					lb.type = "button";
+					lb.className = "btn btn-success";
+					
+					var it = document.createElement("i");
+					it.className = "glyphicon glyphicon-plus";
+					
+					lb.appendChild(it);
+					p.appendChild(lb);
+					
+					var lb2 = document.createElement("BUTTON");
+					lb2.type = "button";
+					lb2.className = "btn btn-default";
+					lb2.disabled = true;
+					
+					var text = ar[i];
+					var sub = m.length+1;
+					
+					if(text.length > 49){
+					  var q = text.substring(sub, 49+sub);
+					  q += "...";
+					  lb2.innerHTML = q;
+					}
+					else{
+						var q = text.substring(sub, ar[i].length-1);
+						lb2.innerHTML = q;
+					}
+					
+					p.appendChild(lb2);
+					
+					var lb4 = document.createElement("button");
+					lb4.className = "btn btn-default dropdown-toggle";
+					lb4.setAttribute("data-toggle","dropdown");
+					
+					var lb5 = document.createElement("span");
+					lb5.className = "caret";
+					
+					var lb6 = document.createElement("ul");
+					lb6.className = "dropdown-menu";
+					
+					var lb7 = document.createElement("li");
+					
+					var lb8 = document.createElement("a");
+					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					
+					lb7.appendChild(lb8);
+					lb6.appendChild(lb7);
+					
+					lb4.appendChild(lb5);
+					p.appendChild(lb4);
+					p.appendChild(lb6);
+					
+					var r = document.createElement("BUTTON");
+					r.type = "button";
+					r.className = "btn btn-primary";
+					r.disabled = true;
+					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
+					r.innerHTML += "m";
+					
+					p.appendChild(r);
+					
+    				
+					b.appendChild(p);
+					
+					var b4 = document.createElement("br");
+					b.appendChild(b4);
+					
+					var b5 = document.createElement("br");
+					b.appendChild(b5);
+
+					}
+				}
+			}
+			else if(m == "Analytical Thinking"){
+
+				document.getElementById('dir').innerHTML = "";
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+
+				var l2 = document.createElement("br");
+					b.appendChild(l2);
+
+				for(var i = 0; i < ar.length; i++){
+					if(ar[i].includes(m)){
+
+					var p = document.createElement("DIV");
+					p.className = "btn-group";
+					p.role = "group";
+					
+					var lb = document.createElement("BUTTON");
+					lb.type = "button";
+					lb.className = "btn btn-success";
+					
+					var it = document.createElement("i");
+					it.className = "glyphicon glyphicon-plus";
+					
+					lb.appendChild(it);
+					p.appendChild(lb);
+					
+					var lb2 = document.createElement("BUTTON");
+					lb2.type = "button";
+					lb2.className = "btn btn-default";
+					lb2.disabled = true;
+					
+					var text = ar[i];
+					var sub = m.length+1;
+					
+					if(text.length > 49){
+					  var q = text.substring(sub, 49+sub);
+					  q += "...";
+					  lb2.innerHTML = q;
+					}
+					else{
+						var q = text.substring(sub, ar[i].length-1);
+						lb2.innerHTML = q;
+					}
+					
+					p.appendChild(lb2);
+					
+					var lb4 = document.createElement("button");
+					lb4.className = "btn btn-default dropdown-toggle";
+					lb4.setAttribute("data-toggle","dropdown");
+					
+					var lb5 = document.createElement("span");
+					lb5.className = "caret";
+					
+					var lb6 = document.createElement("ul");
+					lb6.className = "dropdown-menu";
+					
+					var lb7 = document.createElement("li");
+					
+					var lb8 = document.createElement("a");
+					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					
+					lb7.appendChild(lb8);
+					lb6.appendChild(lb7);
+					
+					lb4.appendChild(lb5);
+					p.appendChild(lb4);
+					p.appendChild(lb6);
+					
+					var r = document.createElement("BUTTON");
+					r.type = "button";
+					r.className = "btn btn-primary";
+					r.disabled = true;
+					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
+					r.innerHTML += "m";
+					
+					p.appendChild(r);
+					
+    				
+					b.appendChild(p);
+					
+					var b4 = document.createElement("br");
+					b.appendChild(b4);
+					
+					var b5 = document.createElement("br");
+					b.appendChild(b5);
+
+					}
+				}
+			}
+			else if(m == "Building Relationships"){
+
+				document.getElementById('dir').innerHTML = "";
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+
+				var l2 = document.createElement("br");
+					b.appendChild(l2);
+
+				for(var i = 0; i < ar.length; i++){
+					if(ar[i].includes(m)){
+
+					var p = document.createElement("DIV");
+					p.className = "btn-group";
+					p.role = "group";
+					
+					var lb = document.createElement("BUTTON");
+					lb.type = "button";
+					lb.className = "btn btn-success";
+					
+					var it = document.createElement("i");
+					it.className = "glyphicon glyphicon-plus";
+					
+					lb.appendChild(it);
+					p.appendChild(lb);
+					
+					var lb2 = document.createElement("BUTTON");
+					lb2.type = "button";
+					lb2.className = "btn btn-default";
+					lb2.disabled = true;
+					
+					var text = ar[i];
+					var sub = m.length+1;
+					
+					if(text.length > 49){
+					  var q = text.substring(sub, 49+sub);
+					  q += "...";
+					  lb2.innerHTML = q;
+					}
+					else{
+						var q = text.substring(sub, ar[i].length-1);
+						lb2.innerHTML = q;
+					}
+					
+					p.appendChild(lb2);
+					
+					var lb4 = document.createElement("button");
+					lb4.className = "btn btn-default dropdown-toggle";
+					lb4.setAttribute("data-toggle","dropdown");
+					
+					var lb5 = document.createElement("span");
+					lb5.className = "caret";
+					
+					var lb6 = document.createElement("ul");
+					lb6.className = "dropdown-menu";
+					
+					var lb7 = document.createElement("li");
+					
+					var lb8 = document.createElement("a");
+					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					
+					lb7.appendChild(lb8);
+					lb6.appendChild(lb7);
+					
+					lb4.appendChild(lb5);
+					p.appendChild(lb4);
+					p.appendChild(lb6);
+					
+					var r = document.createElement("BUTTON");
+					r.type = "button";
+					r.className = "btn btn-primary";
+					r.disabled = true;
+					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
+					r.innerHTML += "m";
+					
+					p.appendChild(r);
+					
+    				
+					b.appendChild(p);
+					
+					var b4 = document.createElement("br");
+					b.appendChild(b4);
+					
+					var b5 = document.createElement("br");
+					b.appendChild(b5);
+
+					}
+				}
+			}
+			else if(m == "Communication"){
+
+				document.getElementById('dir').innerHTML = "";
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+
+				var l2 = document.createElement("br");
+					b.appendChild(l2);
+
+				for(var i = 0; i < ar.length; i++){
+					if(ar[i].includes(m)){
+
+					var p = document.createElement("DIV");
+					p.className = "btn-group";
+					p.role = "group";
+					
+					var lb = document.createElement("BUTTON");
+					lb.type = "button";
+					lb.className = "btn btn-success";
+					
+					var it = document.createElement("i");
+					it.className = "glyphicon glyphicon-plus";
+					
+					lb.appendChild(it);
+					p.appendChild(lb);
+					
+					var lb2 = document.createElement("BUTTON");
+					lb2.type = "button";
+					lb2.className = "btn btn-default";
+					lb2.disabled = true;
+					
+					var text = ar[i];
+					var sub = m.length+1;
+					
+					if(text.length > 49){
+					  var q = text.substring(sub, 49+sub);
+					  q += "...";
+					  lb2.innerHTML = q;
+					}
+					else{
+						var q = text.substring(sub, ar[i].length-1);
+						lb2.innerHTML = q;
+					}
+					
+					p.appendChild(lb2);
+					
+					var lb4 = document.createElement("button");
+					lb4.className = "btn btn-default dropdown-toggle";
+					lb4.setAttribute("data-toggle","dropdown");
+					
+					var lb5 = document.createElement("span");
+					lb5.className = "caret";
+					
+					var lb6 = document.createElement("ul");
+					lb6.className = "dropdown-menu";
+					
+					var lb7 = document.createElement("li");
+					
+					var lb8 = document.createElement("a");
+					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					
+					lb7.appendChild(lb8);
+					lb6.appendChild(lb7);
+					
+					lb4.appendChild(lb5);
+					p.appendChild(lb4);
+					p.appendChild(lb6);
+					
+					var r = document.createElement("BUTTON");
+					r.type = "button";
+					r.className = "btn btn-primary";
+					r.disabled = true;
+					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
+					r.innerHTML += "m";
+					
+					p.appendChild(r);
+					
+    				
+					b.appendChild(p);
+					
+					var b4 = document.createElement("br");
+					b.appendChild(b4);
+					
+					var b5 = document.createElement("br");
+					b.appendChild(b5);
+
+					}
+				}
+			}
+			else if(m == "Pick Question Category"){
+
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+				
+				var lb = document.createElement("label");
+				lb.innerHTML = "Pick a category from the dropdown above to view questions.";
+				
+				myNode.appendChild(lb);
+
+			}
+        }
+    </script>
 										</tr>
 										</table>
                                         <br>
@@ -242,7 +724,24 @@
                                         <div class="form-group">
                                         <h3 class="text-primary"> Selected Questions <h3>
                                         <hr></hr>
-                                        <h4> No questions currently selected. Use the menu on the left to select interview questions. </h4>
+                                        <div class="btn-group" role="group" aria-label="...">
+  											<button type="button" class="btn btn-success"><i class="fa fa-plus fa-fw"></i></button>
+  											<button type="button" class="btn btn-default" disabled>Question Preview</button>
+  											<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-time"></i></button>
+										</div>
+										<br>
+										<br>
+                                        <div class="btn-group" role="group" aria-label="...">
+  											<button type="button" class="btn btn-danger"><i class="fa fa-minus fa-fw"></i></button>
+  											<button type="button" class="btn btn-default" disabled>Question Preview</button>
+  											<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-time"></i></button>
+										</div>
+										<?php
+											/*$t = "Tell us about a time when you had to go above and...";
+											echo strlen($t);
+											echo substr($t, 0,49);*/
+										?>
+                                        <h4>Use the menu on the left to select interview questions</h4>
                                         <br>
                                         <div align="center">
                                     		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
