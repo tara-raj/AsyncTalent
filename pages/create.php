@@ -389,6 +389,8 @@
 					
 					var lb8 = document.createElement("a");
 					lb8.innerHTML = ar[i].substring(sub+2, ar[i].length-1);
+					var st = lb8.innerHTML;
+					lb8.innerHTML = addNewlines(st);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -484,6 +486,8 @@
 					
 					var lb8 = document.createElement("a");
 					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
+					var st = lb8.innerHTML;
+					lb8.innerHTML = addNewlines(st);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -580,6 +584,8 @@
 					
 					var lb8 = document.createElement("a");
 					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
+					var st = lb8.innerHTML;
+					lb8.innerHTML = addNewlines(st);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -670,11 +676,14 @@
 					
 					var lb6 = document.createElement("ul");
 					lb6.className = "dropdown-menu";
+					//lb6.setAttribute('word-wrap' , 'break-word');
 					
 					var lb7 = document.createElement("li");
 					
 					var lb8 = document.createElement("a");
 					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
+					var st = lb8.innerHTML;
+					lb8.innerHTML = addNewlines(st);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -721,6 +730,15 @@
 
 			}
         }
+        
+        function addNewlines(str) {
+  var result = '';
+  while (str.length > 0) {
+    result += str.substring(0, 49) + "<br>";
+    str = str.substring(49);
+  }
+  return result;
+}
     </script>
 										</tr>
 										</table>
