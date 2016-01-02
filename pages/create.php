@@ -178,7 +178,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12" style="width: 515px !important;">
                 
                                         <div class="form-group">
                                         <table>
@@ -200,7 +200,7 @@
 							            
                                         <table class="table">
                                         <tr align="center">
-                                                <div id="myDiv"></div>
+                                        <div id="myDiv"></div>
                                         <label id="dir">Pick a category from the dropdown above to view questions.</label>
                                         
 
@@ -267,7 +267,7 @@
 	
 			while($row = mysqli_fetch_row($result))
 			{
-				$stuff = $row[3].",".$row[1].$row[7];
+				$stuff = $row[0].",".$row[3].",".$row[1].$row[7];
 				array_push($array , $stuff);
 			}
 
@@ -276,6 +276,35 @@
 	<script type="text/javascript">
     	var created = 0;
 
+		function clicked(some){
+			//alert($(some).attr('class') + " " + $(some).attr('id'));
+			if($(some).attr('class')  == 'btn btn-success'){
+				$(some).removeClass("btn btn-success");
+            	$(some).addClass("btn btn-danger");
+            	$(some).children().eq(0).removeClass("glyphicon glyphicon-plus");
+            	$(some).children().eq(0).addClass("glyphicon glyphicon-minus");
+            	var s = document.getElementById('myDiv2');
+            	var another = $(some).parent();
+            	//alert($(another).attr('class'));
+            	another.appendTo(s);
+            	//l2.appendTo(s);
+            	
+            	var b = document.createElement('br');
+            	b.appendTo(s);
+            }
+            else{
+            	$(some).removeClass("btn btn-danger");
+            	$(some).addClass("btn btn-success");
+            	$(some).children().eq(0).removeClass("glyphicon glyphicon-minus");
+            	$(some).children().eq(0).addClass("glyphicon glyphicon-plus");
+            	var s = document.getElementById('myDiv');
+            	var another = $(some).parent();
+            	//alert($(another).attr('class'));
+            	
+            	another.appendTo(s);
+            }
+			//$(some).toggleClass('btn btn-danger');
+		}
         function displayAccordingly() {
 
             //Call mainMenu the main dropdown menu
@@ -316,6 +345,9 @@
 					var lb = document.createElement("BUTTON");
 					lb.type = "button";
 					lb.className = "btn btn-success";
+					lb.setAttribute('onClick', 'clicked(this)');
+					var id = ar[i].substring(0,1);
+					lb.setAttribute('id', ar[i].substring(0,1));
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -331,13 +363,13 @@
 					var text = ar[i];
 					var sub = m.length+1;
 					
-					if(text.length > 49){
-					  var q = text.substring(sub, 49+sub);
+					if(text.length > 40){
+					  var q = text.substring(sub+2, 40+sub);
 					  q += "...";
 					  lb2.innerHTML = q;
 					}
 					else{
-						var q = text.substring(sub, ar[i].length-1);
+						var q = text.substring(sub+2, ar[i].length-1);
 						lb2.innerHTML = q;
 					}
 					
@@ -356,7 +388,7 @@
 					var lb7 = document.createElement("li");
 					
 					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					lb8.innerHTML = ar[i].substring(sub+2, ar[i].length-1);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -387,8 +419,6 @@
 				}
 			}
 			else if(m == "Analytical Thinking"){
-
-				document.getElementById('dir').innerHTML = "";
 				var myNode = document.getElementById('myDiv');
 				var fc = myNode.firstChild;
 
@@ -410,6 +440,9 @@
 					var lb = document.createElement("BUTTON");
 					lb.type = "button";
 					lb.className = "btn btn-success";
+					lb.setAttribute('onClick', 'clicked(this)');
+					var id = ar[i].substring(0,1);
+					lb.setAttribute('id', ar[i].substring(0,1));
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -425,13 +458,13 @@
 					var text = ar[i];
 					var sub = m.length+1;
 					
-					if(text.length > 49){
-					  var q = text.substring(sub, 49+sub);
+					if(text.length > 40){
+					  var q = text.substring(sub+3, 40+sub);
 					  q += "...";
 					  lb2.innerHTML = q;
 					}
 					else{
-						var q = text.substring(sub, ar[i].length-1);
+						var q = text.substring(sub+3, ar[i].length-1);
 						lb2.innerHTML = q;
 					}
 					
@@ -450,7 +483,7 @@
 					var lb7 = document.createElement("li");
 					
 					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -479,11 +512,10 @@
 
 					}
 				}
+
 			}
 			else if(m == "Building Relationships"){
-
-				document.getElementById('dir').innerHTML = "";
-				var myNode = document.getElementById('myDiv');
+								var myNode = document.getElementById('myDiv');
 				var fc = myNode.firstChild;
 
 				while( fc ) {
@@ -504,6 +536,9 @@
 					var lb = document.createElement("BUTTON");
 					lb.type = "button";
 					lb.className = "btn btn-success";
+					lb.setAttribute('onClick', 'clicked(this)');
+					var id = ar[i].substring(0,1);
+					lb.setAttribute('id', ar[i].substring(0,1));
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -519,13 +554,13 @@
 					var text = ar[i];
 					var sub = m.length+1;
 					
-					if(text.length > 49){
-					  var q = text.substring(sub, 49+sub);
+					if(text.length > 40){
+					  var q = text.substring(sub+3, 40+sub);
 					  q += "...";
 					  lb2.innerHTML = q;
 					}
 					else{
-						var q = text.substring(sub, ar[i].length-1);
+						var q = text.substring(sub+3, ar[i].length-1);
 						lb2.innerHTML = q;
 					}
 					
@@ -544,7 +579,7 @@
 					var lb7 = document.createElement("li");
 					
 					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -575,9 +610,7 @@
 				}
 			}
 			else if(m == "Communication"){
-
-				document.getElementById('dir').innerHTML = "";
-				var myNode = document.getElementById('myDiv');
+								var myNode = document.getElementById('myDiv');
 				var fc = myNode.firstChild;
 
 				while( fc ) {
@@ -598,6 +631,9 @@
 					var lb = document.createElement("BUTTON");
 					lb.type = "button";
 					lb.className = "btn btn-success";
+					lb.setAttribute('onClick', 'clicked(this)');
+					var id = ar[i].substring(0,1);
+					lb.setAttribute('id', ar[i].substring(0,1));
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -613,13 +649,13 @@
 					var text = ar[i];
 					var sub = m.length+1;
 					
-					if(text.length > 49){
-					  var q = text.substring(sub, 49+sub);
+					if(text.length > 40){
+					  var q = text.substring(sub+3, 40+sub);
 					  q += "...";
 					  lb2.innerHTML = q;
 					}
 					else{
-						var q = text.substring(sub, ar[i].length-1);
+						var q = text.substring(sub+3, ar[i].length-1);
 						lb2.innerHTML = q;
 					}
 					
@@ -638,7 +674,7 @@
 					var lb7 = document.createElement("li");
 					
 					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub, ar[i].length-1);
+					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
 					
 					lb7.appendChild(lb8);
 					lb6.appendChild(lb7);
@@ -717,33 +753,19 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12"  style="width: 500px !important;">
                 
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
-                                        <h3 class="text-primary"> Selected Questions <h3>
+                                        <h3 class="text-primary"> Selected Questions </h3>
                                         <hr></hr>
-                                        <div class="btn-group" role="group" aria-label="...">
-  											<button type="button" class="btn btn-success"><i class="fa fa-plus fa-fw"></i></button>
-  											<button type="button" class="btn btn-default" disabled>Question Preview</button>
-  											<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-time"></i></button>
-										</div>
-										<br>
-										<br>
-                                        <div class="btn-group" role="group" aria-label="...">
-  											<button type="button" class="btn btn-danger"><i class="fa fa-minus fa-fw"></i></button>
-  											<button type="button" class="btn btn-default" disabled>Question Preview</button>
-  											<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-time"></i></button>
-										</div>
-										<?php
-											/*$t = "Tell us about a time when you had to go above and...";
-											echo strlen($t);
-											echo substr($t, 0,49);*/
-										?>
-                                        <h4>Use the menu on the left to select interview questions</h4>
                                         <br>
+                                        <div id="myDiv2"></div>
+                                        <br>
+										<label>Use the menu on the left to select interview questions</label>
                                         <div align="center">
+                                        	<br>
                                     		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
                                     		<button type="button" value="Go To Form" onclick="sub();" class="btn btn-lg btn-success"">Save + Send</button>
                                     	</div>
@@ -808,63 +830,7 @@
                          <div class="col-lg-6">
             
             
-                         
-                         
-                                    <!--<table>
-                                    <tr>
-                                    	<td align="right"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2000px-Microsoft_logo.svg.png" height="100" width="100"></img></td>
-                                    	<td><h1 vertical-align="bottom">&nbsp Microsoft</h1></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h2 align="right">3.7 &nbsp &nbsp</h2></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="35" width="200"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Compensation &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Culture &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Work/Life Balance &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Job Role &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Growth Opportunities &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2" align="center"><button type="submit" class="btn btn-primary btn-lg">Apply</button></td>
-                                    </tr>
-                                    </table>--!>
-                                </div>
+                        
                                 <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.panel -->
