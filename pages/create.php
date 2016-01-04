@@ -407,300 +407,9 @@
 					r.innerHTML += "m";
 					
 					p.appendChild(r);
-					
-    				
-					b.appendChild(p);
-					
-					var b4 = document.createElement("br");
-					b.appendChild(b4);
-					
-					var b5 = document.createElement("br");
-					b.appendChild(b5);
-
-					}
-				}
-			}
-			else if(m == "Analytical Thinking"){
-				var myNode = document.getElementById('myDiv');
-				var fc = myNode.firstChild;
-
-				while( fc ) {
-    				myNode.removeChild( fc );
-    				fc = myNode.firstChild;
-				}
-
-				var l2 = document.createElement("br");
-					b.appendChild(l2);
-
-				for(var i = 0; i < ar.length; i++){
-					if(ar[i].includes(m)){
-
-					var p = document.createElement("DIV");
-					p.className = "btn-group";
-					p.role = "group";
-					
-					var lb = document.createElement("BUTTON");
-					lb.type = "button";
-					lb.className = "btn btn-success";
-					lb.setAttribute('onClick', 'clicked(this)');
-					var id = ar[i].substring(0,1);
-					lb.setAttribute('id', ar[i].substring(0,1));
-					
-					var it = document.createElement("i");
-					it.className = "glyphicon glyphicon-plus";
-					
-					lb.appendChild(it);
-					p.appendChild(lb);
-					
-					var lb2 = document.createElement("BUTTON");
-					lb2.type = "button";
-					lb2.className = "btn btn-default";
-					lb2.disabled = true;
-					
-					var text = ar[i];
-					var sub = m.length+1;
-					
-					if(text.length > 40){
-					  var q = text.substring(sub+3, 40+sub);
-					  q += "...";
-					  lb2.innerHTML = q;
-					}
-					else{
-						var q = text.substring(sub+3, ar[i].length-1);
-						lb2.innerHTML = q;
-					}
-					
-					p.appendChild(lb2);
-					
-					var lb4 = document.createElement("button");
-					lb4.className = "btn btn-default dropdown-toggle";
-					lb4.setAttribute("data-toggle","dropdown");
-					
-					var lb5 = document.createElement("span");
-					lb5.className = "caret";
-					
-					var lb6 = document.createElement("ul");
-					lb6.className = "dropdown-menu";
-					
-					var lb7 = document.createElement("li");
-					
-					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
-					var st = lb8.innerHTML;
-					lb8.innerHTML = addNewlines(st);
-					
-					lb7.appendChild(lb8);
-					lb6.appendChild(lb7);
-					
-					lb4.appendChild(lb5);
-					p.appendChild(lb4);
-					p.appendChild(lb6);
-					
-					var r = document.createElement("BUTTON");
-					r.type = "button";
-					r.className = "btn btn-primary";
-					r.disabled = true;
-					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
-					r.innerHTML += "m";
-					
-					p.appendChild(r);
-					
-    				
-					b.appendChild(p);
-					
-					var b4 = document.createElement("br");
-					b.appendChild(b4);
-					
-					var b5 = document.createElement("br");
-					b.appendChild(b5);
-
-					}
-				}
-
-			}
-			else if(m == "Building Relationships"){
-								var myNode = document.getElementById('myDiv');
-				var fc = myNode.firstChild;
-
-				while( fc ) {
-    				myNode.removeChild( fc );
-    				fc = myNode.firstChild;
-				}
-
-				var l2 = document.createElement("br");
-					b.appendChild(l2);
-
-				for(var i = 0; i < ar.length; i++){
-					if(ar[i].includes(m)){
-
-					var p = document.createElement("DIV");
-					p.className = "btn-group";
-					p.role = "group";
-					
-					var lb = document.createElement("BUTTON");
-					lb.type = "button";
-					lb.className = "btn btn-success";
-					lb.setAttribute('onClick', 'clicked(this)');
-					var id = ar[i].substring(0,1);
-					lb.setAttribute('id', ar[i].substring(0,1));
-					
-					var it = document.createElement("i");
-					it.className = "glyphicon glyphicon-plus";
-					
-					lb.appendChild(it);
-					p.appendChild(lb);
-					
-					var lb2 = document.createElement("BUTTON");
-					lb2.type = "button";
-					lb2.className = "btn btn-default";
-					lb2.disabled = true;
-					
-					var text = ar[i];
-					var sub = m.length+1;
-					
-					if(text.length > 40){
-					  var q = text.substring(sub+3, 40+sub);
-					  q += "...";
-					  lb2.innerHTML = q;
-					}
-					else{
-						var q = text.substring(sub+3, ar[i].length-1);
-						lb2.innerHTML = q;
-					}
-					
-					p.appendChild(lb2);
-					
-					var lb4 = document.createElement("button");
-					lb4.className = "btn btn-default dropdown-toggle";
-					lb4.setAttribute("data-toggle","dropdown");
-					
-					var lb5 = document.createElement("span");
-					lb5.className = "caret";
-					
-					var lb6 = document.createElement("ul");
-					lb6.className = "dropdown-menu";
-					
-					var lb7 = document.createElement("li");
-					
-					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
-					var st = lb8.innerHTML;
-					lb8.innerHTML = addNewlines(st);
-					
-					lb7.appendChild(lb8);
-					lb6.appendChild(lb7);
-					
-					lb4.appendChild(lb5);
-					p.appendChild(lb4);
-					p.appendChild(lb6);
-					
-					var r = document.createElement("BUTTON");
-					r.type = "button";
-					r.className = "btn btn-primary";
-					r.disabled = true;
-					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
-					r.innerHTML += "m";
-					
-					p.appendChild(r);
-					
-    				
-					b.appendChild(p);
-					
-					var b4 = document.createElement("br");
-					b.appendChild(b4);
-					
-					var b5 = document.createElement("br");
-					b.appendChild(b5);
-
-					}
-				}
-			}
-			else if(m == "Communication"){
-								var myNode = document.getElementById('myDiv');
-				var fc = myNode.firstChild;
-
-				while( fc ) {
-    				myNode.removeChild( fc );
-    				fc = myNode.firstChild;
-				}
-
-				var l2 = document.createElement("br");
-					b.appendChild(l2);
-
-				for(var i = 0; i < ar.length; i++){
-					if(ar[i].includes(m)){
-
-					var p = document.createElement("DIV");
-					p.className = "btn-group";
-					p.role = "group";
-					
-					var lb = document.createElement("BUTTON");
-					lb.type = "button";
-					lb.className = "btn btn-success";
-					lb.setAttribute('onClick', 'clicked(this)');
-					var id = ar[i].substring(0,1);
-					lb.setAttribute('id', ar[i].substring(0,1));
-					
-					var it = document.createElement("i");
-					it.className = "glyphicon glyphicon-plus";
-					
-					lb.appendChild(it);
-					p.appendChild(lb);
-					
-					var lb2 = document.createElement("BUTTON");
-					lb2.type = "button";
-					lb2.className = "btn btn-default";
-					lb2.disabled = true;
-					
-					var text = ar[i];
-					var sub = m.length+1;
-					
-					if(text.length > 40){
-					  var q = text.substring(sub+3, 40+sub);
-					  q += "...";
-					  lb2.innerHTML = q;
-					}
-					else{
-						var q = text.substring(sub+3, ar[i].length-1);
-						lb2.innerHTML = q;
-					}
-					
-					p.appendChild(lb2);
-					
-					var lb4 = document.createElement("button");
-					lb4.className = "btn btn-default dropdown-toggle";
-					lb4.setAttribute("data-toggle","dropdown");
-					
-					var lb5 = document.createElement("span");
-					lb5.className = "caret";
-					
-					var lb6 = document.createElement("ul");
-					lb6.className = "dropdown-menu";
-					//lb6.setAttribute('word-wrap' , 'break-word');
-					
-					var lb7 = document.createElement("li");
-					
-					var lb8 = document.createElement("a");
-					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
-					var st = lb8.innerHTML;
-					lb8.innerHTML = addNewlines(st);
-					
-					lb7.appendChild(lb8);
-					lb6.appendChild(lb7);
-					
-					lb4.appendChild(lb5);
-					p.appendChild(lb4);
-					p.appendChild(lb6);
-					
-					var r = document.createElement("BUTTON");
-					r.type = "button";
-					r.className = "btn btn-primary";
-					r.disabled = true;
-					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
-					r.innerHTML += "m";
-					
-					p.appendChild(r);
-					
+					var tris = ar[i].substring(0,1);
+					p.name = tris;
+					//alert(p.name);
     				
 					b.appendChild(p);
 					
@@ -727,6 +436,104 @@
 				lb.innerHTML = "Pick a category from the dropdown above to view questions.";
 				
 				myNode.appendChild(lb);
+
+			}
+			else {
+				var myNode = document.getElementById('myDiv');
+				var fc = myNode.firstChild;
+
+				while( fc ) {
+    				myNode.removeChild( fc );
+    				fc = myNode.firstChild;
+				}
+
+				var l2 = document.createElement("br");
+					b.appendChild(l2);
+
+				for(var i = 0; i < ar.length; i++){
+					if(ar[i].includes(m)){
+
+					var p = document.createElement("DIV");
+					p.className = "btn-group";
+					p.role = "group";
+					
+					var lb = document.createElement("BUTTON");
+					lb.type = "button";
+					lb.className = "btn btn-success";
+					lb.setAttribute('onClick', 'clicked(this)');
+					var id = ar[i].substring(0,1);
+					lb.setAttribute('id', ar[i].substring(0,1));
+					
+					var it = document.createElement("i");
+					it.className = "glyphicon glyphicon-plus";
+					
+					lb.appendChild(it);
+					p.appendChild(lb);
+					
+					var lb2 = document.createElement("BUTTON");
+					lb2.type = "button";
+					lb2.className = "btn btn-default";
+					lb2.disabled = true;
+					
+					var text = ar[i];
+					var sub = m.length+1;
+					
+					if(text.length > 40){
+					  var q = text.substring(sub+3, 40+sub);
+					  q += "...";
+					  lb2.innerHTML = q;
+					}
+					else{
+						var q = text.substring(sub+3, ar[i].length-1);
+						lb2.innerHTML = q;
+					}
+					
+					p.appendChild(lb2);
+					
+					var lb4 = document.createElement("button");
+					lb4.className = "btn btn-default dropdown-toggle";
+					lb4.setAttribute("data-toggle","dropdown");
+					
+					var lb5 = document.createElement("span");
+					lb5.className = "caret";
+					
+					var lb6 = document.createElement("ul");
+					lb6.className = "dropdown-menu";
+					
+					var lb7 = document.createElement("li");
+					
+					var lb8 = document.createElement("a");
+					lb8.innerHTML = ar[i].substring(sub+3, ar[i].length-1);
+					var st = lb8.innerHTML;
+					lb8.innerHTML = addNewlines(st);
+					
+					lb7.appendChild(lb8);
+					lb6.appendChild(lb7);
+					
+					lb4.appendChild(lb5);
+					p.appendChild(lb4);
+					p.appendChild(lb6);
+					
+					var r = document.createElement("BUTTON");
+					r.type = "button";
+					r.className = "btn btn-primary";
+					r.disabled = true;
+					r.innerHTML = ar[i].substring(ar[i].length-1, ar[i].length);
+					r.innerHTML += "m";
+					
+					p.appendChild(r);
+					
+    				
+					b.appendChild(p);
+					
+					var b4 = document.createElement("br");
+					b.appendChild(b4);
+					
+					var b5 = document.createElement("br");
+					b.appendChild(b5);
+
+					}
+				}
 
 			}
         }
@@ -776,6 +583,7 @@
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
+                                        <!--<form action="create_calc.php" method="post">--!>
                                         <h3 class="text-primary"> Selected Questions </h3>
                                         <hr></hr>
                                         <br>
@@ -790,9 +598,38 @@
                                     	</form>
                                     	<script>
                                     		function sub(){
-                                    			window.location.assign("forms.php");
-                                    		}
+                                    		var myNode = document.getElementById('myDiv2');
+											var fc = myNode.firstChild;
+											var arr = [];
+											var arr2 = <?php echo json_encode($array) ?>;
+											
+											while(fc) {
+    											//arr.push(fc.name);
+    											myNode.removeChild( fc );
+    											var i = 0;
+    											arr.push(fc.name);
+    											//alert(fc.name);	
+    											fc = myNode.firstChild;
+											}
+											
+											//Questions holds all questions info
+											/*var questions = [];
+											for(var i = 0; i < arr.length; i++){
+    											for(var j = 0; j < arr2.length; j++){
+    												if(arr2[j].substring(0,1) == arr[i]){
+														//alert(arr[i] + " " + arr2[j]);
+														questions.push(arr2[j]);
+													}
+												}
+											}*/
+											
+										}
+											//3rd element and not last char
                                     	</script>
+                                    	<?php
+                                    
+                                    	?>
+                                    	
                                     	</div> 
                                     	<!-- /.form-group -->
                                 </div>
