@@ -50,8 +50,37 @@ $response = json_decode($str_json, true); // decoding received JSON to array
 
 echo $response;*/
 $resp = $_POST["stuffT"];
-echo $resp;
-                                    	?>
+$questions = explode(",", $resp);
+//echo $resp;
+
+			$dbhost = 'localhost';
+			$dbuser = 'Assign2';
+			$dbpass = 'password';
+ 
+			$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+			if($conn )
+			{
+  				//echo "Connected";
+			}
+			if(! $conn )
+			{
+  				die('Could not connect: ' . mysql_error());
+			}
+
+			$query="SELECT * FROM Questions";
+			$conn->query($query) or die ("couldn't connect " . $conn->error);
+			$result = $conn->query($query);
+
+			$array = array();
+	
+			while($row = mysqli_fetch_row($result))
+			{
+				if(in_array($row[0], $questions)){
+					echo $row[1] . "<br>";
+				}
+			}
+
+?>
 
 
 
