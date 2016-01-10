@@ -305,6 +305,7 @@
             }
 			//$(some).toggleClass('btn btn-danger');
 		}
+		
         function displayAccordingly() {
 
             //Call mainMenu the main dropdown menu
@@ -348,6 +349,8 @@
 					lb.setAttribute('onClick', 'clicked(this)');
 					var id = ar[i].substring(0,1);
 					lb.setAttribute('id', ar[i].substring(0,1));
+					var nm = "Q" + ar[i].substring(0,1);
+					lb.setAttribute('name', nm);
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -438,7 +441,8 @@
 				myNode.appendChild(lb);
 
 			}
-			else {
+			else{
+
 				var myNode = document.getElementById('myDiv');
 				var fc = myNode.firstChild;
 
@@ -461,8 +465,10 @@
 					lb.type = "button";
 					lb.className = "btn btn-success";
 					lb.setAttribute('onClick', 'clicked(this)');
-					var id = ar[i].substring(0,1);
-					lb.setAttribute('id', ar[i].substring(0,1));
+					var id = ar[i].substring(0,2);
+					lb.setAttribute('id', ar[i].substring(0,2));
+					var nm = "Q" + ar[i].substring(0,2);
+					lb.setAttribute('name', nm);
 					
 					var it = document.createElement("i");
 					it.className = "glyphicon glyphicon-plus";
@@ -522,7 +528,9 @@
 					r.innerHTML += "m";
 					
 					p.appendChild(r);
-					
+					var tris = ar[i].substring(0,2);
+					p.name = tris;
+					//alert(p.name);
     				
 					b.appendChild(p);
 					
@@ -534,7 +542,6 @@
 
 					}
 				}
-
 			}
         }
         
@@ -583,17 +590,17 @@
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
-                                        <!--<form action="create_calc.php" method="post">--!>
+                                        <form action="create_calc.php" method="post" id="myForm">
                                         <h3 class="text-primary"> Selected Questions </h3>
                                         <hr></hr>
                                         <br>
                                         <div id="myDiv2"></div>
                                         <br>
-										<label>Use the menu on the left to select interview questions</label>
+										<label id="lbl">Use the menu on the left to select interview questions</label>
+										<input type="hidden" name="stuffT" id="stuffT" visibility="hidden"></input>
                                         <div align="center">
-                                        	<br>
                                     		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
-                                    		<button type="button" value="Go To Form" onclick="sub();" class="btn btn-lg btn-success"">Save + Send</button>
+                                    		<input type="button" value="Save + Send" onclick="sub();" class="btn btn-lg btn-success""></input>
                                     	</div>
                                     	</form>
                                     	<script>
@@ -602,6 +609,7 @@
 											var fc = myNode.firstChild;
 											var arr = [];
 											var arr2 = <?php echo json_encode($array) ?>;
+											var stuff = document.getElementById('stuffT');
 											
 											while(fc) {
     											//arr.push(fc.name);
@@ -612,6 +620,20 @@
     											fc = myNode.firstChild;
 											}
 											
+											var str = "";
+											for(var i = 0; i < arr.length; i++){
+												if(i != arr.length - 1){
+												str += arr[i] + ",";
+												}
+												else{
+													str += arr[i];
+												}
+											}
+											
+											//alert(str);
+											stuff.value = str;
+											document.getElementById("myForm").submit();
+											//window.location.href = "create_calc.php";
 											//Questions holds all questions info
 											/*var questions = [];
 											for(var i = 0; i < arr.length; i++){
@@ -625,10 +647,7 @@
 											
 										}
 											//3rd element and not last char
-                                    	</script>
-                                    	<?php
-                                    
-                                    	?>
+                                    	</script>									
                                     	
                                     	</div> 
                                     	<!-- /.form-group -->
