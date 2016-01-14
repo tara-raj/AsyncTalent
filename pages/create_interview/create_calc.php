@@ -96,6 +96,8 @@ $qarray = array();
 	//$_SESSION['qnum'] += 1;
 	
 	//echo $_SESSION['qarray'][$_SESSION['qnum']];
+	//$id = base_convert(microtime(false), 10, 36);
+
 	header('Location: questions.php');
 ?>
     </body>

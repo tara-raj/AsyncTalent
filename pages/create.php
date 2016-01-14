@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	//$_SESSION["admin"] = "none";
 ?>
 <!DOCTYPE html>
 <html lang="en">

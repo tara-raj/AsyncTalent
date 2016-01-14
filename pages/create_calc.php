@@ -51,6 +51,7 @@ $response = json_decode($str_json, true); // decoding received JSON to array
 echo $response;*/
 $resp = $_POST["stuffT"];
 $questions = explode(",", $resp);
+$qarray = array();
 //echo $resp;
 
 			$dbhost = 'localhost';
@@ -76,15 +77,29 @@ $questions = explode(",", $resp);
 			while($row = mysqli_fetch_row($result))
 			{
 				if(in_array($row[0], $questions)){
-					echo $row[1] . "<br>";
+					//echo $row[1] . "<br>";
+					array_push($qarray, $row[1]);
 				}
 			}
 
+	//print_r($qarray);
+	
+	for($i = 0; $i < sizeof($qarray); $i++){
+		echo $qarray[$i] . "<br>";
+	}
+	
+	$_SESSION['qarray'] = $qarray;
+	$_SESSION['qnum'] = 0;
+	
+	//echo $_SESSION['qarray'][$_SESSION['qnum']] . "<br>";
+	
+	//$_SESSION['qnum'] += 1;
+	
+	//echo $_SESSION['qarray'][$_SESSION['qnum']];
+	//$id = base_convert(microtime(false), 10, 36);
+
+	header('Location: questions_int.php');
 ?>
-
-
-
-
     </body>
 
 </html>
