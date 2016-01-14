@@ -187,82 +187,9 @@
                                         <div class="form-group">
                                         <table>
                                         <td>
-                                        <h3 class="text-primary">
-                                        <?php
-	$dbhost = 'localhost';
-	$dbuser = 'Assign2';
-	$dbpass = 'password';
- 
-$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
-if($conn )
-{
-  //echo "Connected";
-}
-if(! $conn )
-{
-  die('Could not connect: ' . mysql_error());
-}
-
-$query = "DROP table Questions";
-$conn->query($query) or die (); 
-//echo "Dropped";
-
-$query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
-$conn->query($query) or die ("Invalid create" . $conn->error); 
-//echo "Company table initialized";
-//chmod("QuestionBank.csv", 0755);
-
-$handle = fopen("QuestionBank.csv", "r");
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        // process the line read.
-        $ls = explode(",", $line);
-        if($ls[0] != 'Question'){
-        $query = "INSERT INTO Questions (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
-                       VALUES
-                       ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
-        //echo $ls[0] . " " . $ls[1] . "<br>";
-		$conn->query($query) or die ("invalid user insert" . $conn->error);
-		//echo "here";
-		}
-        /*for($i = 0; $i < sizeof($ls); $i++){
-        	echo $line_separated[$i] . "<br>";
-        }*/
-    }
-
-    fclose($handle);
-    
-} else {
-    // error opening the file.
-} 
-
-	$query="SELECT * FROM Questions";
-	$conn->query($query) or die ("couldn't connect " . $conn->error);
-	$result = $conn->query($query);
-
-	$array = array();
-	
-	while($row = mysqli_fetch_row($result))
-	{
-		//echo $row[0] . " " . $row[1] . " " . $row[2] . " " . $row[3] . " " . $row[4] . " " . $row[5] . " " . $row[6] . " " . $row[7] . $row[8] . $row[9]. "<br>";
-		array_push($array, $row);
-	}
-	
-	pickRandom(sizeof($array)-1, $array);
-	
-	function pickRandom($var, $arr){
-		$select = rand(0, $var);
-		$_SESSION["selected_question"] = $select;
-		//echo $_SESSION["selected_question"];
-		echo $arr[$select][1];
-		$_SESSION["time"] = $arr[$select][7];
-	}
-	
-	//print_r($array);
-	/*for($i = 0; $i < sizeof($array); $i++){
-		echo $array[$i];
-	}*/
-?>
+                                        <h3 class="text-primary"><?php echo $_SESSION['qarray'][$_SESSION['qnum']]; 
+                                        ?>
+                                        
                                         <h3></td>
                                         <td>&nbsp &nbsp</td>
                                         <td>
