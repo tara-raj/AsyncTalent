@@ -73,12 +73,14 @@ $qarray = array();
 			$result = $conn->query($query);
 
 			$array = array();
+			$interview_length = 0;
 	
 			while($row = mysqli_fetch_row($result))
 			{
 				if(in_array($row[0], $questions)){
 					//echo $row[1] . "<br>";
 					array_push($qarray, $row[1]);
+					$interview_length += $row[7];
 				}
 			}
 
@@ -104,17 +106,16 @@ $qarray = array();
 	$nickname = stripslashes($_POST['nickname']);
 	$_SESSION['passcode'] = $passcode;
 	$_SESSION['nickname'] = $nickname;
+	$user = $_SESSION['admin'];
 	
 	$questionList = implode(",", $qarray);
 	
-	$query="INSERT INTO Interviews (Link, Questions, Passcode, Nickname)
+	$query="INSERT INTO Interviews (Link, Questions, Passcode, Nickname, Length, Open, User)
                        VALUES
-                       ('$id', '$questionList', '$passcode', '$nickname')";
+                       ('$id', '$questionList', '$passcode', '$nickname', $interview_length, 1, '$user')";
 			$conn->query($query) or die ("couldn't connect " . $conn->error);
 			$result = $conn->query($query);
 
-
-	
 	header('Location: create_confirm.php');
 ?>
     </body>

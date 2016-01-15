@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if($_SESSION['admin'] == "none"){
-		header('Location: Login.php');
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -183,6 +180,40 @@
                                         </div>
                                         <div class="form-group">
                                         <h3 class="text-primary">Interview<h3>
+                                        <h4> Get ready for your interview! We have some practice questions available if you are not quite ready to start. Check them out at <a>EmployEDU.co/interview</a></h4>
+                                        <h3 class="text-primary"> Your interview will be 
+                                        <?php
+                                        $dbhost = 'localhost';
+										$dbuser = 'Assign2';
+										$dbpass = 'password';
+ 
+										$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+										if($conn )
+										{
+  											//echo "Connected";
+										}
+										if(! $conn )
+										{
+  											die('Could not connect: ' . mysql_error());
+										}
+
+										$link = stripslashes($_SESSION['link']); 
+                                        $query="SELECT * FROM Interviews WHERE Link = '$link'";
+										$conn->query($query) or die ("couldn't connect " . $conn->error);
+										$result = $conn->query($query);
+                                        
+                                        while($row = mysqli_fetch_row($result))
+										{
+											//if($row[1] == $link){
+												$_SESSION['qarray'] = explode(",", $row[2]);
+												$total_time = $row[5];
+											//}
+										}
+                                        
+                                        //echo "Questions";
+                                        echo sizeof($_SESSION['qarray']) . " questions and a total of " . $total_time . " minutes long without breaks."
+                                        ?>
+                                        </h3>
                                         <h4>Some directions: </h4>
                                         <h4 class="text-muted">
                                         <li>Mute your computer volume to prevent recording feedback noise.</li>
@@ -192,6 +223,7 @@
                                         <li>When the timer runs out, you will automatically be taken to the next question.</li>
                                         <li>You may submit the response early if you would like.</li>
                                         </h4>
+                                        <h4 class="text-danger"> Once you start the interview you will not be allowed to go back. Do not exit the window once you have started. </h4>
                                         <h3 align="center" class="text-primary">Good luck!</h3>
                                         <br>
                                         <div align="center">
@@ -201,7 +233,7 @@
                                     	</form>
                                     	<script>
                                     		function sub(){
-                                    			window.location.assign("questions.php");
+                                    			window.location.assign("questions_int.php");
                                     		}
                                     	</script>
                         </div>

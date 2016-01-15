@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['name'] = "none";
+	$_SESSION['admin'] = "none";
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +59,7 @@ if($success == 5){
 	header("Location: find.php");
 }
 else if($success == 10){
-	header("Location: interview.php");
+	header("Location: create.php");
 }
 else {
 	header("Location: Login.php");

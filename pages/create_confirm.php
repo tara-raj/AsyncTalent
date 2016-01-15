@@ -169,10 +169,20 @@
             </div>
             <!-- /.row -->
  
- 			<h2>Awesome! Your interview has been created.</h2>
+ 			<h2 class="text-primary">Awesome! Your interview has been created.</h2>
  			<h3>Your link is: <?php echo $_SESSION['link'] ?> </h3>
  			<h3>Your keyword is: <?php echo $_SESSION['passcode'] ?> </h3>
  			<h3>The nickname for your interview is is: <?php echo $_SESSION['nickname']?> </h3>
+ 			
+ 			<br> <br>
+ 			<div align="center">
+                <button type="button" value="Go To Form" onclick="sub();" class="btn btn-lg btn-success"">Create More Interviews</button>
+            </div>
+            <script>
+                function sub(){
+                    window.location.assign("create.php");
+                }
+            </script>
            
     </div>
     <!-- /#wrapper -->

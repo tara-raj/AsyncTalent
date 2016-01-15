@@ -41,8 +41,11 @@ while($row = mysqli_fetch_row($result))
     //echo "<br>" . $row[2];
     //echo $row[3]. "<br>";
     if($row[1] == $link && $row[3] == $keyword){ //compare row to username
-    		$_SESSION['admin'] = "interviewee";
+    		$_SESSION['admin'] = "none";
 			$success = 15;
+			if($row[6] != 1){
+				$success = 10;
+			}
 			//echo "hit";
     } else {
     	continue;
@@ -50,7 +53,10 @@ while($row = mysqli_fetch_row($result))
 }
 
 if($success == 15){
-	header("Location: questions_int.php");
+	header("Location: enter_interview.php");
+}
+else if($success == 10){
+	header("Location: questions_end.php");
 }
 else {
 	header("Location: enter.php");

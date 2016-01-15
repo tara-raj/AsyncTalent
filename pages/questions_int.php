@@ -213,6 +213,10 @@
 												$_SESSION['qarray'] = explode(",", $row[2]);
 											//}
 										}
+										
+										$query= "UPDATE Interviews SET Open=0 WHERE Link = '$link'";
+										$conn->query($query) or die ("couldn't connect " . $conn->error);
+										$result = $conn->query($query);
                                         
                                         //echo "Questions";
                                         echo $_SESSION['qarray'][$_SESSION['qnum']]; 
@@ -299,7 +303,7 @@ function countdown() {
 </script> 
 <br>
 
-<form align="center" action="questions_calc.php" method="post">
+<form align="center" action="questions_int_calc.php" method="post">
 <div id="info" align="left">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
   <p id="info_speak_now">Begin speaking at a relatively slow pace</p>
@@ -721,7 +725,7 @@ function showButtons(style) {
                     </div>
                     <!-- /.panel -->
                     
-                    
+                    f
 
                 </div>
                 <!-- /.col-lg-12 -->

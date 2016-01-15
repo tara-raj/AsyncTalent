@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SESSION['admin'] == "none"){
+		header('Location: Login.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -405,7 +408,7 @@ $tire = $_POST['r_id'];
 echo "The name of your audio file is: " . $tire . "<br><br>";
 ?>
 </h4>
-<form align="center" action="questions_int_calc.php" method="post">
+<form align="center" action="questions.php" method="post">
 <input class="btn btn-lg btn-success" type="submit" value="Next Question" id="sub">
 </form>
 <script>

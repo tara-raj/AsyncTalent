@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SESSION['admin'] == "none"){
+		header('Location: Login.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
