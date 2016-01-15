@@ -38,7 +38,7 @@
 </head>
 
 <body>
-<form name="submit_form" method="post" action="process_login.php">
+<form name="submit_form" method="post" action="enter_process.php">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -50,15 +50,10 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" type="text" id="username" autofocus>
+                                    <input class="form-control" placeholder="Interview Link" name="link" type="text" id="username" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" id="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+                                    <input class="form-control" placeholder="Keyword" name="keyword" type="password" id="password" value="">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" name="Login" value="Login" class="btn btn-default">

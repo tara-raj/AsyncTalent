@@ -100,16 +100,22 @@ $qarray = array();
 	echo $id . "<br>";
 	
 	$_SESSION['link'] = $id;
+	$passcode = stripslashes($_POST['passcode']);
+	$nickname = stripslashes($_POST['nickname']);
+	$_SESSION['passcode'] = $passcode;
+	$_SESSION['nickname'] = $nickname;
 	
 	$questionList = implode(",", $qarray);
 	
-	$query="INSERT INTO Interviews (Link, Questions)
+	$query="INSERT INTO Interviews (Link, Questions, Passcode, Nickname)
                        VALUES
-                       ('$id', '$questionList')";
+                       ('$id', '$questionList', '$passcode', '$nickname')";
 			$conn->query($query) or die ("couldn't connect " . $conn->error);
 			$result = $conn->query($query);
 
-	header('Location: questions_int.php');
+
+	
+	header('Location: create_confirm.php');
 ?>
     </body>
 

@@ -598,6 +598,14 @@
                                         <div id="myDiv2"></div>
                                         <br>
 										<label id="lbl">Use the menu on the left to select interview questions</label>
+										<div class="form-group">
+    										<label for="passcode">Interview Keyword</label>
+    										<input type="text" class="form-control" id="passcode" placeholder="Windows10" name="passcode">
+  										</div>
+  										<div class="form-group">
+    										<label for="interviewName">Interview Name</label>
+    										<input type="text" class="form-control" id="interviewName" placeholder="Interview with Alex Smith" name="nickname">
+  										</div>
 										<input type="hidden" name="stuffT" id="stuffT" visibility="hidden"></input>
                                         <div align="center">
                                     		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
@@ -670,48 +678,7 @@
                 </td>
                 </table>
             
-            <!--<div class="panel panel-default">
-                        <div class="panel-heading">
-                            Browse Companies
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                
-                                        <div class="form-group">
-                                        </div>
-                                        <div class="form-group">
-                                        <h3 class="text-primary"> Browse Companies <h3>
-                                        <h4> Look through a list of companies and learn more about which each has to offer. If you are
-                                        interested, you can apply right in EmployEDU! </h4>
-                                        <br>
-                                        <div align="center">
-                                    		<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>
-                                    		<button type="button" value="Go To Form" onclick="sub2();" class="btn btn-lg btn-success"">Browse</button>
-                                    	</div>
-                                    	</form>
-                                    	<script>
-                                    		function sub2(){
-                                    			window.location.assign("browse.php");
-                                    		}
-                                    	</script>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                    
-  
-                        <!-- /.panel-body -->
-                         <div class="col-lg-6">
-            
-            
-                        
-                                <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.panel -->
-        </div>
-        <!-- /#page-wrapper -->
-
+           
     </div>
     <!-- /#wrapper -->
 
