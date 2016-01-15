@@ -88,7 +88,7 @@ $qarray = array();
 		echo $qarray[$i] . "<br>";
 	}
 	
-	$_SESSION['qarray'] = $qarray;
+	//$_SESSION['qarray'] = $qarray;
 	$_SESSION['qnum'] = 0;
 	
 	//echo $_SESSION['qarray'][$_SESSION['qnum']] . "<br>";
@@ -96,7 +96,18 @@ $qarray = array();
 	//$_SESSION['qnum'] += 1;
 	
 	//echo $_SESSION['qarray'][$_SESSION['qnum']];
-	//$id = base_convert(microtime(false), 10, 36);
+	$id = base_convert(microtime(false), 10, 36);
+	echo $id . "<br>";
+	
+	$_SESSION['link'] = $id;
+	
+	$questionList = implode(",", $qarray);
+	
+	$query="INSERT INTO Interviews (Link, Questions)
+                       VALUES
+                       ('$id', '$questionList')";
+			$conn->query($query) or die ("couldn't connect " . $conn->error);
+			$result = $conn->query($query);
 
 	header('Location: questions_int.php');
 ?>

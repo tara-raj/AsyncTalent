@@ -111,6 +111,15 @@ $query = "INSERT INTO Companies (Name, LogoURL, Description, Overall, Compensati
                        ('Venmo', 'http://brand.venmo.com/img/logo-mark.png', 'Venmo offers an app that allows users to share and make payments with friends for a variety of services from.', 4.4, 4.4, 4.4, 4.3, 4.4, 4.0);";
 $conn->query($query) or die ("invalid company insert" . $conn->error);
 
+
+//INTERVIEWS TABLE
+$query = "DROP table Interviews";
+$conn->query($query) or die (); 
+
+$query = "CREATE TABLE Interviews (Interview_id int primary key not null AUTO_INCREMENT, Link text, Questions text, Passcode text, Nickname text);";
+$conn->query($query) or die ("Invalid create" . $conn->error); 
+echo "Interviews table initialized";
+
 echo "Tables initialized";
 ?>
 </body>

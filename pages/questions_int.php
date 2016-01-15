@@ -187,7 +187,35 @@
                                         <div class="form-group">
                                         <table>
                                         <td>
-                                        <h3 class="text-primary"><?php echo $_SESSION['qarray'][$_SESSION['qnum']]; 
+                                        <h3 class="text-primary"><?php
+                                        $dbhost = 'localhost';
+										$dbuser = 'Assign2';
+										$dbpass = 'password';
+ 
+										$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+										if($conn )
+										{
+  											//echo "Connected";
+										}
+										if(! $conn )
+										{
+  											die('Could not connect: ' . mysql_error());
+										}
+
+										$link = stripslashes($_SESSION['link']); 
+                                        $query="SELECT * FROM Interviews WHERE Link = '$link'";
+										$conn->query($query) or die ("couldn't connect " . $conn->error);
+										$result = $conn->query($query);
+                                        
+                                        while($row = mysqli_fetch_row($result))
+										{
+											//if($row[1] == $link){
+												$_SESSION['qarray'] = explode(",", $row[2]);
+											//}
+										}
+                                        
+                                        //echo "Questions";
+                                        echo $_SESSION['qarray'][$_SESSION['qnum']]; 
                                         ?>
                                         
                                         <h3></td>
