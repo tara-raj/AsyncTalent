@@ -116,7 +116,7 @@ $conn->query($query) or die ("invalid company insert" . $conn->error);
 $query = "DROP table Interviews";
 $conn->query($query) or die (); 
 
-$query = "CREATE TABLE Interviews (Interview_id int primary key not null AUTO_INCREMENT, Link text, Questions text, Passcode text, Nickname text, Length float, Open int not null, User text not null);";
+$query = "CREATE TABLE Interviews (Interview_id int primary key not null AUTO_INCREMENT, Link text, Questions text, Passcode text, Nickname text, Length float, Open int not null, User text not null, Scores text);";
 $conn->query($query) or die ("Invalid create" . $conn->error); 
 echo "Interviews table initialized";
 
