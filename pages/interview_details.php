@@ -163,7 +163,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Interview Feedback</h1>
+                    <h1 class="page-header">Interview Details</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -179,13 +179,13 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-12" style="width: 1020px !important;">
+                                <div class="col-lg-12" style="width: 515px !important;">
                 
                                         <div class="form-group">
-                                        <table class="table-condensed" style="width: 1020px !important;">
+                                        <table>
                                         <tr>
                                         <td valign="top">
-							           		<select id="mainMenu" onchange="displayAccordingly()" class="form-control" style="width: 200px;">
+							           		<select id="mainMenu" onchange="displayAccordingly()" class="form-control">
         										<option value="Pick Question Category">Pick A Sort</option>
         										<option value="Ambition">Ambition</option>
         										<option value="Analytical Thinking">Analytical Thinking</option>
@@ -199,9 +199,9 @@
                                         <table class="table">
                                         <tr align="center">
                                         <div id="myDiv"></div>
-                                        <label id="dir">Sort results</label>
-                                        
-
+                                        <label id="dir">Sort Results</label>
+		
+	
 <?php
 	$dbhost = 'localhost';
 	$dbuser = 'Assign2';
@@ -642,8 +642,178 @@ while($row = mysqli_fetch_row($result))
 	echo "</form>";
 }
 ?>
-</table>
-<br>
+										</tr>
+										</table>
+                                        <br>
+                                    	</div> 
+                                    	<!-- /.form-group -->
+                                </div>
+                        		<!-- /.col-lg-6 -->
+                        		</div>
+                        		<!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                        
+                    </div>
+                    <!-- /.panel-panel-default -->
+                    
+                </div>
+                <!-- /.col-lg-6 -->                    
+
+                </div>
+                <!-- /.page-wrapper -->
+                </td>
+                
+                 <td>
+ 				<div class="col-lg-12">
+                    <div class="panel panel-default">
+                    
+                        <div class="panel-heading">
+                            <button class="btn btn-sm btn-primary" onclick="closeView()">x</button>
+                            Interview Details
+                        </div>
+                        <script>
+                        	function closeView(){
+                        		window.location.href = "view_feedback.php";
+                        	}
+                        </script>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12"  style="width: 500px !important;">
+                
+                                        <div class="form-group">
+                                        </div>
+                                        <div class="form-group">
+                                        <form action="create_calc.php" method="post" id="myForm">
+                                        <h3 class="text-primary">Interview Details</h3>
+                                        <hr></hr>
+                                        <?php
+$dbhost = 'localhost';
+$dbuser = 'Assign2';
+$dbpass = 'password';
+ 
+$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+if($conn )
+{
+//echo "Connected";
+}
+if(! $conn )
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+
+$link = $_POST['textfield'];
+									
+$query="SELECT * FROM Interviews WHERE Link = '$link'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+$row = mysqli_fetch_row($result);
+
+
+while($row = mysqli_fetch_row($result))
+{
+	//Nickname
+	echo "<h1 class='text-primary'>";
+	if($row[4] == ""){
+		echo "Untitled";
+	} else {
+		echo $row[4];
+	}
+	echo "</h1>";
+	
+	//ID
+	echo "<h3>";
+	echo "ID: " . $row[1];
+	echo "<h3>";
+	
+	//Passcode
+	echo "<h3>";
+	echo "Passcode: " . $row[3];
+	echo "</h3>";
+	
+	//Display Questions
+	$questions = explode(",", $row[2]);
+	$running_score = 0;
+	$scores = explode(",", $row[8]);
+	//open/not row[6]
+	for($i = 0; $i < sizeof($questions); $i++){
+		echo "<table class='table'>";
+		echo "<tr>";
+		echo "<td>";
+		echo "<h4>";
+		echo $questions[$i];
+		echo "</h4>";
+		echo "</td>";
+		echo "<td>";
+		if($i < sizeof($scores)){
+			if($scores[$i] == ''){
+				echo "Score: None";
+				$running_score += 0;
+			} else{
+				echo "Score: " . $scores[$i];
+				$running_score += $scores[$i];
+			}
+		} else{
+			echo "Score: None";
+		} 
+		echo "</td>";
+		
+		echo "<td>";
+		echo "Your Score: ";
+		echo "<div class='dropdown'>
+    				<button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>Score
+    				<span class='caret'></span></button>
+    				<ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>1</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>2</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>3</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>4</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>5</a></li>
+    				</ul>
+ 				 </div>";
+		echo "</td>";
+	}
+	
+	echo "<table>";
+	echo "<tr>";
+	echo "<td>";
+	echo "<h3>";
+	if($running_score == 0){
+		echo "Overall Score: None Yet";
+	} else {
+		echo "Overall Score: " . $running_score;
+	}
+	echo "</h3>";
+	echo "</td>";
+	
+	echo "<td>";
+	echo "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp";
+	echo "</td>";
+	
+	echo "<td>";
+	echo "Your Overall Score: ";
+			echo "<div class='dropdown'>
+    				<button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>Score
+    				<span class='caret'></span></button>
+    				<ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>1</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>2</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>3</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>4</a></li>
+      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>5</a></li>
+    				</ul>
+ 				 </div>";
+		echo "</td>";
+	echo "</td>";
+	echo "</tr>";
+	echo "</table>";
+	
+	echo "<input type='submit'value='Update' class='btn btn-lg btn-success'></input>";	
+}
+?>
+                                    	
                                     	</div> 
                                     	<!-- /.form-group -->
                                 </div>
