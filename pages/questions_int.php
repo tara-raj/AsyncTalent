@@ -321,6 +321,27 @@ function countdown() {
      Upgrade to <a href="//www.google.com/chrome">Chrome</a>
      version 25 or later.</p>
 </div>
+<p align="center">
+    <video autoplay="true" id="videoElement" height='300px' width='300px'>
+    <script>
+     var video = document.querySelector("#videoElement");
+ 
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+ 
+if (navigator.getUserMedia) {       
+    navigator.getUserMedia({video: true}, handleVideo, videoError);
+}
+ 
+function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+}
+ 
+function videoError(e) {
+    // do something
+}
+</script>
+    </video>
+</p>
 <div align="right">
   <button class="btn btn-sm btn-muted" id="start_button" onclick="startButton(event)">Stop Audio</button>
 </div>
