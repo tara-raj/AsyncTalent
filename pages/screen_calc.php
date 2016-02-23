@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if($_SESSION['admin'] == "none"){
-		header('Location: Login.php');
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -161,11 +158,11 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Screen</h1>
+                    <h1 class="page-header">Interview</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -173,28 +170,194 @@
  
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Screen Resumes
+                          Break
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                						<form method='post' action='screen_calc.php'>
+                
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
-                                        <h3 class="text-primary">Use this analysis engine to screen resumes. Just paste your text in the box below to get started!<h3>
-                                        <textarea class="form-control" rows="8" name="text_input"></textarea>
-                                        <br>
-                                        <div align="center">
-                                    		<!--<input class="btn btn-primary" type="submit" onclick = 'submitForm()'></input>--!>
-                                    		<button type="submit" value="Go To Form" onclick="sub();" class="btn btn-lg btn-success"">Results</button>
-                                    	</div>
-                                    	</form>
-                                    	<script>
-                                    		function sub(){
-                                    			window.location.assign("screen_calc.php");
-                                    		}
-                                    	</script>
+                                        <table>
+                                        <td>
+                            <?php                            
+$text = strtolower($_POST["text_input"]);
+$splitted = preg_split('/\s+\,/', $text);
+//echo $text . "<br>";
+//echo $text;
+//echo $text;
+
+for($j = 0; $j < sizeof($splitted); $j++){
+$findme   = 'gpa';
+$pattern = '/[0-4]\.[0-9]+/';
+preg_match($pattern, $text, $matches);
+//print_r($matches);
+}
+
+if(sizeof($matches) > 0){
+	$output = $matches[0];
+}
+else{
+	$output = "none detected";
+}
+echo "<h4>" . "GPA: " . $output . "<br>";
+
+$handle = fopen("languages.csv", "r");
+$languages=array();
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        // process the line read.
+        $p = strtolower($line);
+        $q = rtrim($p);
+        array_push($languages,$q);
+        /*for($i = 0; $i < sizeof($ls); $i++){
+        	echo $line_separated[$i] . "<br>";
+        }*/
+    }
+
+    fclose($handle);
+    
+} else {
+    // error opening the file.
+} 
+
+
+echo "<br>" . "Programming languages: ";
+
+for($j = 0; $j < sizeof($splitted); $j++){
+	for($i = 0; $i < sizeof($languages); $i++){
+		if($languages[$i] != null){
+		$pos = strpos($splitted[$j], $languages[$i]);
+		if($pos === false){
+		}
+		else{
+			echo $languages[$i] . " ";
+		}
+		}
+	}
+	/*if (in_array($languages[$i],$splitted) !== false) {
+		echo $languages[$i] . " ";
+	}*/
+}
+
+$handle = fopen("companies.csv", "r");
+$companies=array();
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        // process the line read.
+        $p = strtolower($line);
+        $q = rtrim($p);
+        array_push($companies,$q);
+        /*for($i = 0; $i < sizeof($ls); $i++){
+        	echo $line_separated[$i] . "<br>";
+        }*/
+    }
+
+    fclose($handle);
+    
+} else {
+    // error opening the file.
+} 
+
+
+echo "<br>" . "<br>" . "Company Experience: ";
+for($j = 0; $j < sizeof($splitted); $j++){
+	for($i = 0; $i < sizeof($companies); $i++){
+		if($companies[$i] != null){
+			$pos = strpos($splitted[$j], $companies[$i]);
+			if($pos === false){
+			}
+			else{
+				if($companies[$i] == 'microsoft'){
+					$p = strpos($text, 'redmond');
+					if($p === false){
+					}
+					else{
+						echo $companies[$i] . " ";
+					}
+				} else if($companies[$i] == 'google' || $companies[$i] == 'linkedin'){
+					$p = strpos($text, 'mountain view');
+					if($p === false){
+					}
+					else{
+						echo $companies[$i] . " ";
+					}
+				} else if($companies[$i] == 'facebook'){
+					$p = strpos($text, 'menlo park');
+					if($p === false){
+					}
+					else{
+						echo $companies[$i] . " ";
+					}
+				} else {
+					echo $companies[$i] . " ";
+				}
+				
+			}
+		}
+	}
+}
+
+echo "<br>" . "<br>" . "Special Considerations: ";
+for($j = 0; $j < sizeof($splitted); $j++){
+	$p = strpos($text, 'teaching assistant');
+	if($p === false){
+					}
+	else{
+		echo "Teaching assitant" . ", ";
+	}
+	$p = strpos($text, 'teaching fellow');
+	if($p === false){
+					}
+	else{
+		echo "Teaching fellow" . ", ";
+	}
+	$p = strpos($text, 'resident advisor');
+	if($p === false){
+					}
+	else{
+		echo "Resident advisor" . ", ";
+	}
+	$p = strpos($text, 'startup');
+	if($p === false){
+					}
+	else{
+		echo "Startup interests" . ", ";
+	}
+	$p = strpos($text, 'entrepreneurship');
+	if($p === false){
+					}
+	else{
+		echo "Entrepreneruship interests" . ", ";
+	}
+	$p = strpos($text, 'founder');
+	if($p === false){
+					}
+	else{
+		echo "Founder" . ", ";
+	}
+	$p = strpos($text, 'president');
+	if($p === false){
+					}
+	else{
+		echo "Club president" . ", ";
+	}
+}
+?>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+<button class="btn btn-lg btn-success" align="center" onclick="navigate()">Back to Screening Tool</button>
+</div>
+ 			<script>
+ 				function navigate(){
+ 					window.location = "screen.php";
+ 				}
+ 			</script>
+ 			
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -208,66 +371,6 @@
             <!-- /.row -->
             
             
-                         
-                         
-                                    <!--<table>
-                                    <tr>
-                                    	<td align="right"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2000px-Microsoft_logo.svg.png" height="100" width="100"></img></td>
-                                    	<td><h1 vertical-align="bottom">&nbsp Microsoft</h1></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h2 align="right">3.7 &nbsp &nbsp</h2></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="35" width="200"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Compensation &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Culture &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Work/Life Balance &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Job Role &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/4.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td><h4 align="right">Growth Opportunities &nbsp &nbsp</h4></td>
-                                    	<td><img src="http://localhost/bootstrap/pages/ratings/3.5.png" height="25" width="140"></img></td>
-                                    </tr>
-                                    <tr>
-                                    	<td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                    	<td colspan="2" align="center"><button type="submit" class="btn btn-primary btn-lg">Apply</button></td>
-                                    </tr>
-                                    </table>--!>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.panel -->
         </div>
         <!-- /#page-wrapper -->
 
