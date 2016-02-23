@@ -209,7 +209,7 @@ if(! $conn )
 }
 
 $q += 1;
-$query="SELECT * FROM Questions WHERE Q_id = $q";
+$query="SELECT * FROM Question WHERE Q_id = $q";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 

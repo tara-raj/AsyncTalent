@@ -217,10 +217,10 @@
   		die('Could not connect: ' . mysql_error());
 	}
 
-	$query = "DROP table Questions";
+	$query = "DROP table Question";
 	$conn->query($query) or die (); 
 
-	$query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
+	$query = "CREATE TABLE Question (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
 	$conn->query($query) or die ("Invalid create" . $conn->error); 
 
 	$handle = fopen("QuestionBank.csv", "r");
@@ -229,7 +229,7 @@
         	// process the line read.
         	$ls = explode(",", $line);
         	if($ls[0] != 'Question'){
-        		$query = "INSERT INTO Questions (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
+        		$query = "INSERT INTO Question (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
                        VALUES
                        ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
 			$conn->query($query) or die ("invalid user insert" . $conn->error);
@@ -257,7 +257,7 @@
   				die('Could not connect: ' . mysql_error());
 			}
 
-			$query="SELECT * FROM Questions";
+			$query="SELECT * FROM Question";
 			$conn->query($query) or die ("couldn't connect " . $conn->error);
 			$result = $conn->query($query);
 
@@ -494,7 +494,7 @@
 					
 					p.appendChild(lb2);
 					
-					var lb4 = document.createElement("button");
+					/*var lb4 = document.createElement("button");
 					lb4.className = "btn btn-default dropdown-toggle";
 					lb4.setAttribute("data-toggle","dropdown");
 					
@@ -502,7 +502,16 @@
 					lb5.className = "caret";
 					
 					var lb6 = document.createElement("ul");
-					lb6.className = "dropdown-menu";
+					lb6.className = "dropdown-menu";*/
+					
+					var lb4 = document.createElement("select");
+					lb4.className = "form-control";
+					
+					var lb5 = document.createElement("option");
+					lb5.innerHTML = "1";
+					
+					var lb52 = document.createElement("option");
+					lb52.innerHTML = "2";
 					
 					var lb7 = document.createElement("li");
 					
@@ -511,10 +520,11 @@
 					var st = lb8.innerHTML;
 					lb8.innerHTML = addNewlines(st);
 					
-					lb7.appendChild(lb8);
-					lb6.appendChild(lb7);
+					//lb7.appendChild(lb8);
+					//lb6.appendChild(lb7);
 					
 					lb4.appendChild(lb5);
+					lb4.appendChild(lb52);
 					p.appendChild(lb4);
 					p.appendChild(lb6);
 					
@@ -625,11 +635,11 @@ while($row = mysqli_fetch_row($result))
 	
 	//Your Score
 	echo "<td>";
-	if($row[8] == ""){
+	if($row[9] == ""){
 		$sc = "No Score";
 	}
 	else{
-		$sc = $row[8];
+		$sc = $row[9];
 	}
 	echo $sc . "</td>";
 	
@@ -684,7 +694,7 @@ while($row = mysqli_fetch_row($result))
                                         <div class="form-group">
                                         </div>
                                         <div class="form-group">
-                                        <form action="create_calc.php" method="post" id="myForm">
+                                        <form action="interview_details_calc.php" method="post" id="myForm">
                                         <h3 class="text-primary">Interview Details</h3>
                                         <hr></hr>
                                         <?php
@@ -704,6 +714,7 @@ if(! $conn )
 
 
 $link = $_POST['textfield'];
+$_SESSION['link_interview'] = $link;
 									
 $query="SELECT * FROM Interviews WHERE Link = '$link'";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
@@ -762,28 +773,38 @@ while($row = mysqli_fetch_row($result))
 		
 		echo "<td>";
 		echo "Your Score: ";
-		echo "<div class='dropdown'>
-    				<button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>Score
+		echo "<div>
+		<select class='form-control'>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    	</div>";
+		echo "</td>";
+	}
+	
+	/*
+	<div class='dropdown'>
+	<button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>Score
     				<span class='caret'></span></button>
-    				<ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>
+	<ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>
       						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>1</a></li>
       						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>2</a></li>
       						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>3</a></li>
       						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>4</a></li>
       						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>5</a></li>
     				</ul>
- 				 </div>";
-		echo "</td>";
-	}
-	
+    */
 	echo "<table>";
 	echo "<tr>";
 	echo "<td>";
 	echo "<h3>";
-	if($running_score == 0){
+	if($row[8] == 0 || $row[8] == ''){
 		echo "Overall Score: None Yet";
 	} else {
-		echo "Overall Score: " . $running_score;
+		echo "Overall Score: " . $row[8];
 	}
 	echo "</h3>";
 	echo "</td>";
@@ -792,19 +813,24 @@ while($row = mysqli_fetch_row($result))
 	echo "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp";
 	echo "</td>";
 	
+	if($row[9] == ''){
+			$val = 0;
+		}
+		else{
+			$val = $row[9];
+		}
 	echo "<td>";
 	echo "Your Overall Score: ";
-			echo "<div class='dropdown'>
-    				<button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>Score
-    				<span class='caret'></span></button>
-    				<ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>
-      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>1</a></li>
-      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>2</a></li>
-      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>3</a></li>
-      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>4</a></li>
-      						<li role='presentation'><a role='menuitem' tabindex='-1' href='#'>5</a></li>
-    				</ul>
- 				 </div>";
+			echo "<div>
+		<select class='form-control' id='recruiter_score' name='recruiter_score'>
+            <option>$val</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    	</div>";
 		echo "</td>";
 	echo "</td>";
 	echo "</tr>";

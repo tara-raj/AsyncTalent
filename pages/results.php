@@ -179,7 +179,12 @@
 
                         <!-- /.panel-body -->
                          <div class="col-lg-12" align="center">
- 
+ 			<button class="btn btn-success" align="left" onclick="navigate()">Back to Quiz</button>
+ 			<script>
+ 				function navigate(){
+ 					window.location = "forms.php";
+ 				}
+ 			</script>
  			<?php
  			//GET COMPANY INFO
 			$servername = "localhost";
@@ -225,7 +230,7 @@
 					$row4 = round($row4, 0, PHP_ROUND_HALF_UP);
 				}
 				echo "<td><h2 align='right'> $row[5] &nbsp &nbsp</h2></td>";
-				echo "<td><img src='ratings/$row4.png' height='35' width='200'></img></td>";
+				echo "<td><img src='../ratings/$row4.png' height='35' width='200'></img></td>";
 				echo "</tr>";
 				echo "<tr>";
 				echo "<td>&nbsp;</td>";
@@ -240,7 +245,7 @@
 				else{
 					$row5 = round($row5, 0, PHP_ROUND_HALF_UP);
 				}
-				echo "<td><img src='ratings/$row5.png'  height='25' width='140'></img></td>";
+				echo "<td><img src='../ratings/$row5.png'  height='25' width='140'></img></td>";
 				echo "</tr>";
 				echo "<tr>";
 				echo "<td>&nbsp;</td>";
@@ -255,7 +260,7 @@
 				else{
 					$row6 = round($row6, 0, PHP_ROUND_HALF_UP);
 				}
-				echo "<td><img src='ratings/$row6.png' height='25' width='140'></img></td>";
+				echo "<td><img src='../ratings/$row6.png' height='25' width='140'></img></td>";
 				echo "</tr>
                                     <tr>
                                     	<td>&nbsp;</td>
@@ -270,7 +275,7 @@
 				else{
 					$row7 = round($row7, 0, PHP_ROUND_HALF_UP);
 				}
-				echo "<td><img src='ratings/$row7.png' height='25' width='140'></img></td>";
+				echo "<td><img src='../ratings/$row7.png' height='25' width='140'></img></td>";
 				echo "</tr>
                                     <tr>
                                     	<td>&nbsp;</td>
@@ -285,7 +290,7 @@
 				else{
 					$row8 = round($row8, 0, PHP_ROUND_HALF_UP);
 				}
-				echo "<td><img src='ratings/$row8.png' height='25' width='140'></img></td>";
+				echo "<td><img src='../ratings/$row8.png' height='25' width='140'></img></td>";
 				echo "</tr>
                                     <tr>
                                     	<td>&nbsp;</td>
@@ -300,7 +305,7 @@
 				else{
 					$row9 = round($row9, 0, PHP_ROUND_HALF_UP);
 				}
-				echo "<td><img src='ratings/$row8.png' height='25' width='140'></img></td>";
+				echo "<td><img src='../ratings/$row8.png' height='25' width='140'></img></td>";
 				echo "<hr width='200%' size='10'>";
 			}
 

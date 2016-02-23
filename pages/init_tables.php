@@ -19,10 +19,10 @@ if(! $conn )
 }
 
 //User Profiles Table
-$query = "DROP table Profiles";
+$query = "DROP table Users";
 $conn->query($query) or die (); 
 
-$query = "CREATE TABLE Profiles (User_id int primary key not null AUTO_INCREMENT, Username char(25) not null, Password char(255) not null, Type char(25) not null, Compensation int not null, Culture int not null, WorkLife int not null, Role int not null, Growth int not null);";
+$query = "CREATE TABLE Users (User_id int primary key not null AUTO_INCREMENT, Username char(25) not null, Password char(255) not null, Type char(25) not null, Compensation int not null, Culture int not null, WorkLife int not null, Role int not null, Growth int not null);";
 $conn->query($query) or die ("Invalid create" . $conn->error); 
 echo "User table initialized";
 
@@ -40,12 +40,12 @@ $password = hash('sha256', $p);
 $name1 = "user";
 $name2 = "recruiter";
 
-$query = "INSERT INTO Profiles (Username, Password, Type)
+$query = "INSERT INTO Users (Username, Password, Type)
                        VALUES
                        ('$name1', '$password', 'user')";
 $conn->query($query) or die ("invalid user insert" . $conn->error);
 
-$query = "INSERT INTO Profiles (Username, Password, Type)
+$query = "INSERT INTO Users (Username, Password, Type)
                        VALUES
                        ('$name2', '$password', 'recruiter')";
 $conn->query($query) or die ("invalid user insert" . $conn->error); 
@@ -116,7 +116,7 @@ $conn->query($query) or die ("invalid company insert" . $conn->error);
 $query = "DROP table Interviews";
 $conn->query($query) or die (); 
 
-$query = "CREATE TABLE Interviews (Interview_id int primary key not null AUTO_INCREMENT, Link text, Questions text, Passcode text, Nickname text, Length float, Open int not null, User text not null, Scores text);";
+$query = "CREATE TABLE Interviews (Interview_id int primary key not null AUTO_INCREMENT, Link text, Questions text, Passcode text, Nickname text, Length float, Open int not null, User text not null, Scores text, RecruiterScores text);";
 $conn->query($query) or die ("Invalid create" . $conn->error); 
 echo "Interviews table initialized";
 

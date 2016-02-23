@@ -102,7 +102,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "UPDATE Profiles SET Culture=$culture_print WHERE username='traj'";
+$sql = "UPDATE Users SET Culture=$culture_print WHERE username='traj'";
 
 if ($conn->query($sql) === TRUE) {
     
@@ -110,7 +110,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 
-$sql = "UPDATE Profiles SET WorkLIfe=$workLife_print WHERE username='traj'";
+$sql = "UPDATE Users SET WorkLIfe=$workLife_print WHERE username='traj'";
 
 if ($conn->query($sql) === TRUE) {
     
@@ -118,7 +118,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 
-$sql = "UPDATE Profiles SET Compensation=$comp_print WHERE username='traj'";
+$sql = "UPDATE Users SET Compensation=$comp_print WHERE username='traj'";
 
 if ($conn->query($sql) === TRUE) {
     
@@ -126,7 +126,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 
-$sql = "UPDATE Profiles SET Growth=$growth_print WHERE username='traj'";
+$sql = "UPDATE Users SET Growth=$growth_print WHERE username='traj'";
 
 if ($conn->query($sql) === TRUE) {
     
@@ -134,7 +134,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 
-$sql = "UPDATE Profiles SET Role=$role_print WHERE username='traj'";
+$sql = "UPDATE Users SET Role=$role_print WHERE username='traj'";
 
 if ($conn->query($sql) === TRUE) {
     

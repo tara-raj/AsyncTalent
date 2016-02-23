@@ -29,7 +29,7 @@ if(! $conn )
   die('Could not connect: ' . mysql_error());
 }     
 
-$query="SELECT * FROM Profiles";
+$query="SELECT * FROM Users";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 

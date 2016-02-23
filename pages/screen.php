@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SESSION['admin'] == "none"){
+		header('Location: Login.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +16,7 @@
     <meta name="author" content="">
     <script src="../js/star-rating.js" type="text/javascript"></script>
 
-    <title>EmployEDU - Find</title>
+    <title>EmployED - Find Companies</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -140,17 +143,17 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
+                         <li>
                             <a href="index.html"><i class="fa fa-home fa-fw"></i>Home</a>
                         </li>
                         <li>
-                            <a href="find.php"><i class="fa fa-search fa-fw"></i>Find Companies</a>
+                            <a href="create.php"><i class="fa fa-edit fa-fw"></i>Create</a>
                         </li>
                         <li>
-                            <a href="apply.php"><i class="fa fa-edit fa-fw"></i>Apply</a>
+                            <a href="view_feedback.php"><i class="fa fa-dashboard fa-fw"></i>View Feedback</a>
                         </li>
                         <li>
-                            <a href="interview.php"><i class="fa fa-briefcase fa-fw"></i>Interview</a>
+                            <a href="screen.php"><i class="fa fa-search fa-fw"></i>Screen</a>
                         </li>
                     </ul>
                 </div>
@@ -158,60 +161,213 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Mock Interview</h1>
+                    <h1 class="page-header">Screen</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
- 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                          Feedback
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                
-                                        <div class="form-group">
-                                        </div>
-                                        <div class="form-group">
-                                        <table>
-                                        <td>
-                                        <h3 class="text-primary">
-                                        <br>
-                                        Congratulations! You have finished the interview.
-                                        <h3>
-                                        <h4>Check out job recruiting resources at <a href="http://employedu.co">EmployEDU.co</a></h4>
-<script>
-</script>
-<!--<h4> Check out more tips: </h4>
-<li><a>Putting buzzwords in meaningful sentences</a></li>
-<li><a>Situation, Action, Response</a></li> 
-<li><a>Specific examples</a></li>--!>
-
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                    
-                    
-
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            
-            
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
+			<h3 class="text-primary">Screen</h3>
+			<h4> Conduct diligence on candidates to give you a better idea of the candidate off paper. EmployEDU helps you 
+			analyzing resumes and pulls in outside information from sources like LinkedIn and GitHub. This is your one stop
+			due diligence tool. </h4>
+			<br>
+			<h1 class="text-primary" align="center">Coming Soon!</h1>
+			<!--<table>
+			<tr>
+				<td>
+                     <div class="panel panel-default">
+  					<div class="panel-heading">Panel heading without title</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+				<td>
+					&nbsp &nbsp &nbsp
+				</td>
+				<td>
+					<div class="panel panel-default">
+  					<div class="panel-heading">
+    					<h3 class="panel-title">Panel title</h3>
+  					</div>
+  					<div class="panel-body">
+    					Panel content
+  					</div>
+					</div>
+				</td>
+			</tr>
+			</table>--!>
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 

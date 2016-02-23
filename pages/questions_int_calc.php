@@ -206,7 +206,7 @@ if(! $conn )
 }
 
 $q += 1;
-$query="SELECT * FROM Questions WHERE Q_id = $q";
+$query="SELECT * FROM Question WHERE Q_id = $q";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 
@@ -294,7 +294,7 @@ echo "<br>" . "example score: " . $_SESSION["example_score"];*/
 </table>
 <?php
 $_SESSION["result_name"] = "Buzzword Wizard";
-$_SESSION["final_score"] = 2;
+$_SESSION["final_score"] = 3;
 
 $k = $_SESSION["keyword_score"];
 $p = $_SESSION["speech_score"];
@@ -420,7 +420,7 @@ if(! $conn )
 $link = stripslashes($_SESSION['link']); 
 $score = $_SESSION["final_score"] + ",";                                       
 										
-$query= "UPDATE Interviews SET Score = CONCAT(Score, '$score') WHERE Link = '$link'";
+$query= "UPDATE Interviews SET Scores = CONCAT(Scores, '$score') WHERE Link = '$link'";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 
@@ -432,7 +432,7 @@ if($_SESSION['qnum'] == (sizeof($_SESSION['qarray']) - 1)){
 else{
 	$_SESSION['qnum'] += 1;
 	//header('Location: questions_int.php');
-	$next = "questios_int.php";
+	$next = "questions_int.php";
 }
 ?>
 <form align="center" action='<?php echo $next ?>' method="post">

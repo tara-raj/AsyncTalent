@@ -68,7 +68,7 @@ $qarray = array();
   				die('Could not connect: ' . mysql_error());
 			}
 
-			$query="SELECT * FROM Questions";
+			$query="SELECT * FROM Question";
 			$conn->query($query) or die ("couldn't connect " . $conn->error);
 			$result = $conn->query($query);
 

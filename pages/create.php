@@ -151,7 +151,7 @@
                             <a href="view_feedback.php"><i class="fa fa-dashboard fa-fw"></i>View Feedback</a>
                         </li>
                         <li>
-                            <a href="manage.php"><i class="fa fa-star fa-fw"></i>Manage</a>
+                            <a href="screen.php"><i class="fa fa-search fa-fw"></i>Screen</a>
                         </li>
                     </ul>
                 </div>
@@ -220,10 +220,10 @@
   		die('Could not connect: ' . mysql_error());
 	}
 
-	$query = "DROP table Questions";
+	$query = "DROP table Question";
 	$conn->query($query) or die (); 
 
-	$query = "CREATE TABLE Questions (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
+	$query = "CREATE TABLE Question (Q_id int primary key not null AUTO_INCREMENT, Question text not null, Category text not null, Sub text, Role text, Company text, Keywords text, Time float, Type text, Tips text);";
 	$conn->query($query) or die ("Invalid create" . $conn->error); 
 
 	$handle = fopen("QuestionBank.csv", "r");
@@ -232,7 +232,7 @@
         	// process the line read.
         	$ls = explode(",", $line);
         	if($ls[0] != 'Question'){
-        		$query = "INSERT INTO Questions (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
+        		$query = "INSERT INTO Question (Question, Category, Sub, Role, Company, Keywords, Time, Type, Tips)
                        VALUES
                        ('$ls[0]', '$ls[1]', '$ls[2]', '$ls[3]', '$ls[4]', '$ls[5]', '$ls[6]', '$ls[7]', '$ls[8]')";
 			$conn->query($query) or die ("invalid user insert" . $conn->error);
@@ -260,7 +260,7 @@
   				die('Could not connect: ' . mysql_error());
 			}
 
-			$query="SELECT * FROM Questions";
+			$query="SELECT * FROM Question";
 			$conn->query($query) or die ("couldn't connect " . $conn->error);
 			$result = $conn->query($query);
 
