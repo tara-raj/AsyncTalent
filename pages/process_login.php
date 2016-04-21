@@ -59,7 +59,7 @@ if($success == 5){
 	header("Location: find.php");
 }
 else if($success == 10){
-	header("Location: create.php");
+	header("Location: screen.php");
 }
 else {
 	header("Location: Login.php");
