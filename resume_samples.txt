@@ -1,0 +1,1014 @@
+Russell Williams
+
+OBJECTIVE 
+To gain hands-on experience through an internship in front end or back end development utilizing my work and leadership experiences, strong communication, problem solving and interpersonal skills, and my interest in contributing to the success of an organization to make a difference. 
+
+EDUCATION 
+University of Virginia, School of Engineering and Applied Science Charlottesville, VA 
+B.S. Computer Science Major May 2016 
+GPA: 3.4/4.0
+BRIDGE Program, School of Engineering and Applied Science Charlottesville, VA 
+Calculus I, Science Technology & Society, Chemistry I Lab Summer 2012 
+•	An intensive summer program providing academic, personal and professional 
+
+Development 
+Robert E. Lee High School Springfield, VA 
+International Baccalaureate Diploma June 2012 
+•	GPA 4.2 
+•	Honor Roll 2008-2012 
+
+RELEVANT INTERNSHIPS, PROJECTS & COURSEWORK 
+CS 2110 – Software Development, Ghost Hunt 
+•	Created a real time Ghost Hunting game incorporating Google Maps API and GPS functions 
+
+CS 3205 – Human Computer Interface in Software Development, Music Navigator 
+•	Redesigned music navigators long scroll bars by creating several prototypes, testing each, and conducting interviews 
+
+CS 4102 – Algorithms STS 2500 - Entrepreneurship and Financing, Ledger 
+•	Created a start up idea, researched the market, conducted interviews, pivoted the idea, and pitched the idea to investors 
+
+TECHNICAL SKILLS 
+Worked under Linux and Windows environment 
+Comfortable with Java, C, and C++, 
+Familiar with CSS, HTML, Javascript, PHP, and Python 
+
+WORK EXPERIENCE 
+VIRGINIA POLYTECHNIC INSTITUTE AND STATE UNIVERSITY Blacksburg, VA 
+Research Summer 2012 
+•	I and a team of five students researched energy cane as a new alternative biofuel by collaborating with graduate students and professors 
+•	Presented the research to a panel and received 2nd place 
+
+LEADERSHIP, HONORS, AND EXTRACURRICULAR ACTIVITIES 
+Society for Professional Hispanic Engineers, Webmaster Spring 2013-Present 
+Student Game Development, Member Fall 2013-Spring 2014 
+Boy Scouts, Eagle Scout Fall 2006 – Summer 2012
+
+
+NEXTRESUME
+Alex W. Levinson
+Email: levinsonalex@gmail.com
+
+EDUCATION
+University of Michigan – Computer Science Engineering, Ann Arbor, MI 
+•	Current GPA: 3.5 Enrolled August 2012 
+•	108 Total Credits Expected Date of Graduation Spring 2016 
+
+Stanford University Summer Program, Stanford, CA Summer 2011 
+Cincinnati Country Day School, Cincinnati, OH June 2012
+
+WORK EXPERIENCE
+Microsoft, Redmond, WA Summer 2015 
+Programmed in C# using the ASP.NET framework and OData Protocol for Web APIs on the OneNote API team. 
+Core Responsibility: Created the ability for 3rd parties to access images through temporary unauthorized links for the use of exporting a OneNote page as HTML. 
+o	Led the design process of the feature - considering security and engineering tradeoffs. 
+o	Wrote unit and end-to-end tests for all code added. 
+Skills Developed: Unit testing strategies, feature design processes, professional workplace experience, on the fly language experience (C#) 
+
+General Electric, Van Buren Township, MI Summer 2014 
+Programmed in several languages (HTML, CSS, JavaScript, Java, JSP), on a large scale web application used to request and form large intercompany business deals ($1.3 Trillion total in 2013). 
+Responsibilities: Delivered three notable client-visible enhancements to the program: 
+o	Created a modal that every user must accept to make a request (legal terms of agreement). 
+o	Added two additional columns in the progress report that could be used to sort the deals currently moving through the pipeline. 
+o	Increased character count only on one specific comment box (proved difficult due to program structure). 
+Skills Developed: Software development life cycle exposure, professional workplace experience, on the fly language experience (HTML, CSS, JavaScript) 
+External Focus: Volunteered for 16 hours of community service, led and managed an early professional sub-committee, and won a GE Capital Americas Lego competition 
+
+PROGRAMMING EXPERIENCE
+Programming Projects – 
+Visit my website at www.levinsonalex.com 
+Languages: 
+Experienced: Java, C++, C#, and C 
+Proficient: HTML, CSS, SQL, and Adobe ActionScript 
+Key Programming Classes (not all): 
+•	AP Computer Science [Java] (2011-12) 
+•	Intro Logic Design (Hardware) [Verilog] (2013) 
+•	Data Structures and Algorithms [C++] (2014) 
+•	Web Databases & Info Systems [Python] (2015) 
+
+LEADERSHIP
+Treasurer/Vice President* of Delta Kappa Epsilon Fraternity All Year 2014 Added several online payment methods, setup installment payment plan, created incentive to pay earlier, created an online record of payments, and improved general quality of living inside fraternity house. 
+*VP stepped down mid-2014 leaving the President and me to shoulder his responsibilities. 
+Captain of Google Hackathon Team “Java the Hutt” (see programming projects) Spring 2014
+
+NEXTRESUME
+Katherine McDonald
+
+EDUCATION
+University of Virginia, College of Arts and Sciences                                          Anticipated Graduation May 2016
+B.S. in Biochemistry, B.A. in Computer Science
+•	3.84 Major GPA, 3.86 Cumulative GPA
+•	Dean’s List
+
+WORK EXPERIENCE
+Berkeley Research Group    		    					                Summer 2014
+Intern
+•	Prepared financial and market analysis to assist an expert witness write intellectual property damages opinion reports for AmLaw 100 law firms and their Fortune 500 clients
+
+Six Flags Great America    		    					                Summer 2013
+Attendant
+•	Responsible for operating rides, running periodic safety checks and greeting guests
+
+Saint Anne Parish                                                                                           September 2008-August 2012
+Administrative Assistant, Nursery Attendant
+•	Scheduled and managed appointments for the priests and periodically updated the church roster 
+•	Assisted in child care in the Church nursery during Sunday morning services
+
+VOLUNTEER EXPERIENCE
+UVA Hospital 		    					                         September 2013-Present
+Hospital Volunteer
+Volunteered to improve quality of life in the Hospital; managed the gift shop; visited and made deliveries to patients.
+
+WTJX Charlottesville                                                                                            September 2013- Present
+Radio DJ
+Hosted a weekly show; ran several fundraising call-in marathons; developed and ran promotional content
+
+Alpha Epsilon Delta, UVA Chapter                                                                           August 2013- Present
+Member/Treasurer(as of Spring 2014)
+Made weekly meals for the Ronald McDonald house.
+Managed club finances and worked with University officials to secure chapter funding
+
+Campaign of Village President Karen Darch                                                             June 2012-April 2013
+Consultant
+Set up and ran the primary social media campaign; provided assistance with marketing and distribution of campaign materials
+
+ADDITIONAL INFORMATION
+•	Technical Skills: Proficient with Microsoft Excel, Java, C, C++, SQL; familiar with Linux and Windows
+•	Foreign Language Skills: Spanish (Conversational)
+
+NEXTRESUME
+Linda Zhu
+
+https://www.linkedin.com/in/lindazhu
+
+EDUCATION
+UNIVERSITY OF VIRGINIA, COLLEGE OF ARTS & SCIENCES, Charlottesville, VA                                                                                   May 2016
+B.S. in Mathematics (concentration in Financial Mathematics), B.A. in Economics, minor in Physics
+GPA: 3.53/4.0                          
+Related Coursework:  Game Theory, Real Analysis, Probability, Theory of Financial Markets, Stochastic Processes, Microeconomics, Macroeconomics, Applied Linear Models, Applied Time Series, Econometrics, International Trade: Theory and Policy
+
+WORK EXPERIENCE
+Elder Research Inc., Data Science Intern, Data Mining and Analytics Team, Charlottesville, VA                                 May 2015 –July 2015
+•	Conducted entire data mining process, including data exploration, data preparation, modeling,                                     visualization, and presentation, on large dataset using SQL and R.
+•	Prepared and delivered weekly presentations, including charts and figures to convey findings.
+•	Prepared and delivered final presentation with findings to client, and held weekly business meetings.
+•	Determined deliverable targets and project direction, managed project execution, broke down project goals into tasks and delegated them, resolved team conflicts, prioritized goals to adhere to time constraints, and made final call on decisions during two weeks as Project Lead of team.
+Magpar LLP, Junior Analyst, Research and Due Diligence Team (Financial Services Consulting), London                 June 2014 –Aug 2014
+•	Conducted primary and secondary research as part of counterparty due diligence.
+•	Collected, analyzed, and looked for connections between pieces of information found in various online sources.
+•	Gathered information about international events that might affect certain funds, determined how those funds would be affected, and then wrote briefings on my findings. 
+•	Worked within team to triage principal investment strategies.
+•	Wrote research briefings, contributed to promotional fund materials, produced client reports, and authored internal project minutes.
+Johns Hopkins Bloomberg School of Public Health, Research Aide, Dept. of Epidemiology, Baltimore, MD            May 2013 –Aug 2013
+•	Conducted statistical analysis of the Atherosclerosis Risk in Communities (ARIC) study data.
+•	Aided in the creation of figures, charts, and tables for neurocognitive research publications.
+•	Cleaned large databases. Compiled and presented database synopsis.
+•	Co-author on pending paper, “Smoking and 23-year Cognitive Change in ARIC Neurocognitive Study”.
+AWARDS
+•	College Science Scholar
+•	Awarded to 21 out of 3360 first year students who have excelled in the sciences; recipients are enrolled in an honors program at UVA designed to afford them opportunities for research and close mentorship with science faculty.
+Echols Scholar
+•	Awarded to approximately 6% of UVA students in each class with superior academic and extracurricular achievements.
+National Merit Finalist
+EXPERIENCE & ACTIVITIES
+UVA Scuba Club, President                                                                                                                                                              Fall 2012-present
+•	Determine club objectives and plan and implement activities that align with these goals and fit within the budget.
+•	Develop and execute capital raising strategies, including the collection of club dues, and manage budget.
+•	Direct executive board of eight members and delegate responsibilities related to the organization of all diver education, fall and spring break trips, fundraisers, social events, and philanthropy projects.
+•	Develop strategy to increase club membership and engage current members to ensure club succession.
+SKILLS
+•	•	Stata     
+•	SQL
+•	R
+•	Git
+•	Clear Verbal and Written Communication         
+•	Problem Solving                        
+•	Research               
+•	Inductive and Deductive Reasoning             
+
+NEXTRESUME
+Michelle Dayton
+mdayton@college.harvard.edu
+215-888-2459
+Education
+Harvard University (Cambridge, MA) 						         Sept 2013 - Present
+• Expected A.B. in Computer Science in May 2017 with secondary in Religion; Current GPA: 3.87.
+The Shipley School (Bryn Mawr, PA) Sept 2009 - June 2013
+SAT: 2330; MATH2: 800
+• Intel Science Talent Search National Semi-Finalist; National Merit Scholar.
+Experience
+Microsoft (Redmond, WA) – Explorer Intern          			    		    May 2015 – Aug 2015
+Intern on Bing Answers: Core Experiences team with rotations in Program Management and Development
+• Developed Bing widget answers in C# and JavaScript.
+• Responsible for all parts of the development and management process including design, corporate
+collaborations, coding widgets, internal testing, running A/B tests on Bing live site, etc.
+• Received return offer for PM on Core Search for summer 2016.
+Comcast Corporation (Philadelphia, PA) - Internship Program 			      Jun 2014 – Aug 2014
+Intern at Comcast with rotations at independent start-ups
+• Helped build data storage cloud using Scala (Comcast Technology & Product).
+• Wrote code for automated weekly updates using Ruby (Artisan Mobile).
+Harvard Computer Science Department (Cambridge, MA) 				     Aug 2014 – Dec 2014
+Teaching Fellow for CS50
+• Taught weekly section of 18 undergraduate and graduate students. Covered introduction to coding techniques
+in C, introduction to data structures, and web programming in HTML, PHP, and JavaScript.
+• Graded weekly problem sets, helped students at weekly office hours and all-night hackathon, graded exams, and tutored struggling students one-on-one.
+Publications and Awards
+Intel Science Talent Search (Philadelphia, PA) – Pre-College Science Competition 	      Jun 2012 – Nov 2014
+Original Project Researcher
+• National semifinalist for paper Behavioral and Neural Correlates of Emotion Word Processing. Research
+was conducted while working in Dr. Michael Kahana’s computational neuroscience lab at the University of Pennsylvania using behavioral and EEG data, with MatLab analysis.
+
+Long, N., Danoff, M., and Kahana, M. Recall Dynamics Reveal the Retrieval of Emotional Context. PsychonomicBulletin & Review: In press Nov. 2014.
+
+Leadership Roles
+Harvard Women in Computer Science – Co-President 				         Sept 2013 - Present
+• In charge of all aspects of leadership for Harvard WiCS club with annual budget of over $100,000.
+Responsibilities include direction of executive board and overseeing of major WiCS efforts including
+building corporate partnerships, Grace Hopper participation, Advocacy Council work, running annual
+WeCODE conference, etc.
+• Teach and mentor middle school students at weekly ‘Girls Who Code’ club (2014-2015)
+Harvard Undergraduate Debate Union – Board Member (HCDU and APDA) 	         Sept 2013 - Present
+• Compete at APDA tournaments, board member of APDA Women’s Initiative.
+
+Skills
+Spanish (conversational). Experience in C, JavaScript, C#, MatLab, HTML, Scala, MySQL.
+NEXTRESUME
+MirandaWang
+miranda-wang.com
+www.linkedin.com/in/
+mirandawangx
+msw3bb@virginia.edu
+EDUCATION
+University of Virginia
+B.A. Computer Science, B.A. Psychology — 2012-2016
+Cumulative GPA: 3.501
+Computer Science GPA: 3.880
+
+EXPERIENCE
+Software Engineer Intern, Perfect Sense Digital
+Reston, VA — Summer 2015
+● Created new features for and removed bugs from the Special Olympics World Games LA2015 website (http://www.la2015.org)
+● Using Java, HTML, CSS/Less, and Javascript to create a responsive form displaying the results with filters to sort by sport, event, or delegation.
+● Site reached over 5 million unique page views, 15% of which was traffic to the results page.
+● Developed a responsive email HTML newsletter following a Photoshop static design that was sent out daily during the World Games.
+● Using the Flickr API, created social integration support: when a user uploads to a connected Flickr account, the uploads appear on the site automatically.
+
+Vice President of Technology, Enactus at UVa
+Charlottesville, VA — November 2014-present
+● Developed and lead the technology strategy for Enactus at UVa
+● Complete redesign of website to a responsive, modern layout using HTML/CSS, Javascript, JQuery ( http://enactusatuva.org )
+● Maintained the website following Enactus Brand & Style guide
+
+Website Founder and Manager, Virginia Homecomings
+Charlottesville,, VA — May 2014-May 2015
+● Created initial website and set up, learning how register a domain, host a website, and implement a content management system and template
+● Edited pages using HTML/CSS, i.e. formatting of Events calendar and “Hoos Behind Homecoming” Exec Board profiles
+
+PROJECTS
+ bloom
+PennApps hackathon in Philadelphia, PA - September 2015.
+● In a team of three others, developed a Python/Django habit tracking web application game from the ground up in less than 48 hours.
+● Designed the different web pages with HTML and CSS, made them dynamic with Javascript/jQuery.
+● With Photoshop, created and designed graphics.
+
+SKILLS
+● Java , C++, Python
+● HTML/CSS, Less. Javascript, jQuery
+● JSP, JSTL
+● Django, WordPress
+● MySql
+● Photoshop
+NEXTRESUME
+CHRISTINE J. MATHERS
+1307 Summer Ct • McLean, VA  • 703.555.7033
+cjm@virginia.edu
+EDUCATION
+The University of Virginia, Charlottesville, VA
+Systems Engineering Major, Engineering Business Minor
+Graduation anticipated May 2016
+GPA: 3.91/4.0
+Langley High School, McLean, VA
+Graduation June 2012, GPA: 4.1
+VOLUNTEER AND WORK EXPERIENCE
+• Intern, Northrop Grumman, Enterprise Project Management (Summer 2014)
+• Office Manager and Insurance Claims Administrator, Dr. Anne Nickodem Office of Plastic Surgery
+(Summer 2013)
+• Lifeguard, World Pool Inc., Hamlet Swim and Tennis Club (Summers 2009, 2011)
+• Intern, Smithsonian Natural History Museum, Entomology Department (Summer 2010)
+• Volunteer, Sunrise Assisted Living, McLean, VA (2009 - 2012)
+• Teacher, Faith Formation Catechist, St. Luke’s Parish, McLean, VA (2007 - 2010)
+ACADEMIC HONORS
+• Dean’s List, University of Virginia, School of Engineering and Applied Sciences (Fall 2012)
+• Recipient, Agnes Scott College Book Award, Langley High School (June 2011)
+• Leadership Honor Society, Co-President, Langley High School (2010 - 2012)
+• National Honor Society, Langley High School (2010 - 2012)
+• Science Honor Society, Secretary, Langley High School (2010 - 2012)
+• Spanish Honor Society, Advisory Council, Langley High School (2008 - 2012)
+HONORS AND AWARDS
+• Silver Medal Recipient, U.S. Congressional Award Program (May 2012)
+• Participant, U.S. Military Academy, West Point Summer Leadership Seminar (June 2011)
+• Langley High School Representative, West Point Leadership and Ethics Conference (March 2011)
+• Delegate, Virginia Girls State, Appointed Secretary of Technology (June 2011)
+• Recipient, McLean Citizens Association, Outstanding Character Award for Teens (May 2011)
+ACTIVITIES
+• Concierge, Better Business Challenge, 2013 – present
+• Service Committee Member, Engineering Student Council 2013 – present
+• Publicity Committee Member, Society of Women Engineers, 2012 – present
+• Member, Engineering Students Without Borders, 2012 - present
+• Member, Sigma Delta Tau Sorority, 2013 - present
+• Member, University of Virginia Sustainability Design Project, 2012
+• Member, Virginia Alpine Ski and Snowboard Team, 2012 - present
+• Captain, Langley High School Volleyball Team (Varsity 2010-2012; JV 2008-2009); Coach’s Award
+(2011)
+• Captain, Langley High School Swimming and Diving Team (Varsity 2008-2012); Virginia State
+Champions 2010-2011
+TECHNICAL SKILLS
+• Programming languages: Java, SQL, HTML, PHP
+• Expertise in Microsoft Word, Microsoft Excel, Microsoft PowerPoint
+• Proficient in Eclipse, MySQL
+
+NEXTRESUME
+Brooks Harding
+Charlottesville, VA 22903 (402) 555-1920
+Education 
+University of Virginia, Charlottesville, VA 
+College of Arts & Sciences 
+Intended Majors: Math and Computer Science 
+May 2017 
+Cumulative GPA: 3.64 
+Related Courses: Software Development Methods, Differential Equations, Financial Accounting, 
+Managerial Accounting, Linear Algebra, Calculus 3, Microeconomics, Macroeconomics, Discrete Math 
+Experience 
+Boylan Heights, Charlottesville, VA August 2014-Present 
+Food Runner 
+•	Work up to 12 hours per week in a fast-paced restaurant environment, doing maintenance and providing customer service. 
+
+Contemporary Analysis, Omaha, NE May - August 2014 
+Business Intern 
+•	Created survey to determine potential weaknesses in the company’s business model. Assisted senior management in analyzing methods of growing client-base and improving profitability. 
+
+Montclair Community Center, Omaha, NE June - August 2014 
+Activity Facilitator and Receptionist 
+•	Provided excellent customer service by efficiently facilitating center-sponsored operations. 
+
+Extracurriculars 
+Inter-Fraternity Council Judiciary Committee August 2014-Present 
+Investigator 
+•	Chosen to collect reliable, meaningful information in the event of alleged transgressions committed by fraternities and provide the University with an unbiased account of events. 
+
+Ultimate Frisbee Club Team September 2013-Present 
+Recruitment Chair 
+•	Participate in practices and competitions up to 20 hours per week. 
+•	Implement outreach strategies to increase participation and interest in the team. 
+
+Sigma Alpha Mu Fraternity February 2014-Present 
+Treasurer 
+•	Elected to handle, collect and budget all funds for fraternity activities and proceedings, totaling approximately $80,000. 
+•	Budgeting, payment of all bills, and collection dues from members. 
+
+Skills 
+Java, Python, Microsoft Office (Word, PowerPoint, Excel)
+
+NEXTRESUME
+TERRY STANTON
+(206) 555 6445 • tstanton@g.hmc.edu
+340 E Foothill Blvd, HMC, Claremont, CA 91711
+
+EDUCATION
+Harvey Mudd College Claremont, CA  | Expected, May 2018
+B.S. Computer Science 
+GPA: 3.75/4.0
+
+EXPERIENCE
+Technical Experience 
+Microsoft Explore Intern - Microsoft Redmond Campus				Summer 2015
+•	Worked on the OneDrive Share Point team to help improve Android and iOS application  
+•	Used Java to improve the Android OneDrive Mobile App accessibility for more platforms  
+•	As a PM designed a new feature using a 3rd party app 
+•	Returning summer 2016 as a developer intern for Outlook 
+
+Leadership Experience 
+Microsoft Intern Ambassador 							2015 – Present 
+•	Organized events to help students prepare for interviews and answered questions
+•	Helped recruiter with events while she was on campus
+Lean-In Circle Founder and Moderator 						2015 – Present  
+•	Organize meetings by planning the agenda, logistics and advertising 
+
+Work Experience
+Grutor  – HMC Computer Science Department						2015
+•	Graded homework and tests for the Introduction to Computer Science course
+•	Held weekly tutoring hours 
+Note Taker – HMC Division of Student Affairs						2015
+•	Took detailed and comprehensive notes in Electricity and Magnetism, Differential Equations and Linear Algebra 
+Office Assistant  – HMC Office of Career Services	2014
+•	Made posters and flyers using MS Publisher  
+•	Ran data reports with MS Excel
+•	Greeted and helped with recruiters and students who came into the office
+
+SKILLS
+Computer Skills
+Languages: C++, Java, Python, Prolog, Racket, Matlab 
+
+Relevant Coursework 
+User Interfaces • Discrete Math • Data Structures/Program Development • Multivariable Calculus • Differential Equations II • Linear Algebra II • Introduction to Engineering Systems • Principles of Computer Science • Mathematics of Games and Puzzles • Probability and Statistics 
+
+NEXTRESUME
+JENNIFER R. HURSTON
+2647 Lerner Hall, 2920 Broadway, NY, NY 10027 • 949.379.0097 • jrhuston@columbia.edu • linkedin.com/in/jenhurston
+
+EDUCATION
+Columbia University, New York City, NY Expected Graduation Date: May 2018
+The Fu Foundation School of Engineering and Applied Science
+B.S. Computer Science
+
+St. Margaret’s Episcopal School, San Juan Capistrano, CA Class of 2014
+Cum Laude Society, University of Pennsylvania Book Award, St. Margaret’s Award SAT: 2290
+
+Coursera – Completed 8 courses from various universities
+• Including: Human-Computer Interaction (Stanford University), Design: Creation of Artifacts in Society (University of
+Pennsylvania), Women and the Civil Rights Movement (University of Maryland)
+
+HONORS
+Google, Travel Grant Recipient for the Grace Hopper Conference for Women in Technology 2014
+Tests of Engineering Aptitude, Math, and Science (TEAMS), California 2nd Pl, Small School Division
+
+EXPERIENCE
+Microsoft, Explore Intern Redmond, WA | May 2015 – Aug 2015
+• Working on creating a working heat map for Azure’s Batch extension.
+• Language used: TypeScript
+• Working on both program management and software development of product, created both a PM spec and dev spec
+• Started a Lean-In intern circle to encourage other interns to start Lean-In circles on their own campuses
+
+Google, Computer Science Summer Institute 2014 Cambridge, MA | Jul 2014
+• 3 week intensive computer science program learning: HTML, CSS, JavaScript, Python, AppEngine
+
+Broadcom, Human Resources – Project Intern Irvine, CA | May 2014 - Jun 2014
+• Wrote content for Employee Affinity Group brochures for groups including: Broadcom Women’s Network, Multi-cultural Network, & AWARE Network
+
+University of California, Irvine, Dept. of Mechanical and Aerospace Engineering – Intern Irvine, CA | Jun 2013 - Aug 2013
+• Worked with Professor Derek Dunn-Rankin analyzing thermocouples placed under conditions of hydrogen and methane
+
+LEADERSHIP
+Columbia Organization of Rising Entrepreneurs, Organizational Committee Leader New York, NY | September 2015 – Ongoing
+• Works to inspire students to launch business or startup careers, and support Columbia entrepreneurs
+Barnard + Columbia Design for America, Studio Member New York, NY | September 2015 – Ongoing
+• Apply human-centered design to local and social challenges as innovators through extra-curricular, university-based, student led
+design studios
+
+Columbia University Society of Women Engineers, Committee Head: Corporate New York, NY | May 2015 – Ongoing
+• Facilitate the connection between SWE members and corporate world through organizing tech talks and site visits with
+companies
+• Aid students in professional development through workshops including: “How to set up a LinkedIn Profile” and “What to
+Wear in the Work Place?”
+
+Organizational Committee Member: Webmaster New York, NY | Sep 2014 – Apr 2015
+• Help upkeep the organization’s website as the webmaster
+
+Lean-In: Columbia University Chapter, Circle Moderator New York, NY | Jan 2015 – Ongoing
+• Led a monthly support group for women seeking to become leaders in the corporate world
+• Organized and established the first circles at Columbia University
+
+SKILLS
+Technical Skills: HTML/CSS (Beginner), Python (Beginner), Java (Beginner), Soldering, Microsoft Word, Microsoft Excel
+Interests: Gender equality in STEM fields, Wearable Technology, Spoken word poetry, Traveling
+
+NEXTRESUME
+KYLE BIBLER
+Experience working with Java, Javascript, Python, C++, PHP, HTML, and Javascript frameworks and libraries: Angular.js, Jquery, Node.js (limited)
+Experience in software development techniques such as Agile development and software testing and analysis methods.
+Developing mobile applications for Android with Java.
+Interface design and implementation for "mobile first" websites.
+Experience with Git, Github and other revision control systems.
+Able to learn new programming languages quickly.
+Attended Hack Virginia: Co-created and designed a mobile first web application, Pugger, that helps facilitate the creating of community sporting events. Lead front-end interface design on project.
+
+Rodman Scholar: Top 5% of incoming engineering class at the University of Virginia.
+
+Attended Hack UVA: Top 10 finalist for co-creating a drink making machine that is interfaced with an Android mobile application. Android app designer for project.
+IR Virtual Instrument: Created a virtual keyboard-like instrument to use in a web browser. Uses the Leap Motion (IR sensor) to allow a touchless interface with the instrument, and was used as a study for Human Computer interaction and design.
+Bachelor of Science, Computer Science
+University of Virginia - Charlottesville, V A, United States
+
+Relevant Courses Taken:
+Web and Mobile Design
+Human Computer Interaction
+Program and Data Representation
+Software Development Methods
+Advanced Software Development
+Algorithms
+
+K & S Audio Video Solutions - Lynchburg
+
+Father's company - regularly worked from 2005 to present
+Helped install and wire sophisticated audio and video systems in residential and commercial locations.
+Installed central vacuum systems in in-construction and pre-existing homes.
+
+AREVA NP - Lynchburg
+Trained in servicing techniques and data reading for nuclear power plants.
+Re-cataloged and updated all items in inventory allowing for easier use of inventory database.
+
+NEXTRESUME
+FANJIA (KEN) KONG
+1309 John Street, Charlottesville, VA 22903 | C: (434) 270-4624 | E: fanjia.kong2016@gmail.com
+
+Hard working and motivated Data Science candidate with proven leadership and organizational skills seeking to apply my abilities to the fulltime position started from summer 2016.
+
+SUMMARY OF QUALIFICATIONS
+ Data Analytics: R, Python, SAS, SQL, Bash
+ Programming Languages: Java, C++, Ruby
+ Functional Languages: Haskell, Coq, x86
+
+University of Virginia -- Charlottesville, VA
+
+M.S. Data Science, Data Science Institute July 2015 – May 2016
+ Relevant Coursework: Capstone, Predictive Modeling, Data Mining, Machine Learning, Data Visualization, Programming in Python, Linear Modelling, Ethics of Big Data
+
+B.A. Computer Science and Economics, College of Arts and Sciences Aug 2012 – May 2015
+ 3.58/4.00 Computer Science GPA, Dean’s List Academic Achievement Award
+ Relevant Coursework: Computer Architecture, Algorithms, Database System, Human-Computer Interaction
+Capstone: Methodology for Mapping Data to Client Projects – Charlottesville, VA Fall 2015 - Present
+ Utilized Python to build major classes and functions that enabled creation of ontology map based on keywords from data mining of 3 different resources including insight store and open source data
+ Provided optimal set of data according to the quality of the data and its relevance to the client problem by user interaction and dynamically threshold
+ Followed Agile Methodology in development with a 2-week sprint and played specific role as internal coordinator between a 9-person team and team advisors
+Project: UK Energy Grid Analyzer – Charlottesville, VA Summer 2015
+ Utilized Python and panda package, to build major dataset functions that enabled creation of bar charts, line charts, heat map with correlation matrix and auto correlation graph by user interaction
+ Cleaned, filtered, resampled, and manipulated the dataset with more than 450,000 observations
+Fujitsu Ltd. – Nanjing, China Summer 2014
+ Extracted the general rules for XBRL from Fujitsu’s manual, summarized them into a worker manual, and project recognized by project manager
+ Translated the manual into Chinese, especially for groups working on XBRL project in the future, and adopted by
+China Construction Bank – Nanjing, China Summer 2013
+ Identified potential clients and analyzed their financial needs, leading to 3 resigned contracts and 2 new
+ Collected financial report and management report from business. Compared it to the reports from previous business cycle. Analyzed data and assisted my manager to evaluate the new report
+ Conducted time-series financial and management report analysis, assisting manager in evaluation of the report
+Alpha Sigma Phi Fraternity, Zeta Upsilon Chapter – Charlottesville, VA Spring 2014 - Present
+Founding Father and Member of Risk Committee
+ Founded Alpha Sigma Phi Social Fraternity at University of Virginia
+ Broke record in Alpha Sigma Phi Fraternity’s history to be the fastest growing chapter promoted from colony
+UVa Student Ambassador in Shanghai Club – Charlottesville, VA Fall 2013 - Present
+Student Ambassador and High School Connector
+ Hosted 2 receptions to introduce University of Virginia to 450 high school students from Nanjing Foreign Languages School and their parents
+Chinese Students and Scholars Society – Charlottesville, VA Fall 2012 - Present
+ Organized at least 3 major Chinese events in Charlottesville, attracting 1000+ students, scholars, professors and
+ Coordinated with other culture organizations on campus and other Chinese organizations within Washington DC and Virginia area to co-organized 20+ events per semester for 2000+ people
+ Web: PHP, JavaScript
+ Processing: Emacs, LaTex, Adobe Photoshop
+ Bilingual Chinese and English
+
+NEXTRESUME
+SARIKA PAWAR
+37 Debra Drive, Dayton, NJ 08810 | ssp2jm@virginia.edu | (732) 439-3559
+
+University of Virginia, Charlottesville, Virginia Expected May 2018
+
+ Intended B.S. in Commerce and B.A. in Chinese Language/Literature
+
+ Awards Include: Dean’s List, PwC Case Competition 2nd place Winner, Hoos Hacking 2nd place Winner
+
+Fudan University, Shanghai, China June - Aug 2015
+
+ Intensive Chinese Language Program, GPA: 4.0 /4.0
+
+South Brunswick High School, Monmouth Junction, New Jersey May 2014
+
+SVC-International Incorporated, Research Associate August 2014 – 2015
+
+ Organized support calls between financial institutions and financial consultants as well as documenting problem
+
+ Assisted in developing presentation on business growth opportunities and administrative management
+
+Cell Bio & Neuroscience Dept. of Rutgers University, Research Lab Intern May – September 2013
+
+ Analyzed cypin protein regulating glial development utilizing many laboratory methods and procedures
+
+ Actively contributed to Dr. Bonnie Firestein’s paper entitled, “Assessing effects on dendritic arborization using
+
+E X T R A C U R R I C U L A R A C T I V I T I E S
+
+Alternative Investment Fund, Coverage Director for the Special Situations Group 2015 - Present
+
+ Analyzed companies utilizing financial modeling as well as providing coverage updates on NYSE: FL (Short)
+
+ Pitched NYSE: SUNE and NYSE: FICO as a long, NYSE: WTW as a short based on fundamental analysis
+
+Virginia Consulting Group, Vice President 2014 - Present
+
+ Oversee operations with respect to clients by managing client acquisition and performing due diligence
+
+ Consulted for venture-backed startups in growth, marketing, and operations strategy
+
+ Devised new product, ‘The Sticker Series’, as a marketing campaign to promote brand recognition for startup
+
+‘Baron Fig’ and increased user base by 3,000 AsyncUsers over two months
+
+Alpha Kappa Psi, Secretary, Former Rush Chair and Stock Pitch Mentor 2015 – Present
+
+ Responsible for pledge recruiting process including marketing, event logistics, and final deliberations
+
+ Awards include Stock Pitch Competition Winner, Case Competition Winner, Venture Capital Pitch Winner
+
+Junior State of America, President & Mid-Atlantic State Director of Fundraising 2010 - 2014
+
+ Operated a chapter of 300+ members and raised over $3700 through various community initiatives
+
+ Executed a $50,000 fundraising initiative utilizing alumni relations and restructured nationwide online
+
+ Created 3 new chapters across Mid-Atlantic State and passed 2 pieces of legislation across JSA nationwide
+
+Vocal Music: Indian Classical 2000 - Present
+
+ Performed over 10 domestic and international concerts across the United States, India, and London
+
+ Awarded 9 1st places, 20+ prizes in total internationally, orchestrated two charity concerts raising $4600
+
+Skills: Microsoft Office Suite (Proficient), Java (Basic), CapIQ (Basic), Mandarin (Intermediate)
+
+Interests: Kickboxing, Bouldering, Audio Book Reading
+
+NEXTRESUME
+Christopher M. Long
+607 Gigi Drive, Blacksburg, VA24060 ♦ (540) 808-3354 ♦ cml3ta@virginia.edu
+
+University of Virginia, Charlottesville VA Expected Graduation: May 2018
+GPA: 3.71
+• Pursuing BA in Computer Science and BS in Commerce
+• Relevant Completed Courses: Statistics, Introduction to Programming, Microeconomics,
+
+Macroeconomics, Financial Accounting, Money and Banking
+• Created Java program using interworking classes and graphics to create an interactive game
+• Designed and Implemented a python program to search through a literary database and find consistent diction among authors, the placement of particular words and other literary techniques
+
+Institute for Creativity, Arts and Technology (ICAT) May – August 2015
+• Merged a physical and virtual building to create a more interactive virtual learning experience under Ben Knapp, the director of ICAT and Computer Science Professor at Virginia Tech
+• Facilitated the sound, video, and other technological needs of researchers and guests in “The Cube,” a 4- story room with 128 speakers and surrounding projector screens
+• Learned the hardware aspects of technology and how to properly utilize different software and hardware combinations to create the most efficient process
+
+Roanoke Valley Soccer Officials Association January 2009 – 2014
+• Center and Assistant Referee for all age groups in youth club soccer (Virginia Youth Soccer League)
+• Learned to make pressure decisions, face criticism and confidently present rulings
+
+EXTRACURRICULAR ACTIVITIES AND LEADERSHIP
+Alpha Kappa Psi Professional Business Fraternity September 2015 – Present
+• Pledge Class Vice-President, responsible for delegating tasks, organizing meetings with the brotherhood, and ensuring the overall success of our pledge class
+• Social Chair, responsible for organizing social events for the brotherhood
+• Developed public speaking and PowerPoint skills by giving 2-3 presentations per week for 7 weeks
+• Completed assignments include: Marketing Campaign Presentation, Venture Capital Pitch, Case
+Competition and a Stock Pitch of GameStop (GME)
+
+Madison House Volunteer September 2015 – Present
+• Coach local youth soccer team, teaching the athletes the basic aspects of soccer, the rewards of hard work and teamwork while serving as a positive role model
+• Tutor local high school students in pre-calculus for 1 hour each week
+
+University of Virginia Dean’s List December 2014 – Present
+Phi Eta Sigma: University of Virginia National Honor Society October 2015 - Present
+C. Dan Keffer Award May 2014
+
+• Virginia State Golf Association’s most prestigious Award, for the individual with the top academic performance with an interest in golf. Accompanied by a $7,000 scholarship
+
+Technical Skills: Java (Proficient), Python (Beginner)
+
+Scotwork Advanced Negotiations Skills Course, New York NY May 18 – 21, 2015
+• Learned advanced negotiation techniques to reach amicable solutions that meet both parties goals
+• Performed practice negotiations with business leaders across the world
+
+Language Skills: English (Native), Spanish (Conversant)
+
+Interests: Golf, Fantasy Football, Running, Debate
+
+NEXTRESUME
+Kevin Zhao
+416 Garces Drive, San Francisco, CA 94132 | (434) 282-5369 | rz2db@virginia.edu | www.linkedin.com/in/kevinzhaouva
+
+UNIVERSITY OF VIRGINIA Charlottesville, VA
+
+Areas of study: Computer Science and Information Technology May 2016
+
+GPA: 3.66 / 4.00 (Dean’s list and Intermediate Honor)
+
+Blog on coding and personal projects: https://medium.com/@kevinzhao | Github: https://github.com/kevinzzz007
+Proficient in Python, Java, and SQL, familiar with Natural Language Processing, JavaScript, PostgreSQL, Linux, Ruby on Rails,
+Ruby, Excel Macros, Android App Development, Github, Heroku, Amazon Web Services, HTML5, CSS
+
+PROXIMIC San Francisco, CA
+Software Engineer Intern July 2015 – August 2015
+• Wrote Python scripts to help map existing Proximic categories to Oracle contract categories where these categories will help Oracle to categorize different pages into different categories
+• Built a crawler to collect retail URLs that are related to online retail stores, mapped these URLs to categories that Oracle specified, and fed the URLs to Proximic algorithm to create rules for categorizing these retail pages
+
+DRUNK MODE San Francisco, CA
+Software Engineer Intern June 2015 – Present
+• Wrote Python scripts to extract user data from Parse and transform it into require format for BlueKai(Oracle) and other clients
+• Analyzed user data with Python and produced reports for CEO to help with analyzing user demographics
+
+COMSCORE San Francisco, CA
+Data Analyst Intern May 2015 – July 2015
+• Pulled millions of rows of web search related data on Google, Yahoo, and Bing from PostgreSQL database and turned the data into a web search market share report which is critical for million-dollar contracts with Microsoft
+• Went through over 1,300 lines of code for Rogers, the Canadian Verizon who is a client who signed over 850,000 dollars contract with comScore, to identify bugs in a script which is used to produce a critical data analysis report for Rogers
+• Developed methodology to categorize Internet AsyncUsers as English or non-English speaking in the Asian market for Netflix, then wrote PostgreSQL code to pulled data on the population to determine sites they visited most often
+
+CENTER FOR BUSINESS ANALYTICS AT THE MCINTIRE SCHOOL OF COMMERCE Charlottesville, VA
+Software Engineer September 2014 – June 2015
+• Created entity relationship diagrams for Twitter and FDA data, used Java to transform 7,000,000 lines of unstructured text data into various tables, loaded data into a SQL database, used statistical analysis to identify anomalies in user sentiments
+• Used Tableau to build interactive dashboards to visualize significant events, such as FDA investigations, online sentiments, and influential AsyncUsers, which could help pharmaceutical companies predict future events, regulatory agencies detect issues with drugs, and healthcare investors forecast future stock prices
+• Mined massive datasets collected from Weibo, the Chinese Twitter, and Douban, the largest movie review website in China, with Python to compile over 160 million lines and create a database in Microsoft SQL Server
+• Will leverage the database to compare user behavior across different online social platforms to help advertisers identify the best online social platform for marketing campaigns
+• Built data pipelines with Natural Language Toolkit(NLTK) packages in Python to prepare unstructured English and Chinese text data for sentiment analysis, which will be conducted by tools such as RapidMiner
+
+EHANG, INC. San Carlos, CA
+Data Analytics Intern December 2014 – January 2015
+• Updated the website with HTML5 and CSS to show changes to the hardware components such as the controller
+• Sold Ghost, the company’s consumer-facing drone, at the 2015 Consumer Electronics Show to help it increase its revenue by 13% to over $800,000 and become the most funded campaign started by a Chinese company on Indiegogo
+• Built an Android game application “Ghost Hunter” as a software engineer on the team of 4, studied and built the feature of allowing a second device to share the screen of the device that’s actually playing the game through Wifi
+• Built a web crawler with Python to collect rental pricing on Craiglist and used Google Map Geocoding to link each listing to a
+• Built a website with Ruby on Rails to give restaurant recommendations to friends
+NEXTRESUME
+TARA RAJ
+tara@virginia.edu (908) 528-7301 https://github.com/
+
+University of Virginia Charlottesville, VA
+
+B.A. Computer Science Class of 2016
+Echols Scholar (Honors Program), Raven Society, College Science Scholar
+
+Hunterdon Central Regional High School Flemington, NJ
+GPA: 4.27/4.0 (weighted) Rank: 3/785 Class of 2012
+
+Microsoft Corp. Redmond, WA
+Program Manager Intern – OneNote May 2015 – Aug 2015
+● Created and deployed a Year in Review for OneNote and Wunderlist with personalized analytics from customer usage data
+● Initiated the custom notifications effort by developing a model to deliver custom in-app notifications
+● Drove engineering efforts by prototyping notifications features and utilizing basic machine learning models
+Program Manager Intern – Data Platform Group May 2014 – Aug 2014
+● Developed and released database optimization feature demos via Azure cloud online using SQL Global Scale client library
+● Initiated UI/UX for Azure dashboard “Resource Manager” to visualize database metrics and optimization recommendations
+Explorer Intern May 2013 – Aug 2013
+● Created a Windows app for AsyncUsers to monitor SQL Azure databases; being used by internal Microsoft database administrators
+● Worked on a team of interns to engineer a pipeline to retrieve database health metrics and deliver notifications
+
+Princeton University Princeton, NJ
+Engineering Research Intern Jun 2012– Aug 2012
+● Modeled and optimized Electron Spin Resonance (ESR) quantum computing experiments using MATLAB
+● Created an algorithm to automate experiments and analyze data more efficiently
+
+EmployEDU Charlottesville, VA
+Founder and Lead Developer Oct 2015 – Present
+● Building a next generation talent recruiting platform by developing artificial intelligence algorithms for an interviewing tool
+● Working with recruiters from Fortune 500 companies and startups to develop AI models and feature set
+
+VotersChoice Charlottesville, VA
+Co-Founder and CEO Nov 2013 – Jan 2016
+● Developed a polling and analytics app to create a communication channel between government officials and voters
+● Worked with local level officials and advocacy groups to gather customer opinion data to drive product development
+
+Virginia Venture Fund Charlottesville, VA
+Vice President of Programs Sept 2012 – Present
+● Oversee due diligence and sourcing teams for tech investments in Virginia and Washington D.C. areas
+● Work with D.C.-based venture capital firms to assist in investment research and develop educational resources for analysts
+● Started student venture incubator to foster entrepreneurship and introduce students to angel investors
+
+Virginia Consulting Group Charlottesville, VA
+Vice President Sept 2013 – Dec 2015
+● Provided students with experience working with tech startups on business development, marketing, and product development
+● Forged relationships with growing startups who participated in incubators such as Y-Combinator and MassChallenge
+Other activities: Alpha Kappa Psi (Co-ed business fraternity), Circle K (community service organization)
+
+● Microsoft HackforHer Hackathon IoT Winner (2015)
+● Darden Business Plan Competition First Place (2014)
+● UVA Galant Challenge Seed Funding Finalist (2014, 2015)
+● Programming Languages: Java, C++, PHP, Javascript, Objective C, HTML, C#, SQL, SCOPE
+● Interests: Music Production, Basketball, Hiking
+● Intel Science Talent Search Semifinalist (2012)
+● Siemens Competition Semifinalist (2011)
+● AP Scholar with Distinction (2011)
+
+SKILLS AND INTERESTS
+● Programming Languages: Java, C++, PHP, Javascript, Objective C, HTML, C#, SQL, SCOPE
+● Interests: Music Production, Basketball, Hiking
+
+NEXTRESUME
+Jason T. Ellington
+
+Profile Summary
+A hard-working and motivated individual with proven leadership and interpersonal skills. Seeking an internship in a computer science related field.
+
+Education
+The University of Virginia, College of Arts & Sciences – Charlottesville, Virginia May 2017
+B.A Computer Science
+ Computer Science GPA: 3.15
+ Cumulative GPA: 3.0
+
+Fuqua School – Farmville, Virginia May 2013
+ GPA: 4.286, Cum Laude Society
+ Student Cooperative Association Board; Vice President: Youth in Government
+ William and Mary College Leadership Award
+ Varsity Sports: Basketball (Captain & All Academic), Soccer (Captain & All Conference)
+
+Related Projects and Coursework
+CS 2110 Software Development
+Served as project manager and head programmer in the design of a Mobile Android application. This involved learning the fundamentals of Android application and game design, inlcuding: building and maintaining a user interface and managing activity lifecycles. Learned about fundamental concepts involving recursive data structures, complexities of algorithms, data mining, binary trees, sets and maps, and inheritance and abstraction.
+
+CS 1110 Introduction to Programming
+Apart of a paired-programming team that successfully designed a desktop game and a JAVA application incorporating gps locations.
+
+Coursework: Discrete Mathematics, Microeconomics, Macroeconomics (Intermediate), Number Theory, Statistics,
+
+Work Experience
+Davenport & Company Internship Summer 2014
+ Assissted Senior Vice President in operations. Strengthened customer relations and loyaltly through personal contact and follow-up. Researched and analyzed stocks and gave input regarding growth and risk potential.
+
+Fuqua School Catering and Operations Employee (part-time) 2009 - Present
+ Assisted with employee recruitment, event planning, and overall execution of events.
+Prepared and arranged special dinners and events, as well as working as a chef.
+
+Birdwood Golf Course Outside Services (part-time) 2014 - Present
+Ellington Lawn Care Landscaper 2012 - 2014
+Lifeguard at Fuqua Pool 2010 - 2012
+Technical and Other Skills
+
+Computer Programming in Java, HTML, and CSS; Apple and Android Operating Systems; Microsoft Excel,
+
+PowerPoint, Word; Probability and Statistical Analysis; Web Design and Development; Collaboration and working with teams
+
+College Activities
+ Athletic Affairs Committee of Student Council (student self-governed organization)
+ Dance Marathon Community Outreach Committee, supporting UVA Children’s Hospital
+ Brother – Sigma Alpha Epsilon Fraternity
+Computer Science, Lighting Design
+ Pancakes for Parkinson’s Volunteer
+
+NEXTRESUME
+Yucheng Chen
+100 Wahoo Way, Charlottesville, VA 765-774-2231 yc2kf@virginia.edu
+
+SUMMARY: I’m a master’s student in statistics with two years’ experience in data analysis projects. I’m also a trained engineering
+
+student with working experience in Business Development Department of the world’s largest AC company. I hope to apply my critical
+
+thinking and good communication skills to your Marketing Intern Position.
+
+University of Virginia Charlottesville, VA
+
+M.S. in Statistics (Tutor of System Engineering APMA3120) , GPA: 3.83/4.00 Dec.2015(Expected) Courses: Categorical Data, Linear Regression Analysis, Statistical Computing with SAS and R, Statistical Inference, Statistical Consulting
+
+Purdue University West Lafayette, IN
+M.S. in Mechanical Engineering, GPA: 3.74/4.00 May.2014
+Statistics Related Courses: Statistical Methods, Design of Experiments, Applied Regression Analysis, Linear Algebra Application,
+Advanced Mathematics for Engineering and Physics, Modeling Analysis and System Control, Industrial Organization
+
+Shanghai Jiao Tong University (SJTU) Shanghai, China
+BS. in Mechanical Engineering (Accelerated Degree), GPA: 3.65/4.00 Jun. 2013
+
+WORK EXPERIENCES:
+Bank of China ( Nanjing Headquarters) Nanjing, China
+Full-time Intern, Dept. of Bank Accounting Summer 2014
+Analyzed monthly sales performance of precious metals for each bank branch by Excel; summarized a report for presentation. Compiled and analyzed financial statements of small and medium enterprises; filtered out important data and made contrasts. Developed risk estimates table and risk investigation table for Nanjing Machine Tool Plant and reported to the supervisor.
+
+Daikin Industries, Ltd (Shanghai Headquarters) Shanghai, China
+Full-time Intern, Dept. of Business Promotion Summer 2013
+Provided consulting services to three residential projects; communicated with clients and solved client problems. Calculated cooling load of 68 rooms in a commercial building with Excel; results were adopted by Technology Department. Collaborated with team engineers in designing HVAC system in Shanghai Daning Building and obtained good appraise.
+
+SELECTED RESEARCH PROJECTS:
+Statistical Inference for Early Stage Detection of Diabetes (Team Member) Spring 2015
+Analyzed human clinical data from different groups of people and fitted the logistic regression model to the data sets. Applied parameter estimates from R outcome to the testing data set; found out whether each individual is likely to have diabetes or not. Predicted the same group of people by using partial derivative function in Matlab; compared outcomes with those from R.
+Washington DC Bike Share Program Data Analysis (Individual Project) Fall 2014
+st quarter using R. Conducted data cleaning by SAS and created new variables such as longitude of position for further analysis. In R, compared data of the two quarters by time series plots and bar plots, and wrote functions to find out summary data of bike usage.
+Combined Bike Share data including duration and stations from raw data of 2011 4th quarter and 2012 1
+
+Mathematical Modeling of CO2 Transcript Cycle (Team Leader) Fall 2013
+Analyzed data from experiments using Latin Square by SAS; discovered optimal parameters for different treatments.. Conducted simulations of the evaporation process in CO2 refrigeration cycle based on facilities in lab using Matlab. Programmed with Matlab and tested on facilities by changing different parameters to get response data.
+
+COMPUTATIONAL SKILLS:
+
+Statistics: SAS, R, Matlab, Minitab, SQL, Microsoft Excel Others: Power Point, Visio, VB, AutoCAD, Python
+
+LEADERSHIP EXPERIENCE:
+Co-founder of Lowsharp Online Supermarket Spring 2014
+Analyzed daily and weekly revenue data and made strategies for following operations. Monitored and managed ‘lowsharp.com’ website background; arranged daily operations in West Lafayette area.
+
+NEXTRESUME
+Amber Yuyan Zhang
+Current Address –300 Montebello Circle, Apt.8, VA 22903
+
+Permanent Address – 300, East Zhongshan Road, Nanjing, China
+
+Email – yz2fh@virginia.edu
+
+Phone – (434)326-8155
+
+University of Virginia – School of Engineering and Applied Science, Charlottesville, VA
+
+Bachelor of Science, anticipated Graduation Date May 2017
+
+ Majors: Bachelor of Science, System Engineering, double major Music
+
+Nanjing Foreign Language School, Nanjing, China
+
+High School Diploma, June 2013
+
+ Graphic Design Club, Nanjing, China
+
+Founder, President, 2011-2013
+
+ Managed general affairs in the club such as events planning, funding, and charity works
+
+ Initiated a project called “Traveler’s Dream” that helps to collect funding for kids in
+
+impoverished regions by selling photo albums made by students who loved traveling
+
+ Asian Pacific Leadership Training Institute, Charlottesville, VA
+
+ Identified personal leadership style, collaborated with team members, practiced public
+
+speaking and networking skills in a selective cohort of roughly 40 students
+
+ Chinese Students and Scholars Society, Charlottesville, VA
+
+Activity Chair, Fall 2013-present
+
+ Provide service for Chinese residents in Charlottesville area
+
+ Collaborate with other colleges in Virginia to hold events such as Virginia Karaoke Contest
+
+ Peer Advising Family Plan, Charlottesville, VA
+
+Peer Advisor, Spring 2014 – present
+
+ Connect new students with resources on grounds to assist them adapt to college life
+
+Course Project and Extracurricular Activities
+
+ Android software development, Charlottesville, VA
+
+ Collaboratively developed a video game on Android platform in a team of four peer students
+
+ 180 Degree Consultant (UVa branch), Charlottesville, VA
+
+Consultant, Sept. 2014-Present
+
+ Developed marketing solutions and promoted profit-making outcomes for start-up business
+
+ Performing piano at University Hospital, Charlottesville, VA
+
+ Language: Chinese (native language); English (professional working fluency)
+
+ Computer skills: Java, C++, SQL, HTML, Excel, Tableau, Android, PHP
+
+ Music: Piano Performance, Improvisation, Composition, FL Studio, Garageband
+
+NEXTRESUME
+Meaghan K Gilmartin
+University of Virginia, College of Arts & Sciences, Charlottesville, VA Aug 2012 – May 2016
+
+B.S., Financial Economics, B.A. Media Studies, Minor in Statistical Analysis of Social Behavior
+- Cumulative GPA: 3.33; Financial Economics GPA: 3.4
+
+Relevant Coursework: Econometrics, Financial & Managerial Economics, Theory of Financial Markets, Behavioral Finance
+
+University of Virginia, McIntire School of Commerce, Hong Kong & Singapore January 2015
+University of Virginia in Lyon, Lyon, France Summer 2014
+Georgetown Visitation Preparatory School, Washington D.C. Aug 2008 – May 2012
+- Identified a distinct business opportunity, performed due diligence and long-term valuation model
+- Created surveys and managed feedback from 500+ participants to compute customer acquisition costs and predict
+- Brainstormed and implemented marketing tactics through various channels including events, social media,
+- Generated a 10 year plan using The Business Model Canvas and presented to a Board of Directors to raise funding
+
+Asian Financial Capitals: Hong Kong and Singapore
+- Visited the SGX and HKEX to assess the challenges and opportunities of the emerging markets in Asia, and the impact of China’s recent developments towards and open economy
+- Gained an insight into the operations behind the central banks of Hong Kong Monetary Authority
+- Discussed investment strategies of various financial services including value investing, FX trading, wealth management,
+- Maintained a blog and reported my observations of and exposure to a variety of knowledge and opinions
+- Used R and Stata to collect data and perform statistical analysis in order to assess the randomization process of lottery
+- Presented alternative drawing methods to maximize the randomization process
+- Demonstrated the ability to define goals, collaborate with a team, and resolve conflicts
+- Utilized Matlab to develop computing algorithms to analyze data and create functions
+- Collaborated within a group of five working on a long-term project designing, building, and monitoring feedback of a
+- Gained exposure to computer applications and the ability to resolve device issues
+
+Boylan Heights Restaurant & Bar, Charlottesville Server May 2013 – Dec 2014
+
+Nordstrom, Women’s Active, Tysons Corner, Sales Associate May 2012 – Jan 2014
+
+Washington Golf Country Club, Arlington, VA Server Summer 2012
+
+Strivectin Operating Co., New York, NY Marketing and Research Intern Summer 2011
+- Worked on a long-term project with another intern and presented to management
+- Devised a new product line marketed toward a youth customer segment
+
+Virginia Venture Funds, Member Fall 2014 - Present
+- Collaborated with ten other students to perform extensive research and valuations of potential investments
+- Presented results to Angel Investors and Private Equity firms, and received current analysis, (ongoing project)
+
+UVA Seeds of Hope, Sao Paolo, Brazil, Volunteer May 2014
+- Raised money with 54 other students through fund-raising events and sales paying for 10 days of labor in Sao Paolo, Brazil
+- Constructed and renovated housing for low-income students in Sao Paolo, Brazil
+
+Cedars Retirement Center, Volunteer 2013 - Present
+
+Martha & Jefferson House, Volunteer 2013 - Present
+
+Habitat for Humanity at Charlottesville, Administrative Assistant & Crew Volunteer 2012 –2013
+- Organized fundraising events, recruited volunteers, and managed housing applications and resource allocation
+
+Director of Special Events Spring 2013-Present
+- Manage large $50,000 annual budget to organize Formal Events
+- Identify potential new candidates and facilitate networking opportunities
+- Responsible for coordinating Fall and Spring philanthropic events
+
+UVA Club Cross Country, Member Aug 2012- May 2013
