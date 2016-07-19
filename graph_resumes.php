@@ -144,6 +144,13 @@
             <li class="active"><a href="graph_resumes.php"><i class="fa fa-bar-chart"></i>Graph</a></li>
           </ul>
         </li>
+        <li>
+          <a href=#>
+            <i class="fa fa-edit"></i>
+            <span>Manage</span>
+            <small class="label pull-right bg-primary">coming soon</small>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
   </aside>
