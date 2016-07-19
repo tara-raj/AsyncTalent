@@ -161,6 +161,30 @@
       </ol>
     </section>
 
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="box box-default collapsed-box">
+            <div class="box-header with-border">
+              <i class="fa fa-flask"></i><h3 class="box-title">Analysis Tools</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <div class="box-body">
+              Filter <small class="label pull-right bg-primary">coming soon</small>
+            </div>
+            <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    
 	<?php
 	$dbhost = 'localhost';
 	$dbuser = 'Assign2';
@@ -326,8 +350,6 @@ while($row = mysqli_fetch_row($result))
 
 ?>
 
-    <!-- Main content -->
-    <section class="content">
       <div class="row">
         <div class="col-md-6">
         <div class="box box-success">
@@ -393,11 +415,9 @@ while($row = mysqli_fetch_row($result))
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-          
-         
-	 
-	 </div>
+	</div>
       <!-- /.row -->
+      
       
         <div class="row">
         <div class="col-md-6">
@@ -465,11 +485,14 @@ while($row = mysqli_fetch_row($result))
             </div>
             <!-- /.box-body -->
           </div>
-          <!-- /.box -->
-        
+      
+      </div>
+      </div>
+          
     </section>
     <!-- /.content -->
-    
+
+      
     <script>
         function click(){
             $("#edu").click();

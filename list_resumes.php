@@ -212,7 +212,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-    </div>
+        </div>
     
       <div class="row">
         <!-- left column -->
@@ -639,6 +639,7 @@ echo "</tr>";
                 </tr>
                 </tfoot>
               </table>
+              </div>
               <div class="box-footer">
                 <button class="btn btn-lg btn-primary" onclick="location.href = 'upload.php';">Upload More Resumes</button>
               </div>
