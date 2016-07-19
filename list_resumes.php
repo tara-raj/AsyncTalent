@@ -225,13 +225,7 @@
               <div class="box-body">
               </div>
               <!-- /.box-body -->
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>Name</th>
@@ -645,10 +639,6 @@ echo "</tr>";
                 </tr>
                 </tfoot>
               </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
               <div class="box-footer">
                 <button class="btn btn-lg btn-primary" onclick="location.href = 'upload.php';">Upload More Resumes</button>
               </div>
@@ -656,6 +646,7 @@ echo "</tr>";
           </div>
           </div>
           <!-- /.box -->
+
           
         </div>
         <!--/.col (right) -->

@@ -222,7 +222,10 @@ $total_red = 0;
 
 while($row = mysqli_fetch_row($result))
 {
-	$number_resumes += 1;
+	if($row[2] != ''){
+		$number_resumes += 1;
+	}
+	
 	if($row[7] == 1){
 		$score_1 += 1;
 	}
@@ -327,9 +330,9 @@ while($row = mysqli_fetch_row($result))
     <section class="content">
       <div class="row">
         <div class="col-md-6">
-        <div class="box box-default">
+        <div class="box box-success">
           	<div class="box-header with-border">
-          	<h4 class="box-title"><button class="btn btn-primary" onclick="location.href = 'upload.php';" disabled><b><?php echo $number_resumes; ?> Total Resumes</b></button></h4>
+          	<h4 class="box-title"><button class="btn btn-success" onclick="location.href = 'upload.php';" disabled><b><?php echo $number_resumes; ?> Total Resumes</b></button></h4>
           </div>
         <!-- /.box-body -->
       </div>
@@ -399,9 +402,9 @@ while($row = mysqli_fetch_row($result))
         <div class="row">
         <div class="col-md-6">
         
-        <div class="box box-default">
+        <div class="box box-primary">
           	<div class="box-header with-border">
-          	<h3 class="box-title"><button class="btn btn-secondary" onclick="location.href = 'upload.php';">Upload More Resumes</button></h3>
+          	<h3 class="box-title"><button class="btn btn-primary" onclick="location.href = 'upload.php';">Upload More Resumes</button></h3>
           </div>
         <!-- /.box-body -->
       </div>
