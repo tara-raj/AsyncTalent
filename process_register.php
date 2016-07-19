@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['user'] = "none";
+	$_SESSION['user'] = "Welcome!";
 	$_SESSION['user_id'] = "none";
 ?>
 <!DOCTYPE html>
@@ -13,6 +13,7 @@
  <?php 
  	
   		$username = rtrim($_POST["email"]);
+  		$name = rtrim($_POST["name"]);
   		$_SESSION['name'] = $username;
   		$p = rtrim($_POST["password"]);
     	$password = hash('sha256', $p);
@@ -53,9 +54,9 @@ while($row = mysqli_fetch_row($result))
 
 if (isset($_POST['terms'])) {
 if($userexist == 0){
-	$query = "INSERT INTO AsyncUsers (Username, Password)
+	$query = "INSERT INTO AsyncUsers (Email, Username, Password)
                        VALUES
-                       ('$username', '$password')";
+                       ('$username', '$name', '$password')";
 	$conn->query($query) or die ("invalid user insert" . $conn->error);
 	echo "Added";
 	$_SESSION['user'] = $username;
