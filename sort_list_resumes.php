@@ -402,8 +402,7 @@ echo "</tr>";
         <!--/.col (right) -->
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+  
   </body>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
