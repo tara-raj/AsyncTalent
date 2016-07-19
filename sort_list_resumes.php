@@ -177,7 +177,7 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form action="sort.php" method="post">
+            <form action="sort_list_resumes.php" method="post">
             <div class="box-body">
               <!-- /.form-group -->
               <div class="form-group">
@@ -256,6 +256,7 @@ if(! $conn )
 }     
 
 $recruiter = $_SESSION['user_id'];
+//echo $recruiter;
 
 if($sort_by == "Score"){
 	$sort = 'total_score';
