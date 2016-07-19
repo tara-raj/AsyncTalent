@@ -122,7 +122,7 @@
           <ul class="treeview-menu">
             <li><a href="sort_list_resumes.php"><i class="fa fa-th-list"></i>List</a></li>
             <li><a href="grid_resumes.php"><i class="fa fa-th-large"></i>Grid</a></li>
-            <li><a href=#><i class="fa fa-bar-chart"></i>Graph</a></li>
+            <li><a href="graph_resumes.php"><i class="fa fa-bar-chart"></i>Graph</a></li>
           </ul>
         </li>
     </section>

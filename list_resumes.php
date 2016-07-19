@@ -143,7 +143,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="sort_list_resumes.php"><i class="fa fa-th-list"></i>List</a></li>
             <li><a href="grid_resumes.php"><i class="fa fa-th-large"></i>Grid</a></li>
-            <li><a href=#><i class="fa fa-bar-chart"></i>Graph</a></li>
+            <li><a href="graph_resumes.php"><i class="fa fa-bar-chart"></i>Graph</a></li>
           </ul>
         </li>
     </section>
@@ -155,7 +155,7 @@
     <!-- Content Header (Page header) -->
      <section class="content-header">
       <h1>
-        Results
+        Resume List
       </h1>
       <ol class="breadcrumb">
         <li><a href="upload.php"><i class="fa fa-upload"></i>Upload</a></li>
