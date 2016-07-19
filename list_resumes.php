@@ -219,9 +219,6 @@
         <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-th-list text-primary"></i><h1 class="box-title">Resume List</h1>
-            </div>
             
             <!-- /.box-header -->
             <!-- form start -->

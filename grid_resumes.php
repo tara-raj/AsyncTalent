@@ -737,23 +737,13 @@ while($row = mysqli_fetch_row($result))
       </div>
       <!-- /.row -->
 
+      <div class="box-footer">
+        <button class="btn btn-lg btn-primary" onclick="location.href = 'upload.php';">Upload More Resumes</button>
+      </div>
       
-              <div class="box-footer">
-                <button class="btn btn-lg btn-primary" onclick="location.href = 'upload.php';">Upload More Resumes</button>
-              </div>
-              
-          </div>
-          </div>
-          <!-- /.box -->
-
-          
-        </div>
-        <!--/.col (right) -->
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  </body>
+</div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0.0
@@ -761,6 +751,7 @@ while($row = mysqli_fetch_row($result))
     <strong>Copyright &copy; 2016 AsyncTalent.</strong> All rights
     reserved.
   </footer>
+</div>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

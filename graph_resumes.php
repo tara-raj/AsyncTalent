@@ -477,7 +477,8 @@ while($row = mysqli_fetch_row($result))
         }
     </script>
                 
-  </div>
+    </div>
+  </body>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
