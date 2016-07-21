@@ -31,10 +31,10 @@ echo "<br>";
 //ADD AsyncUsers 
 $p = 'password';
 $password = hash('sha256', $p);
-$email1 = "ben@google.com";
-$email2 = "matt@facebook.com";
-$name1 = "Ben Cunningham";
-$name2 = "Matt DAgati";
+$email1 = "sam@airbnb.com";
+$email2 = "james@facebook.com";
+$name1 = "Sam Hunt";
+$name2 = "James Bay";
 
 $query = "INSERT INTO AsyncUsers (Email, Username, Password, Type)
                        VALUES
