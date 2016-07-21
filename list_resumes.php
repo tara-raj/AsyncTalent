@@ -512,60 +512,63 @@ $red = 0;
 //GPA RANKINGS
 if($gpa >= 3.6){
 	$g_rank =  "btn btn-success";
-	$total_score += 4;
+	$total_score += 25;
 	$green += 1;
 }
 elseif($gpa >= 3.4 && $gpa <= 3.6){
 	$g_rank = "btn btn-warning";
-	$total_score += 3;
+	$total_score += 20;
 	$yellow += 1;
 }
 else{
 	$g_rank = "btn btn-danger";
+	$total_score += 5;
 	$red += 1;
 }
 
 //PROGRAMMING LANGUAGE RANKINGS
 if($langs > 6){
 	$l_rank = "btn btn-success";
-	$total_score += 3;
+	$total_score += 20;
 	$green += 1;
 }
 elseif($langs > 2 && $langs < 6){
 	$l_rank = "btn btn-warning";
-	$total_score += 2;
+	$total_score += 15;
 	$yellow += 1;
 }
 else{
 	$l_rank = "btn btn-danger";
-	$total_score += 1;
+	$total_score += 10;
 	$red += 1;
 }
 
 //COMPANY RANKINGS
 if($comps > 0){
 	$c_rank = "btn btn-success";
-	$total_score += 5;
+	$total_score += 35;
 	$green += 1;
 }
 else{
 	$c_rank = "btn btn-danger";
+	$total_score += 20;
 	$red += 1;
 }
 
 //XFACTOR RANKINGS
 if($xfactor > 1){
 	$x_rank = "btn btn-success";
-	$total_score += 3;
+	$total_score += 20;
 	$green += 1;
 }
 elseif($xfactor > 0){
 	$x_rank = "btn btn-warning";
-	$total_score += 2;
+	$total_score += 15;
 	$yellow += 1;
 }
 else{
 	$x_rank = "btn btn-danger";
+	$total_score += 10;
 	$red += 1;
 }
 

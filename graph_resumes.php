@@ -181,8 +181,52 @@
               </div>
               <!-- /.box-tools -->
             </div>
+            <!-- /.box-header -->
+            <form action="graph_resumes.php" method="post">
             <div class="box-body">
-              Filter <small class="label pull-right bg-primary">coming soon</small>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label>Filter</label>
+                <select class="form-control select2" style="width: 100%;" id="filter" name="filter">
+                  <option selected="selected">All Batches</option>
+                  <?php
+                  	$batch_names = '';
+                  	
+                  	$dbhost = 'localhost';
+					$dbuser = 'Assign2';
+					$dbpass = 'password';
+ 
+					$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+					if(! $conn )
+					{
+  						die('Could not connect: ' . mysql_error());
+					}     
+
+					$recruiter = $_SESSION['user_id'];
+
+					$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
+					$conn->query($query) or die ("couldn't connect " . $conn->error);
+					$result = $conn->query($query);
+
+					if (false === $result) {
+    					echo mysql_error();
+					}
+					
+					while($row = mysqli_fetch_row($result))
+					{
+    						if(strpos($batch_names, $row[11]) === false ){
+    							echo "<option>" . $row[11] . "</option>";
+    							$batch_names .= $row[11] . ' ';
+    						}
+					}
+                  ?>
+                </select>
+              </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-body">
+              <button class="btn btn-sm btn-primary" type="submit">Apply</button>
             </div>
             <!-- /.box-body -->
             </form>
@@ -205,6 +249,19 @@ if(! $conn )
 
 $recruiter = $_SESSION['user_id'];
 
+if(isset($_POST["filter"]) && $_POST["filter"] != 'All Batches'){
+  	$batch= rtrim($_POST["filter"]);
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter' AND batch = '$batch'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+}
+else{
+
 $query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
@@ -212,6 +269,9 @@ $result = $conn->query($query);
 if (false === $result) {
     echo mysql_error();
 }
+
+}
+
 
 $score_1 = 0;
 $score_2 = 0;
@@ -225,11 +285,9 @@ $score_9 = 0;
 $score_10 = 0;
 $score_11 = 0;
 $score_12 = 0;
-$score_13 = 0;
-$score_14 = 0;
-$score_15 = 0;
 
 $number_resumes = 0;
+$sum_score = 0;
 
 $edu_green = 0;
 $edu_yellow = 0;
@@ -255,55 +313,44 @@ while($row = mysqli_fetch_row($result))
 {
 	if($row[2] != ''){
 		$number_resumes += 1;
+		$sum_score += $row[7];
 	}
 	
-	if($row[7] == 1){
+	if($row[7] == 45){
 		$score_1 += 1;
 	}
-	else if($row[7] == 2){
+	else if($row[7] == 50){
 		$score_2 += 1;
 	}
-	else if($row[7] == 3){
+	else if($row[7] == 55){
 		$score_3 += 1;
 	}
-	else if($row[7] == 4){
+	else if($row[7] == 60){
 		$score_4 += 1;
 	}
-	else if($row[7] == 5){
+	else if($row[7] == 65){
 		$score_5 += 1;
 	}
-	else if($row[7] == 6){
+	else if($row[7] == 70){
 		$score_6 += 1;
 	}
-	else if($row[7] == 7){
+	else if($row[7] == 75){
 		$score_7 += 1;
 	}
-	else if($row[7] == 8){
+	else if($row[7] == 80){
 		$score_8 += 1;
 	}
-	else if($row[7] == 9){
+	else if($row[7] == 85){
 		$score_9 += 1;
 	}
-	else if($row[7] == 10){
+	else if($row[7] == 90){
 		$score_10 += 1;
 	}
-	else if($row[7] == 2){
-		$score_2 += 1;
-	}
-	else if($row[7] == 11){
+	else if($row[7] == 95){
 		$score_11 += 1;
 	}
-	else if($row[7] == 12){
-		$score_12 += 1;
-	}
-	else if($row[7] == 13){
-		$score_13 += 1;
-	}
-	else if($row[7] == 14){
-		$score_14 += 1;
-	}
 	else{
-		$score_15 += 1;
+		$score_12 += 1;
 	}
 	
 	if($row[3] >= 3.6){
@@ -355,6 +402,12 @@ while($row = mysqli_fetch_row($result))
 	}
 }
 
+$sum_score = $sum_score / $number_resumes;
+$sum_quality = $total_red + $total_yellow + $total_green;
+$sum_edu = $edu_green + $edu_yellow + $edu_red;
+$sum_pl = $pl_green + $pl_yellow + $pl_red;
+$sum_work = $work_green + $work_yellow + $work_red;
+$sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
 ?>
 
       <div class="row">
@@ -381,6 +434,7 @@ while($row = mysqli_fetch_row($result))
             <div class="box-body">
               <div class="chart">
                 <canvas id="areaChart" style="height:250px"></canvas>
+                <h4 class="box-title"><button class="btn btn-primary" disabled><b><?php echo $sum_score; ?> Average Score</b></button></h4>
               </div>
             </div>
             <!-- /.box-body -->
@@ -400,6 +454,15 @@ while($row = mysqli_fetch_row($result))
             </div>
             <div class="box-body">
               <canvas id="pieChart" style="height:250px"></canvas>
+              <table align="right">
+                <tr>
+                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($edu_green/$sum_edu)*100; echo $display ?> %</b></button></h4> </td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($edu_yellow/$sum_edu)*100; echo $display ?> %</b></button></h4></td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($edu_red/$sum_edu)*100; echo $display ?> %</b></button></h4></td>
+                </tr>
+                </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -418,6 +481,15 @@ while($row = mysqli_fetch_row($result))
             </div>
             <div class="box-body">
               <canvas id="pieChart2" style="height:250px"></canvas>
+              <table align="right">
+                <tr>
+                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($pl_green/$sum_pl)*100; echo $display ?> %</b></button></h4> </td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($pl_yellow/$sum_pl)*100; echo $display ?> %</b></button></h4></td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($pl_red/$sum_pl)*100; echo $display ?> %</b></button></h4></td>
+                </tr>
+              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -451,6 +523,15 @@ while($row = mysqli_fetch_row($result))
             <div class="box-body">
               <div class="chart">
                 <canvas id="pieChartOverall" style="height:230px"></canvas>
+                <table align="right">
+                <tr>
+                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($total_green/$sum_quality)*100; echo $display ?> %</b></button></h4> </td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($total_yellow/$sum_quality)*100; echo $display ?> %</b></button></h4></td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($total_red/$sum_quality)*100; echo $display ?> %</b></button></h4></td>
+                </tr>
+                </table>
                 &nbsp
               </div>
             </div>
@@ -471,6 +552,15 @@ while($row = mysqli_fetch_row($result))
             </div>
             <div class="box-body">
               <canvas id="pieChart3" style="height:250px"></canvas>
+              <table align="right">
+                <tr>
+                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($work_green/$sum_work)*100; echo $display ?> %</b></button></h4> </td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($work_yellow/$sum_work)*100; echo $display ?> %</b></button></h4></td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($work_red/$sum_work)*100; echo $display ?> %</b></button></h4></td>
+                </tr>
+              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -489,6 +579,15 @@ while($row = mysqli_fetch_row($result))
             </div>
             <div class="box-body">
               <canvas id="pieChart4" style="height:250px"></canvas>
+              <table align="right">
+                <tr>
+                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($xfactor_green/$sum_xfactor)*100; echo $display ?> %</b></button></h4> </td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($xfactor_yellow/$sum_xfactor)*100; echo $display ?> %</b></button></h4></td>
+                <td>&nbsp</td>
+                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($xfactor_red/$sum_xfactor)*100; echo $display ?> %</b></button></h4></td>
+                </tr>
+              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -756,12 +855,6 @@ var score_11 = '<?php echo $score_11; ?>';
 score_11 = parseInt(score_11);
 var score_12 = '<?php echo $score_12; ?>';
 score_12 = parseInt(score_12);
-var score_13 = '<?php echo $score_13; ?>';
-score_13 = parseInt(score_13);
-var score_14 = '<?php echo $score_14; ?>';
-score_14 = parseInt(score_14);
-var score_15 = '<?php echo $score_15; ?>';
-score_15 = parseInt(score_15);
 
 var edu_green = '<?php echo $edu_green; ?>';
 edu_green = parseInt(edu_green);
@@ -815,7 +908,7 @@ total_red = parseInt(total_red);
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+      labels: ["45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"],
       datasets: [
         {
           label: "Resumes",
@@ -825,8 +918,7 @@ total_red = parseInt(total_red);
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [score_1, score_2, score_3, score_4, score_5, score_6, score_7, score_8, score_9, score_10, score_11, score_12, 
-          score_13, score_14, score_15]
+          data: [score_1, score_2, score_3, score_4, score_5, score_6, score_7, score_8, score_9, score_10, score_11, score_12]
         }
       ]
     };
