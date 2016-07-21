@@ -590,7 +590,7 @@ if(! $conn )
   die('Could not connect: ' . mysql_error());
 }     
 
-$querycheck = "SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter_id' AND name = '$candidate_name'";
+$querycheck = "SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter_id' AND name = '$candidate_name' AND batch = '$batch'";
 $result = $conn->query($querycheck);
 if(mysqli_num_rows($result) > 0)
 { 
