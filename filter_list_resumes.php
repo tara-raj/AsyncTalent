@@ -298,29 +298,28 @@ if(! $conn )
 $recruiter = $_SESSION['user_id'];
 //echo $recruiter;
 
-if($sort_by == "Score"){
-	$sort = 'total_score';
-}
-else if($sort_by == "Education"){
-	$sort = 'edu';
-}
-else if($sort_by == "Programming Languages"){
-	$sort = 'lang';
-}
-else if($sort_by == "Work Experience"){
-	$sort = 'work';
-}
-else if($sort_by == "X-Factors"){
-	$sort = 'xfactor';
-}
-else{
-	$sort = 'total_score';
-}
-  
-$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'
-		ORDER BY $sort DESC";
+if(isset($_POST["filter"]) && $_POST["filter"] != 'All Batches'){
+  	$batch= rtrim($_POST["filter"]);
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter' AND batch = '$batch'";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+}
+else{
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+
+}
 
 if (false === $result) {
     echo mysql_error();

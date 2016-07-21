@@ -167,7 +167,155 @@
         <li class="active">Grid</li>
       </ol>
     </section>
+ <?php 
+ 
+	$dbhost = 'localhost';
+	$dbuser = 'Assign2';
+	$dbpass = 'password';
+ 
+$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}     
 
+$recruiter = $_SESSION['user_id'];
+  
+if(isset($_POST["filter"]) && $_POST["filter"] != 'All Batches'){
+  	$batch= rtrim($_POST["filter"]);
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter' AND batch = '$batch'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+}
+else{
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+
+}
+
+if (false === $result) {
+    echo mysql_error();
+}
+
+ 		$selected_1 = '';
+ 		$selected_2 = '';
+ 		$selected_3 = '';
+ 		$selected_4 = '';
+ 		
+ 		$z_value = 0;
+		$z_names = '';
+ 		
+ 		if(isset($_POST["edu"]) && isset($_POST["langs"]) && isset($_POST["work"]) && isset($_POST["xfactor"])){
+  			$selected_1 = rtrim($_POST["edu"]);
+  			$selected_2 = rtrim($_POST["langs"]);
+  			$selected_3 = rtrim($_POST["work"]);
+  			$selected_4 = rtrim($_POST["xfactor"]);
+  			
+  			//echo $selected_1 . " " . $selected_2 . " " . $selected_3 . " " . $selected_4;
+  			
+  			while($row = mysqli_fetch_row($result))
+			{
+				$name = ucwords($row[2]);
+				
+				//GPA RANKINGS
+				if($row[3] >= 3.6){
+					$edu = 'Green';
+				}
+				elseif($row[3] >= 3.4 && $row[3] <= 3.6){
+					$edu = 'Yellow';
+				}
+				else{
+					$edu = 'Red';
+				}
+
+				//PROGRAMMING LANGUAGE RANKINGS
+				if($row[4] > 6){
+					$langs = 'Green';
+				}
+				elseif($row[4] > 2 && $row[4] < 6){
+					$langs = 'Yellow';
+				}
+				else{
+					$langs = 'Red';
+				}
+
+				//COMPANY RANKINGS
+				if($row[5] > 0){
+					$work = 'Green';
+				}
+				else{
+					$work = 'Red';
+				}
+
+				//XFACTOR RANKINGS
+				if($row[6] > 1){
+					$xfactor = 'Green';
+				}
+				elseif($row[6] > 0){
+					$xfactor = 'Yellow';
+				}
+				else{
+					$xfactor = 'Red';
+				}
+			
+			if(strcmp($edu, $selected_1) == 0 &&  strcmp($langs, $selected_2) == 0 && strcmp($work, $selected_3) == 0 && strcmp($xfactor, $selected_4) == 0){	
+				$z_value += 1;
+				$z_names .= $name . ',';
+			}
+  		}
+  		
+  		if(strcmp('Green', $selected_1) == 0){
+  			$icon_1 = "btn btn-success";
+  		}
+  		elseif(strcmp('Yellow', $selected_1) == 0){
+  			$icon_1 = "btn btn-warning";
+  		}
+  		else{
+  			$icon_1 = "btn btn-danger";
+  		}
+  		
+  		if(strcmp('Green', $selected_2) == 0){
+  			$icon_2 = "btn btn-success";
+  		}
+  		elseif(strcmp('Yellow', $selected_2) == 0){
+  			$icon_2 = "btn btn-warning";
+  		}
+  		else{
+  			$icon_2 = "btn btn-danger";
+  		}
+  		
+  		if(strcmp('Green', $selected_3) == 0){
+  			$icon_3 = "btn btn-success";
+  		}
+  		elseif(strcmp('Yellow', $selected_3) == 0){
+  			$icon_3 = "btn btn-warning";
+  		}
+  		else{
+  			$icon_3 = "btn btn-danger";
+  		}
+  		
+  		if(strcmp('Green', $selected_4) == 0){
+  			$icon_4 = "btn btn-success";
+  		}
+  		elseif(strcmp('Yellow', $selected_4) == 0){
+  			$icon_4 = "btn btn-warning";
+  		}
+  		else{
+  			$icon_4 = "btn btn-danger";
+  		}
+  	}
+?>
 <?php
 	$dbhost = 'localhost';
 	$dbuser = 'Assign2';
@@ -392,7 +540,8 @@ while($row = mysqli_fetch_row($result))
         </div>
         <!-- /.col -->
     </div>
-
+    <!--/.row -->
+       
  <div class="row">
         <div class="col-md-3">
           <div class="box box-default collapsed-box">
@@ -784,7 +933,7 @@ while($row = mysqli_fetch_row($result))
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
+       </div>
       <!-- /.row -->
 
       <div class="box-footer">

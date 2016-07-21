@@ -466,12 +466,54 @@ while($row = mysqli_fetch_row($result))
               </table>
               </div>
               <!-- /.form-group -->
-            </div>
-            <!-- /.box-body -->
+              <div class="box-body">
+              	<button class="btn btn-sm btn-primary" type="submit">Sort</button>
+              </div>
+              </form>
+              <form action="filter_grid_resumes.php" method="post">
+              <div class="form-group">
+                <label>Filter</label>
+                <select class="form-control select2" style="width: 100%;" id="filter" name="filter">
+                  <option selected="selected">All Batches</option>
+                  <?php
+                  	$batch_names = '';
+                  	
+                  	$dbhost = 'localhost';
+					$dbuser = 'Assign2';
+					$dbpass = 'password';
+ 
+					$conn = new mysqli($dbhost, $dbuser, $dbpass, 'Assign2');
+					if(! $conn )
+					{
+  						die('Could not connect: ' . mysql_error());
+					}     
+
+					$recruiter = $_SESSION['user_id'];
+
+					$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
+					$conn->query($query) or die ("couldn't connect " . $conn->error);
+					$result = $conn->query($query);
+
+					if (false === $result) {
+    					echo mysql_error();
+					}
+					
+					while($row = mysqli_fetch_row($result))
+					{
+    						if(strpos($batch_names, $row[11]) === false ){
+    							echo "<option>" . $row[11] . "</option>";
+    							$batch_names .= $row[11] . ' ';
+    						}
+					}
+                  ?>
+                </select>
+              </div>
+              <!-- /.form-group -->
             <div class="box-body">
-              <button class="btn btn-sm btn-primary" type="submit">Apply</button>
+              <button class="btn btn-sm btn-primary" type="submit">Filter</button>
             </div>
             <!-- /.box-body -->
+            </div>
             </form>
           </div>
           <!-- /.box -->
