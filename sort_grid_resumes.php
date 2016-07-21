@@ -563,13 +563,15 @@ while($row = mysqli_fetch_row($result))
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        </div>         
- <div class="row">
+        </div>
+ 
+  <div class="row">
         <div class="col-md-3">
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $a_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $a_value; ?></b></button></h2>
+              <!--<span data-toggle="tooltip" class="badge bg-default"><?php echo $a_value ?></span>--!>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
@@ -587,8 +589,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $a_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -601,7 +602,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-			  <span data-toggle="tooltip" class="badge bg-default"><?php echo $b_value ?></span>
+			  <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $b_value; ?></b></button></h2>
 			  <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
@@ -619,8 +620,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $b_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -633,7 +633,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $c_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $c_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
@@ -651,8 +651,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $c_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -665,7 +664,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $d_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $d_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
@@ -683,8 +682,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $d_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -700,7 +698,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $e_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $e_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
@@ -718,8 +716,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $e_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -732,7 +729,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $f_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $f_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
@@ -750,8 +747,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $f_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -764,7 +760,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $g_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $g_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
@@ -782,8 +778,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $g_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -796,7 +791,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $h_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $h_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-green">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
@@ -814,8 +809,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $h_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -825,13 +819,13 @@ while($row = mysqli_fetch_row($result))
         </div>
         <!-- /.col -->
       </div>
-      <!-- /.row -->
- <div class="row">
+      <!-- /.row -->                
+ 	<div class="row">
         <div class="col-md-3">
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $i_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $i_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
@@ -849,8 +843,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $i_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -863,7 +856,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $j_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $j_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
@@ -881,8 +874,7 @@ while($row = mysqli_fetch_row($result))
             	<?php 
               		$pieces = explode(",", $j_names);
               		for ($i = 0; $i < count($pieces); $i++) {
-    					echo $pieces[$i];
-    					echo "<br>";
+    					echo "<h4>". $pieces[$i] . "</h4>";
 					} 
               	?>
             </div>
@@ -895,7 +887,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $k_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $k_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-yellow">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
@@ -913,8 +905,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $k_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -927,7 +918,7 @@ while($row = mysqli_fetch_row($result))
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">
-              <span data-toggle="tooltip" class="badge bg-default"><?php echo $l_value ?></span>
+              <h2 class="box-title"><button class="btn btn-secondary" disabled><b><?php echo $l_value; ?></b></button></h2>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
               <span data-toggle="tooltip" class="badge bg-red">&nbsp</span>
@@ -945,8 +936,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $l_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
-    				echo "<br>";
+    				echo "<h4>". $pieces[$i] . "</h4>";
 				} 
               ?>
             </div>
@@ -955,7 +945,7 @@ while($row = mysqli_fetch_row($result))
           <!-- /.box -->
         </div>
         <!-- /.col -->
-       </div>
+      </div>
       <!-- /.row -->
 
       <div class="box-footer">
