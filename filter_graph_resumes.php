@@ -182,7 +182,7 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form action="graph_resumes.php" method="post">
+            <form action="filter_graph_resumes.php" method="post">
             <div class="box-body">
               <!-- /.form-group -->
               <div class="form-group">
@@ -285,9 +285,11 @@ $score_9 = 0;
 $score_10 = 0;
 $score_11 = 0;
 $score_12 = 0;
+$score_13 = 0;
+$score_14 = 0;
+$score_15 = 0;
 
 $number_resumes = 0;
-$sum_score = 0;
 
 $edu_green = 0;
 $edu_yellow = 0;
@@ -313,44 +315,55 @@ while($row = mysqli_fetch_row($result))
 {
 	if($row[2] != ''){
 		$number_resumes += 1;
-		$sum_score += $row[7];
 	}
 	
-	if($row[7] == 45){
+	if($row[7] == 1){
 		$score_1 += 1;
 	}
-	else if($row[7] == 50){
+	else if($row[7] == 2){
 		$score_2 += 1;
 	}
-	else if($row[7] == 55){
+	else if($row[7] == 3){
 		$score_3 += 1;
 	}
-	else if($row[7] == 60){
+	else if($row[7] == 4){
 		$score_4 += 1;
 	}
-	else if($row[7] == 65){
+	else if($row[7] == 5){
 		$score_5 += 1;
 	}
-	else if($row[7] == 70){
+	else if($row[7] == 6){
 		$score_6 += 1;
 	}
-	else if($row[7] == 75){
+	else if($row[7] == 7){
 		$score_7 += 1;
 	}
-	else if($row[7] == 80){
+	else if($row[7] == 8){
 		$score_8 += 1;
 	}
-	else if($row[7] == 85){
+	else if($row[7] == 9){
 		$score_9 += 1;
 	}
-	else if($row[7] == 90){
+	else if($row[7] == 10){
 		$score_10 += 1;
 	}
-	else if($row[7] == 95){
+	else if($row[7] == 2){
+		$score_2 += 1;
+	}
+	else if($row[7] == 11){
 		$score_11 += 1;
 	}
-	else{
+	else if($row[7] == 12){
 		$score_12 += 1;
+	}
+	else if($row[7] == 13){
+		$score_13 += 1;
+	}
+	else if($row[7] == 14){
+		$score_14 += 1;
+	}
+	else{
+		$score_15 += 1;
 	}
 	
 	if($row[3] >= 3.6){
@@ -401,13 +414,6 @@ while($row = mysqli_fetch_row($result))
 		$total_red += 1;
 	}
 }
-
-$sum_score = $sum_score / $number_resumes;
-$sum_quality = $total_red + $total_yellow + $total_green;
-$sum_edu = $edu_green + $edu_yellow + $edu_red;
-$sum_pl = $pl_green + $pl_yellow + $pl_red;
-$sum_work = $work_green + $work_yellow + $work_red;
-$sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
 ?>
 
       <div class="row">
@@ -454,15 +460,6 @@ $sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
             </div>
             <div class="box-body">
               <canvas id="pieChart" style="height:250px"></canvas>
-              <table align="right">
-                <tr>
-                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($edu_green/$sum_edu)*100; echo $display ?> %</b></button></h4> </td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($edu_yellow/$sum_edu)*100; echo $display ?> %</b></button></h4></td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($edu_red/$sum_edu)*100; echo $display ?> %</b></button></h4></td>
-                </tr>
-                </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -481,15 +478,6 @@ $sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
             </div>
             <div class="box-body">
               <canvas id="pieChart2" style="height:250px"></canvas>
-              <table align="right">
-                <tr>
-                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($pl_green/$sum_pl)*100; echo $display ?> %</b></button></h4> </td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($pl_yellow/$sum_pl)*100; echo $display ?> %</b></button></h4></td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($pl_red/$sum_pl)*100; echo $display ?> %</b></button></h4></td>
-                </tr>
-              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -523,15 +511,6 @@ $sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
             <div class="box-body">
               <div class="chart">
                 <canvas id="pieChartOverall" style="height:230px"></canvas>
-                <table align="right">
-                <tr>
-                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($total_green/$sum_quality)*100; echo $display ?> %</b></button></h4> </td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($total_yellow/$sum_quality)*100; echo $display ?> %</b></button></h4></td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($total_red/$sum_quality)*100; echo $display ?> %</b></button></h4></td>
-                </tr>
-                </table>
                 &nbsp
               </div>
             </div>
@@ -552,15 +531,6 @@ $sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
             </div>
             <div class="box-body">
               <canvas id="pieChart3" style="height:250px"></canvas>
-              <table align="right">
-                <tr>
-                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($work_green/$sum_work)*100; echo $display ?> %</b></button></h4> </td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($work_yellow/$sum_work)*100; echo $display ?> %</b></button></h4></td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($work_red/$sum_work)*100; echo $display ?> %</b></button></h4></td>
-                </tr>
-              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -579,15 +549,6 @@ $sum_xfactor = $xfactor_green + $xfactor_yellow + $xfactor_red;
             </div>
             <div class="box-body">
               <canvas id="pieChart4" style="height:250px"></canvas>
-              <table align="right">
-                <tr>
-                <td><h4 class="box-title"><button class="btn btn-success" disabled><b><?php $display = ($xfactor_green/$sum_xfactor)*100; echo $display ?> %</b></button></h4> </td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-warning" disabled><b><?php $display = ($xfactor_yellow/$sum_xfactor)*100; echo $display ?> %</b></button></h4></td>
-                <td>&nbsp</td>
-                <td><h4 class="box-title"><button class="btn btn-danger" disabled><b><?php $display = ($xfactor_red/$sum_xfactor)*100; echo $display ?> %</b></button></h4></td>
-                </tr>
-              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -855,6 +816,12 @@ var score_11 = '<?php echo $score_11; ?>';
 score_11 = parseInt(score_11);
 var score_12 = '<?php echo $score_12; ?>';
 score_12 = parseInt(score_12);
+var score_13 = '<?php echo $score_13; ?>';
+score_13 = parseInt(score_13);
+var score_14 = '<?php echo $score_14; ?>';
+score_14 = parseInt(score_14);
+var score_15 = '<?php echo $score_15; ?>';
+score_15 = parseInt(score_15);
 
 var edu_green = '<?php echo $edu_green; ?>';
 edu_green = parseInt(edu_green);
@@ -908,7 +875,7 @@ total_red = parseInt(total_red);
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: ["45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"],
+      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
       datasets: [
         {
           label: "Resumes",
@@ -918,7 +885,8 @@ total_red = parseInt(total_red);
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [score_1, score_2, score_3, score_4, score_5, score_6, score_7, score_8, score_9, score_10, score_11, score_12]
+          data: [score_1, score_2, score_3, score_4, score_5, score_6, score_7, score_8, score_9, score_10, score_11, score_12, 
+          score_13, score_14, score_15]
         }
       ]
     };
