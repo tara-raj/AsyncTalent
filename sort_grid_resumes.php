@@ -553,7 +553,7 @@ while($row = mysqli_fetch_row($result))
               <?php 
               	$pieces = explode(",", $z_names);
               	for ($i = 0; $i < count($pieces); $i++) {
-    				echo $pieces[$i];
+    				echo "<h4>". $pieces[$i] . "</h4>";
     				echo "<br>";
 				} 
               ?>
