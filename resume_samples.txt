@@ -232,7 +232,7 @@ Harvard Undergraduate Debate Union – Board Member (HCDU and APDA) 	         Se
 Skills
 Spanish (conversational). Experience in C, JavaScript, C#, MatLab, HTML, Scala, MySQL.
 NEXTRESUME
-MirandaWang
+Marissa Wang
 miranda-wang.com
 www.linkedin.com/in/
 mirandawangx
@@ -472,7 +472,7 @@ Technical Skills: HTML/CSS (Beginner), Python (Beginner), Java (Beginner), Solde
 Interests: Gender equality in STEM fields, Wearable Technology, Spoken word poetry, Traveling
 
 NEXTRESUME
-KYLE BIBLER
+KYLE BIBER
 Experience working with Java, Javascript, Python, C++, PHP, HTML, and Javascript frameworks and libraries: Angular.js, Jquery, Node.js (limited)
 Experience in software development techniques such as Agile development and software testing and analysis methods.
 Developing mobile applications for Android with Java.
@@ -554,7 +554,7 @@ Chinese Students and Scholars Society – Charlottesville, VA Fall 2012 - Presen
  Bilingual Chinese and English
 
 NEXTRESUME
-SARIKA PAWAR
+SYDNEY POWERS
 37 Debra Drive, Dayton, NJ 08810 | ssp2jm@virginia.edu | (732) 439-3559
 
 University of Virginia, Charlottesville, Virginia Expected May 2018
@@ -624,7 +624,7 @@ Skills: Microsoft Office Suite (Proficient), Java (Basic), CapIQ (Basic), Mandar
 Interests: Kickboxing, Bouldering, Audio Book Reading
 
 NEXTRESUME
-Christopher M. Long
+Christopher M. Larson
 607 Gigi Drive, Blacksburg, VA24060 ♦ (540) 808-3354 ♦ cml3ta@virginia.edu
 
 University of Virginia, Charlottesville VA Expected Graduation: May 2018
@@ -674,7 +674,7 @@ Language Skills: English (Native), Spanish (Conversant)
 Interests: Golf, Fantasy Football, Running, Debate
 
 NEXTRESUME
-Kevin Zhao
+Brian Zhao
 416 Garces Drive, San Francisco, CA 94132 | (434) 282-5369 | rz2db@virginia.edu | www.linkedin.com/in/kevinzhaouva
 
 UNIVERSITY OF VIRGINIA Charlottesville, VA
@@ -719,7 +719,7 @@ Data Analytics Intern December 2014 – January 2015
 • Built a web crawler with Python to collect rental pricing on Craiglist and used Google Map Geocoding to link each listing to a
 • Built a website with Ruby on Rails to give restaurant recommendations to friends
 NEXTRESUME
-TARA RAJ
+Sara Rodgers
 tara@virginia.edu (908) 528-7301 https://github.com/
 
 University of Virginia Charlottesville, VA
@@ -953,7 +953,7 @@ Consultant, Sept. 2014-Present
  Music: Piano Performance, Improvisation, Composition, FL Studio, Garageband
 
 NEXTRESUME
-Meaghan K Gilmartin
+Meaghan K Gregory
 University of Virginia, College of Arts & Sciences, Charlottesville, VA Aug 2012 – May 2016
 
 B.S., Financial Economics, B.A. Media Studies, Minor in Statistical Analysis of Social Behavior
