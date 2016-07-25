@@ -51,8 +51,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -132,16 +130,16 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li>
-          <a href="upload.php">
+          <a href="upload_business.php">
             <i class="fa fa-upload"></i> <span>Upload Resumes</span>
           </a>
         </li>
         <li class="active treeview">
-          <a href="sort_list_resumes.php">
+          <a href="sort_list_resumes_business.php">
             <i class="fa fa-flask"></i> <span>View Results</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="sort_list_resumes.php"><i class="fa fa-th-list"></i>List</a></li>
+            <li class="active"><a href="sort_list_resumes_business.php"><i class="fa fa-th-list"></i>List</a></li>
             <li><a href="grid_resumes.php"><i class="fa fa-th-large"></i>Grid</a></li>
             <li><a href="graph_resumes.php"><i class="fa fa-bar-chart"></i>Graph</a></li>
           </ul>
@@ -165,7 +163,7 @@
         Resume List
       </h1>
       <ol class="breadcrumb">
-        <li><a href="upload.php"><i class="fa fa-upload"></i>Upload</a></li>
+        <li><a href="upload_business.php"><i class="fa fa-upload"></i>Upload</a></li>
         <li class="active">List</li>
       </ol>
     </section>
@@ -186,7 +184,7 @@
               <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
-            <form action="sort_list_resumes.php" method="post">
+            <form action="sort_list_resumes_business.php" method="post">
             <div class="box-body">
               <!-- /.form-group -->
               <div class="form-group">
@@ -204,7 +202,7 @@
               	<button class="btn btn-sm btn-primary" type="submit">Sort</button>
               </div>
               </form>
-              <form action="filter_list_resumes.php" method="post">
+              <form action="filter_list_resumes_business.php" method="post">
               <div class="form-group">
                 <label>Filter</label>
                 <select class="form-control select2" style="width: 100%;" id="filter" name="filter">
@@ -234,7 +232,7 @@
 					
 					while($row = mysqli_fetch_row($result))
 					{
-    						if(strpos($batch_names, $row[11]) === false && $row[11] != '&#32'){
+    						if(strpos($batch_names, $row[11]) === false ){
     							echo "<option>" . $row[11] . "</option>";
     							$batch_names .= $row[11] . ' ';
     						}
@@ -246,7 +244,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-body">
-              <button class="btn btn-sm btn-primary" type="submit">Apply</button>
+              <button class="btn btn-sm btn-primary" type="submit">Filter</button>
             </div>
             <!-- /.box-body -->
             </form>
@@ -254,7 +252,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        </div>
+    </div>
     
       <div class="row">
         <!-- left column -->
@@ -279,310 +277,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                
-<?php 
-$tr = $_FILES["file"];
-$batch = $_POST["batchName"];
-$batch = rtrim($_POST["batchName"]);
-//echo $batch;
-  		//print_r($tr);
-  		
-  		//echo $tr['name'] . "<br>";
-$init = "";
-  		if ($_FILES["file"]["error"] > 0)
-		{
-			echo "Error: " . $_FILES["file"]["error"] . "<br />";
-		}
-		else
-		{
-			$fp = fopen($_FILES['file']['tmp_name'], 'rb');
-    		while ( ($line = fgets($fp)) !== false) {
-      			//echo "$line<br>";
-      			$init .= $line . "<br>";
-    		}
-		}
-		                           
-$text = strtolower($init);
-$resume_array = explode("nextresume", $text);
-//$resume_array = preg_split("/^nextresume$/", $text);
-
-//print_r($resume_array);
-
-$gpa = 0;
-for($a = 0; $a < sizeof($resume_array); $a++){
-
-$array = explode("\n", $resume_array[$a]);
-if($a == 0){
-	$firstLine = $array[0];
-	$candidate_name = $firstLine;
-}
-else{
-	$firstLine = $array[1];
-	$candidate_name = substr($firstLine, 4);
-}
-
-//echo "<br>" . $candidate_name;
-
-$splitted = preg_split('/\s+\,/', $resume_array[$a]);
-
-
-for($j = 0; $j < sizeof($splitted); $j++){
-$findme   = 'gpa';
-$pattern = '/[0-4]\.[0-9]+/';
-preg_match($pattern, $resume_array[$a], $matches);
-//print_r($matches);
-}
-
-if(sizeof($matches) > 0){
-	$output = $matches[0];
-	$gpa = $output;
-}
-else{
-	$output = "none detected";
-	$gpa = 0;
-}
-//echo "<h4>" . "GPA: " . $output . "<br>";
-
-
-$handle = fopen("languages.csv", "r");
-$languages=array();
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        // process the line read.
-        $p = strtolower($line);
-        $q = rtrim($p);
-        array_push($languages,$q);
-        /*for($i = 0; $i < sizeof($ls); $i++){
-        	echo $line_separated[$i] . "<br>";
-        }*/
-    }
-
-    fclose($handle);
-    
-} else {
-    // error opening the file.
-} 
-
-
-//echo "<br>" . "Programming languages: ";
-
-$langs = 0;
-for($j = 0; $j < sizeof($splitted); $j++){
-	for($i = 0; $i < sizeof($languages); $i++){
-		if($languages[$i] != null){
-		$pos = strpos($splitted[$j], $languages[$i]);
-		if($pos === false){
-		}
-		else{
-			//echo $languages[$i] . " ";
-			$langs += 1;
-		}
-		}
-	}
-	/*if (in_array($languages[$i],$splitted) !== false) {
-		echo $languages[$i] . " ";
-	}*/
-}
-
-$comps = 0;
-$handle = fopen("companies.csv", "r");
-$companies=array();
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        // process the line read.
-        $p = strtolower($line);
-        $q = rtrim($p);
-        array_push($companies,$q);
-        /*for($i = 0; $i < sizeof($ls); $i++){
-        	echo $line_separated[$i] . "<br>";
-        }*/
-    }
-
-    fclose($handle);
-    
-} else {
-    // error opening the file.
-} 
-
-
-//echo "<br>" . "<br>" . "Company Experience: ";
-for($j = 0; $j < sizeof($splitted); $j++){
-	for($i = 0; $i < sizeof($companies); $i++){
-		if($companies[$i] != null){
-			$pos = strpos($splitted[$j], $companies[$i]);
-			if($pos === false){
-			}
-			else{
-				if($companies[$i] == 'microsoft'){
-					$p = strpos($resume_array[$a], 'redmond');
-					if($p === false){
-					}
-					else{
-						//echo $companies[$i] . " ";
-						$comps += 1;
-					}
-				} else if($companies[$i] == 'google' || $companies[$i] == 'linkedin'){
-					$p = strpos($resume_array[$a], 'mountain view');
-					if($p === false){
-					}
-					else{
-						//echo $companies[$i] . " ";
-						$comps += 1;
-					}
-				} else if($companies[$i] == 'facebook'){
-					$p = strpos($resume_array[$a], 'menlo park');
-					if($p === false){
-					}
-					else{
-						//echo $companies[$i] . " ";
-						$comps += 1;
-					}
-				} else {
-					//echo $companies[$i] . " ";
-					$comps += 1;
-				}
-				
-			}
-		}
-	}
-}
-
-$xfactor = 0;
-//echo "<br>" . "<br>" . "Special Considerations: ";
-
-
-for($j = 0; $j < sizeof($splitted); $j++){
-	$p = strpos($resume_array[$a], 'teaching assistant');
-	if($p === false){
-					}
-	else{
-		//echo "Teaching assitant" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'teaching fellow');
-	if($p === false){
-					}
-	else{
-		//echo "Teaching fellow" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'resident advisor');
-	if($p === false){
-					}
-	else{
-		//echo "Resident advisor" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'startup');
-	if($p === false){
-					}
-	else{
-		//echo "Startup interests" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'entrepreneurship');
-	if($p === false){
-					}
-	else{
-		//echo "Entrepreneruship interests" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'founder');
-	if($p === false){
-					}
-	else{
-		//echo "Founder" . ", ";
-		$xfactor += 1;
-	}
-	$p = strpos($resume_array[$a], 'president');
-	if($p === false){
-	}
-	else{
-		//echo "Club president" . ", ";
-		$xfactor += 1;
-	}
-}
-
-
-$total_score = 0;
-$green = 0;
-$yellow = 0;
-$red = 0;
-
-//GPA RANKINGS
-if($gpa >= 3.6){
-	$g_rank =  "btn btn-success";
-	$total_score += 25;
-	$green += 1;
-}
-elseif($gpa >= 3.4 && $gpa <= 3.6){
-	$g_rank = "btn btn-warning";
-	$total_score += 20;
-	$yellow += 1;
-}
-else{
-	$g_rank = "btn btn-danger";
-	$total_score += 5;
-	$red += 1;
-}
-
-//PROGRAMMING LANGUAGE RANKINGS
-if($langs > 6){
-	$l_rank = "btn btn-success";
-	$total_score += 20;
-	$green += 1;
-}
-elseif($langs > 2 && $langs < 6){
-	$l_rank = "btn btn-warning";
-	$total_score += 15;
-	$yellow += 1;
-}
-else{
-	$l_rank = "btn btn-danger";
-	$total_score += 10;
-	$red += 1;
-}
-
-//COMPANY RANKINGS
-if($comps > 0){
-	$c_rank = "btn btn-success";
-	$total_score += 35;
-	$green += 1;
-}
-else{
-	$c_rank = "btn btn-danger";
-	$total_score += 20;
-	$red += 1;
-}
-
-//XFACTOR RANKINGS
-if($xfactor > 1){
-	$x_rank = "btn btn-success";
-	$total_score += 20;
-	$green += 1;
-}
-elseif($xfactor > 0){
-	$x_rank = "btn btn-warning";
-	$total_score += 15;
-	$yellow += 1;
-}
-else{
-	$x_rank = "btn btn-danger";
-	$total_score += 10;
-	$red += 1;
-}
-
-
+ <?php 
+ 		$sort_by = '';
+ 		if(isset($_POST["sort"])){
+  			$sort_by = rtrim($_POST["sort"]);
+  		}
+  		//echo $sort_by . "<br>";
 ?>
 <?php
-//ADD THE INFO TO A TABLE
-?>
-<?php
-//echo "<br>" . "STATS: " . $gpa . " " . $langs . " " . $comps . " " . $xfactor . "<br>";
-//echo "<br>" . "STATS: " . $g_rank . " " . $l_rank . " " . $c_rank . " " . $x_rank . "<br>";
-
-$recruiter_id = $_SESSION['user_id'];
-
 	$dbhost = 'localhost';
 	$dbuser = 'Assign2';
 	$dbpass = 'password';
@@ -593,54 +295,90 @@ if(! $conn )
   die('Could not connect: ' . mysql_error());
 }     
 
-$querycheck = "SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter_id' AND name = '$candidate_name' AND batch = '$batch'";
-$result = $conn->query($querycheck);
-if(mysqli_num_rows($result) > 0)
-{ 
+$recruiter = $_SESSION['user_id'];
+//echo $recruiter;
+
+if(isset($_POST["filter"]) && $_POST["filter"] != 'All Batches'){
+  	$batch= rtrim($_POST["filter"]);
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter' AND batch = '$batch'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
+}
+else{
+
+$query="SELECT * FROM Resumes WHERE Recruiter_id = '$recruiter'";
+$conn->query($query) or die ("couldn't connect " . $conn->error);
+$result = $conn->query($query);
+
+if (false === $result) {
+    echo mysql_error();
+}
 
 }
-else
-{
-	$query = "INSERT INTO Resumes (Recruiter_id, name, edu, lang, work, xfactor, total_score, green, yellow, red, batch)
-                VALUES ('$recruiter_id', '$candidate_name', $gpa, $langs, $comps, $xfactor, $total_score, $green, $yellow, $red, '$batch')";
-	$conn->query($query) or die ("Invalid create" . $conn->error);
 
+if (false === $result) {
+    echo mysql_error();
+}
+
+while($row = mysqli_fetch_row($result))
+{
+    //GPA RANKINGS
+if($row[3] >= 3.75){
+	$g_rank =  "btn btn-success";
+}
+elseif($row[3] >= 3.6 && $row[3] <= 3.75){
+	$g_rank = "btn btn-warning";
+}
+else{
+	$g_rank = "btn btn-danger";
+}
+
+//PROGRAMMING LANGUAGE RANKINGS
+if($row[4] >= 6){
+	$l_rank = "btn btn-success";
+}
+elseif($row[4] > 3 && $row[4] < 6){
+	$l_rank = "btn btn-warning";
+}
+else{
+	$l_rank = "btn btn-danger";
+}
+
+//COMPANY RANKINGS
+if($row[5] > 0){
+	$c_rank = "btn btn-success";
+}
+else{
+	$c_rank = "btn btn-danger";
+}
+
+//XFACTOR RANKINGS
+if($row[6] > 1){
+	$x_rank = "btn btn-success";
+}
+elseif($row[6] > 0){
+	$x_rank = "btn btn-warning";
+}
+else{
+	$x_rank = "btn btn-danger";
 }
 
 //LOOP THROUGH TABLE AND PRINT SORTED ROWS
-
-/*echo "<div class='btn-group'>";
-echo "<button type='button' class='" . $g_rank . "'>";
-echo "<span class='glyphicon glyphicon-education'></span>";
-echo "</button>";
-
-echo "<button type='button' class='" . $l_rank . "'>";
-echo "<span class='glyphicon glyphicon-random'></span>";
-echo "</button>";
-
-echo "<button type='button' class='" . $c_rank . "'>";
-echo "<span class='glyphicon glyphicon-briefcase'></span>";
-echo "</button>";
-
-echo "<button type='button' class='" . $x_rank . "'>";
-echo "<span class='glyphicon glyphicon-fire'></span>";
-echo "</button>";
-
-echo "<button type='button' class='btn btn-default'>" . $candidate_name . "</button>";
-
-echo "<button type='button' class='btn btn-default'>" . $total_score . "</button>";
-
-echo "</div>";
-echo "<br>";
-echo "<br>";*/
-
-$candidate_name = ucwords($candidate_name);
+if($row[2] == ''){
+}
+else{
+$candidate_name = ucwords($row[2]);
 
 echo "<tr>";
 
 echo "<td><b><h4>". $candidate_name . "</h4></b></td>";
 
-echo "<td><b><h4>". $total_score . "</h4></b></td>";
+echo "<td><b><h4>". $row[7] . "</h4></b></td>";
 
 echo "<td>";
 echo "<button type='button' class='" . $g_rank . "'>";
@@ -666,15 +404,16 @@ echo "<span class='glyphicon glyphicon-fire'></span>";
 echo "</button>";
 echo "</td>";
 
+//echo "<td>";
+//echo $row[11];
+//echo "</td>";
+
 echo "</tr>";
+}
 
 }
 
-//echo "<input class='btn btn-group'>";
-//echo "<input class='btn btn-success'>";
-
-
-?>              
+?>
                 </tbody>
                 <tfoot>
                 <tr>
@@ -701,7 +440,7 @@ echo "</tr>";
         <!--/.col (right) -->
     </section>
     <!-- /.content -->
-
+  
   </body>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -970,30 +709,5 @@ echo "</tr>";
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- Page script -->
-<!-- DataTables -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
 </body>
 </html>

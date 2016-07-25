@@ -135,7 +135,7 @@
           </a>
         </li>
         <li class="active treeview">
-          <a href="sort.php">
+          <a href="sort_list_resumes_business.php">
             <i class="fa fa-flask"></i> <span>View Results</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">

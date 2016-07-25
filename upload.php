@@ -116,7 +116,7 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="sort.php">
+          <a href="sort_list_resumes_business.php">
             <i class="fa fa-flask"></i> <span>View Results</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
@@ -159,8 +159,12 @@
             <form action="list_resumes.php" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <h3 for="exampleInputFile"><b>My Resumes</b></h3>
+                  <h4 for="exampleInputFile" class="text-primary">File Input</h4>
                   <input type="file" name="file" id="file"/>
+                </div>
+                <div class="form-group">
+                  <h4 class="text-primary">Batch Name</h4>
+                  <input type="text" class="form-control" name="batchName" placeholder="Hackathon Submissions">
                 </div>
               </div>
               <!-- /.box-body -->
