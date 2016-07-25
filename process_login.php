@@ -31,7 +31,7 @@ if(! $conn )
   die('Could not connect: ' . mysql_error());
 }     
 
-$query="SELECT * FROM AsyncUsers";
+$query="SELECT * FROM Async_Users";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 

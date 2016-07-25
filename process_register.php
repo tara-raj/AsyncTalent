@@ -54,7 +54,7 @@ while($row = mysqli_fetch_row($result))
 
 if (isset($_POST['terms'])) {
 if($userexist == 0){
-	$query = "INSERT INTO AsyncUsers (Email, Username, Password)
+	$query = "INSERT INTO Async_Users (Email, Username, Password)
                        VALUES
                        ('$username', '$name', '$password')";
 	$conn->query($query) or die ("invalid user insert" . $conn->error);
@@ -66,7 +66,7 @@ if($userexist == 0){
    $success = 0;
 }
 
-$query="SELECT * FROM AsyncUsers";
+$query="SELECT * FROM Async_Users";
 $conn->query($query) or die ("couldn't connect " . $conn->error);
 $result = $conn->query($query);
 

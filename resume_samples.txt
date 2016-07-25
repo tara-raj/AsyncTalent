@@ -597,7 +597,7 @@ Virginia Consulting Group, Vice President 2014 - Present
 
  Devised new product, ‘The Sticker Series’, as a marketing campaign to promote brand recognition for startup
 
-‘Baron Fig’ and increased user base by 3,000 AsyncUsers over two months
+‘Baron Fig’ and increased user base by 3,000 Async_Users over two months
 
 Alpha Kappa Psi, Secretary, Former Rush Chair and Stock Pitch Mentor 2015 – Present
 
@@ -701,12 +701,12 @@ COMSCORE San Francisco, CA
 Data Analyst Intern May 2015 – July 2015
 • Pulled millions of rows of web search related data on Google, Yahoo, and Bing from PostgreSQL database and turned the data into a web search market share report which is critical for million-dollar contracts with Microsoft
 • Went through over 1,300 lines of code for Rogers, the Canadian Verizon who is a client who signed over 850,000 dollars contract with comScore, to identify bugs in a script which is used to produce a critical data analysis report for Rogers
-• Developed methodology to categorize Internet AsyncUsers as English or non-English speaking in the Asian market for Netflix, then wrote PostgreSQL code to pulled data on the population to determine sites they visited most often
+• Developed methodology to categorize Internet Async_Users as English or non-English speaking in the Asian market for Netflix, then wrote PostgreSQL code to pulled data on the population to determine sites they visited most often
 
 CENTER FOR BUSINESS ANALYTICS AT THE MCINTIRE SCHOOL OF COMMERCE Charlottesville, VA
 Software Engineer September 2014 – June 2015
 • Created entity relationship diagrams for Twitter and FDA data, used Java to transform 7,000,000 lines of unstructured text data into various tables, loaded data into a SQL database, used statistical analysis to identify anomalies in user sentiments
-• Used Tableau to build interactive dashboards to visualize significant events, such as FDA investigations, online sentiments, and influential AsyncUsers, which could help pharmaceutical companies predict future events, regulatory agencies detect issues with drugs, and healthcare investors forecast future stock prices
+• Used Tableau to build interactive dashboards to visualize significant events, such as FDA investigations, online sentiments, and influential Async_Users, which could help pharmaceutical companies predict future events, regulatory agencies detect issues with drugs, and healthcare investors forecast future stock prices
 • Mined massive datasets collected from Weibo, the Chinese Twitter, and Douban, the largest movie review website in China, with Python to compile over 160 million lines and create a database in Microsoft SQL Server
 • Will leverage the database to compare user behavior across different online social platforms to help advertisers identify the best online social platform for marketing campaigns
 • Built data pipelines with Natural Language Toolkit(NLTK) packages in Python to prepare unstructured English and Chinese text data for sentiment analysis, which will be conducted by tools such as RapidMiner
@@ -739,7 +739,7 @@ Program Manager Intern – Data Platform Group May 2014 – Aug 2014
 ● Developed and released database optimization feature demos via Azure cloud online using SQL Global Scale client library
 ● Initiated UI/UX for Azure dashboard “Resource Manager” to visualize database metrics and optimization recommendations
 Explorer Intern May 2013 – Aug 2013
-● Created a Windows app for AsyncUsers to monitor SQL Azure databases; being used by internal Microsoft database administrators
+● Created a Windows app for Async_Users to monitor SQL Azure databases; being used by internal Microsoft database administrators
 ● Worked on a team of interns to engineer a pipeline to retrieve database health metrics and deliver notifications
 
 Princeton University Princeton, NJ

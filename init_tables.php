@@ -20,15 +20,15 @@ if(! $conn )
 }
 
 //User Profiles Table
-$query = "DROP table AsyncUsers;";
+$query = "DROP table Async_Users;";
 $conn->query($query) or die (); 
 
-$query = "CREATE TABLE AsyncUsers (User_id int primary key not null AUTO_INCREMENT, Email char(255) not null, Username char(25) not null, Password char(255) not null, Type char(25) not null);";
+$query = "CREATE TABLE Async_Users (User_id int primary key not null AUTO_INCREMENT, Email char(255) not null, Username char(25) not null, Password char(255) not null, Type char(25) not null);";
 $conn->query($query) or die ("Invalid create" . $conn->error); 
 echo "User table initialized";
 echo "<br>";
 
-//ADD AsyncUsers 
+//ADD Async_Users 
 $p = 'password';
 $password = hash('sha256', $p);
 $email1 = "sam@airbnb.com";
@@ -36,12 +36,12 @@ $email2 = "james@facebook.com";
 $name1 = "Sam Hunt";
 $name2 = "James Bay";
 
-$query = "INSERT INTO AsyncUsers (Email, Username, Password, Type)
+$query = "INSERT INTO Async_Users (Email, Username, Password, Type)
                        VALUES
                        ('$email1', '$name1', '$password', 'recruiter')";
 $conn->query($query) or die ("invalid user insert" . $conn->error);
 
-$query = "INSERT INTO AsyncUsers (Email, Username, Password, Type)
+$query = "INSERT INTO Async_Users (Email, Username, Password, Type)
                        VALUES
                        ('$email2', '$name2', '$password', 'recruiter')";
 $conn->query($query) or die ("invalid user insert" . $conn->error); 
